@@ -91,6 +91,7 @@ if st.button("▶️ Run Simulation"):
         priors[team] = {"mean": base + strength_adj, "std": std_adj}
 
     ladder_samples = {team: [] for team in teams}
+    all_ladders = []
     top8_sets = []
 
     def sim():
@@ -111,14 +112,15 @@ if st.button("▶️ Run Simulation"):
 
         return sorted(pts.items(), key=lambda x: (-x[1], -diffs[x[0]]))
 
-    # Run simulations
+    # Run simulations and store results
     for _ in range(num_sims):
         ladder = sim()
+        all_ladders.append(ladder)
         top8_sets.append(frozenset([team for team, _ in ladder[:8]]))
         for i, (team, _) in enumerate(ladder):
             ladder_samples[team].append(i + 1)
 
-    # === SHOW FINAL LADDER PROBS ===
+    # === Final Ladder Probabilities ===
     st.subheader("📊 Final Ladder Probabilities")
     result_data = []
     for team in teams:
@@ -135,7 +137,7 @@ if st.button("▶️ Run Simulation"):
     df = pd.DataFrame(result_data).sort_values("Median Pos")
     st.dataframe(df.set_index("Team").style.format("{:.1f}"))
 
-    # === CHART ===
+    # === Chart ===
     st.subheader("📈 Ladder Position Distribution")
     fig, ax = plt.subplots(figsize=(12, 8))
     sorted_teams = df["Team"].tolist()
@@ -154,7 +156,7 @@ if st.button("▶️ Run Simulation"):
     ax.set_title("Predicted Ladder Position Distributions")
     st.pyplot(fig)
 
-    # === TOP 8 COMBO SETS ===
+    # === Top 8 Unordered ===
     st.subheader("🎯 Most Common Top 8 Sets (Unordered)")
     top8_counts = Counter(top8_sets)
     top8_table = pd.DataFrame([
@@ -162,3 +164,33 @@ if st.button("▶️ Run Simulation"):
         for combo, count in top8_counts.most_common(10)
     ])
     st.dataframe(top8_table)
+
+    # === Top 8 Ordered ===
+    st.subheader("🏅 Most Common Top 8 Orders")
+    top8_ordered = [tuple(team for team, _ in ladder[:8]) for ladder in all_ladders]
+    top8_ordered_counts = Counter(top8_ordered)
+    top8_ordered_table = pd.DataFrame([
+        {"Top 8 Order": ' > '.join(combo), "Probability": f"{(count / num_sims):.2%}"}
+        for combo, count in top8_ordered_counts.most_common(10)
+    ])
+    st.dataframe(top8_ordered_table)
+
+    # === Top 4 Unordered ===
+    st.subheader("🧢 Most Common Top 4 Sets (Unordered)")
+    top4_unordered = [frozenset(team for team, _ in ladder[:4]) for ladder in all_ladders]
+    top4_unordered_counts = Counter(top4_unordered)
+    top4_unordered_table = pd.DataFrame([
+        {"Top 4 Teams": ', '.join(sorted(combo)), "Probability": f"{(count / num_sims):.2%}"}
+        for combo, count in top4_unordered_counts.most_common(10)
+    ])
+    st.dataframe(top4_unordered_table)
+
+    # === Top 4 Ordered ===
+    st.subheader("🥇 Most Common Top 4 Orders")
+    top4_ordered = [tuple(team for team, _ in ladder[:4]) for ladder in all_ladders]
+    top4_ordered_counts = Counter(top4_ordered)
+    top4_ordered_table = pd.DataFrame([
+        {"Top 4 Order": ' > '.join(combo), "Probability": f"{(count / num_sims):.2%}"}
+        for combo, count in top4_ordered_counts.most_common(10)
+    ])
+    st.dataframe(top4_ordered_table)
