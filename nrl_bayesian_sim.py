@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # === BASIC SETTINGS ===
 st.set_page_config(page_title="NRL Bayesian Ladder Predictor", layout="wide")
-st.title("🏉 Bayesian NRL Ladder Predictor (2025)")
+st.title("🏉 Joel's NRL Ladder Predictor (2025)")
 
 st.markdown("Adjust your beliefs about team strength & variability. Click **Run Simulation** to update predictions.")
 
@@ -75,7 +75,7 @@ fixtures = [
 # === RUN SIMULATION BUTTON ===
 if st.button("▶️ Run Simulation"):
 
-    h = 0.4
+    h = 0.3
     alpha = 10.0
     sigma = 12.0
 
