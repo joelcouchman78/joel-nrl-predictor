@@ -130,6 +130,7 @@ if st.button("▶️ Run Simulation"):
             "Top 4 %": (pos <= 4).mean() * 100,
             "Top 8 %": (pos <= 8).mean() * 100,
             "Minor Prem. %": (pos == 1).mean() * 100,
+            "Wooden Spoon %": (pos == len(teams)).mean() * 100,
             "Median Pos": int(np.median(pos))
         }
         result_data.append(row)
