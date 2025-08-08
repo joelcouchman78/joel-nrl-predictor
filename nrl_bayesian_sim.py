@@ -6,7 +6,7 @@ from collections import Counter
 import matplotlib.pyplot as plt
 
 # === BASIC SETTINGS ===
-st.set_page_config(page_title="NRL Bayesian Ladder Predictor", layout="wide")
+st.set_page_config(page_title="Joel's NRL Ladder Predictor 8Aug 2025", layout="wide")
 st.title("🏉 Joel's NRL Ladder Predictor (2025)")
 
 st.markdown("Adjust your beliefs about team strength & variability. Click **Run Simulation** to update predictions.")
