@@ -19,6 +19,18 @@ st.set_page_config(page_title="Big Joel's NRL Predictor", layout="wide")
 st.title("🏉 Joel's NRL Ladder Predictor (2025)")
 st.markdown("Adjust your beliefs about team strength & variability. Click Run Simulation to update predictions.")
 
+
+# --- Show deployed commit SHA ---
+import subprocess
+def _git_short_sha() -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"]
+        ).decode().strip()
+    except Exception:
+        return "unknown"
+
+st.caption(f"Deployed commit: `{_git_short_sha()}`")
 # -------------------------
 # Team name map (NRL.com -> canonical)
 # -------------------------
