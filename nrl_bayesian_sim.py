@@ -120,14 +120,14 @@ def compute_ladder_from_results(df: pd.DataFrame, all_teams: list[str]) -> pd.Da
 # Load CSV and prepare results (with diagnostics)
 # -------------------------
 st.divider()
-st.subheader("🔎 Diagnostics")
-st.write({
-    "app_file": __file__,
-    "repo_csv": str(REPO_DATA_CSV),
-    "repo_exists": REPO_DATA_CSV.exists(),
-    "desktop_csv": str(DESKTOP_CSV),
-    "desktop_exists": DESKTOP_CSV.exists(),
-})
+with st.expander("🔎 Diagnostics", expanded=False):
+    st.json({
+        "app_file": __file__,
+        "repo_csv": str(REPO_DATA_CSV),
+        "repo_exists": REPO_DATA_CSV.exists(),
+        "desktop_csv": str(DESKTOP_CSV),
+        "desktop_exists": DESKTOP_CSV.exists(),
+    })
 
 if REPO_DATA_CSV.exists():
     RESULTS_CSV = REPO_DATA_CSV
@@ -139,7 +139,7 @@ else:
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
     raw_df = pd.read_csv(RESULTS_CSV)
     results_df = prepare_completed_results(raw_df)
-    st.caption(f"Loaded {len(raw_df)} rows from: {RESULTS_CSV.resolve()} • Completed matches: {len(results_df)}")
+    st.caption(f"Loaded {len(raw_df)} rows from: {Path(RESULTS_CSV).resolve()} • Completed matches: {len(results_df)}")
 else:
     st.error(f"No CSV found. Expected one of: {REPO_DATA_CSV} or {DESKTOP_CSV}.")
     results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
