@@ -1,0 +1,205 @@
+season,round,date_header,status,kickoff_local,home_team,away_team,home_score,away_score,venue,match_href
+2025,1,SUNDAY 2ND MARCH,FULL TIME,,Raiders,Warriors,30,8,"Allegiant Stadium, Las Vegas",https://www.nrl.com/draw/nrl-premiership/2025/round-1/raiders-v-warriors/
+2025,1,SUNDAY 2ND MARCH,FULL TIME,,Panthers,Sharks,28,22,"Allegiant Stadium, Las Vegas",https://www.nrl.com/draw/nrl-premiership/2025/round-1/panthers-v-sharks/
+2025,1,THURSDAY 6TH MARCH,FULL TIME,,Roosters,Broncos,14,50,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-1/roosters-v-broncos/
+2025,1,FRIDAY 7TH MARCH,FULL TIME,,Wests Tigers,Knights,8,10,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-1/wests-tigers-v-knights/
+2025,1,FRIDAY 7TH MARCH,FULL TIME,,Rabbitohs,Dolphins,16,14,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-1/dolphins-v-rabbitohs/
+2025,1,SATURDAY 8TH MARCH,FULL TIME,,Dragons,Bulldogs,20,28,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-1/dragons-v-bulldogs/
+2025,1,SATURDAY 8TH MARCH,FULL TIME,,Sea Eagles,Cowboys,42,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-1/sea-eagles-v-cowboys/
+2025,1,SUNDAY 9TH MARCH,FULL TIME,,Storm,Eels,56,18,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-1/storm-v-eels/
+2025,2,THURSDAY 13TH MARCH,FULL TIME,,Knights,Dolphins,26,12,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-2/knights-v-dolphins/
+2025,2,FRIDAY 14TH MARCH,FULL TIME,,Warriors,Sea Eagles,36,16,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-2/warriors-v-sea-eagles/
+2025,2,FRIDAY 14TH MARCH,FULL TIME,,Panthers,Roosters,32,38,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-2/panthers-v-roosters/
+2025,2,SATURDAY 15TH MARCH,FULL TIME,,Dragons,Rabbitohs,24,25,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-2/dragons-v-rabbitohs/
+2025,2,SATURDAY 15TH MARCH,FULL TIME,,Cowboys,Sharks,12,36,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-2/cowboys-v-sharks/
+2025,2,SATURDAY 15TH MARCH,FULL TIME,,Raiders,Broncos,32,22,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-2/raiders-v-broncos/
+2025,2,SUNDAY 16TH MARCH,FULL TIME,,Eels,Wests Tigers,6,32,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-2/eels-v-wests-tigers/
+2025,2,SUNDAY 16TH MARCH,FULL TIME,,Bulldogs,Titans,40,24,"Belmore Sports Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-2/bulldogs-v-titans/
+2025,3,THURSDAY 20TH MARCH,FULL TIME,,Storm,Panthers,30,24,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-3/storm-v-panthers/
+2025,3,FRIDAY 21ST MARCH,FULL TIME,,Warriors,Roosters,14,6,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-3/warriors-v-roosters/
+2025,3,FRIDAY 21ST MARCH,FULL TIME,,Broncos,Cowboys,26,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-3/broncos-v-cowboys/
+2025,3,SATURDAY 22ND MARCH,FULL TIME,,Sharks,Rabbitohs,27,12,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-3/sharks-v-rabbitohs/
+2025,3,SATURDAY 22ND MARCH,FULL TIME,,Dolphins,Wests Tigers,18,30,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2025/round-3/dolphins-v-wests-tigers/
+2025,3,SATURDAY 22ND MARCH,FULL TIME,,Titans,Knights,26,6,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-3/titans-v-knights/
+2025,3,SUNDAY 23RD MARCH,FULL TIME,,Eels,Bulldogs,8,16,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-3/eels-v-bulldogs/
+2025,3,SUNDAY 23RD MARCH,FULL TIME,,Sea Eagles,Raiders,40,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-3/sea-eagles-v-raiders/
+2025,4,THURSDAY 27TH MARCH,FULL TIME,,Rabbitohs,Panthers,28,18,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/rabbitohs-v-panthers/
+2025,4,FRIDAY 28TH MARCH,FULL TIME,,Roosters,Titans,12,30,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/roosters-v-titans/
+2025,4,FRIDAY 28TH MARCH,FULL TIME,,Dolphins,Broncos,12,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-4/dolphins-v-broncos/
+2025,4,SATURDAY 29TH MARCH,FULL TIME,,Dragons,Storm,14,8,"Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/dragons-v-storm/
+2025,4,SATURDAY 29TH MARCH,FULL TIME,,Cowboys,Raiders,30,20,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-4/cowboys-v-raiders/
+2025,4,SATURDAY 29TH MARCH,FULL TIME,,Sharks,Bulldogs,6,20,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/sharks-v-bulldogs/
+2025,4,SUNDAY 30TH MARCH,FULL TIME,,Sea Eagles,Eels,26,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/sea-eagles-v-eels/
+2025,4,SUNDAY 30TH MARCH,FULL TIME,,Wests Tigers,Warriors,24,26,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-4/wests-tigers-v-warriors/
+2025,5,THURSDAY 3RD APRIL,FULL TIME,,Raiders,Sharks,24,20,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-5/raiders-v-sharks/
+2025,5,FRIDAY 4TH APRIL,FULL TIME,,Panthers,Cowboys,18,22,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-5/panthers-v-cowboys/
+2025,5,FRIDAY 4TH APRIL,FULL TIME,,Rabbitohs,Roosters,20,14,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-5/rabbitohs-v-roosters/
+2025,5,SATURDAY 5TH APRIL,FULL TIME,,Eels,Dragons,23,22,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-5/eels-v-dragons/
+2025,5,SATURDAY 5TH APRIL,FULL TIME,,Titans,Dolphins,10,36,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-5/titans-v-dolphins/
+2025,5,SATURDAY 5TH APRIL,FULL TIME,,Broncos,Wests Tigers,46,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-5/broncos-v-wests-tigers/
+2025,5,SUNDAY 6TH APRIL,FULL TIME,,Sea Eagles,Storm,24,48,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-5/sea-eagles-v-storm/
+2025,5,SUNDAY 6TH APRIL,FULL TIME,,Bulldogs,Knights,20,0,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-5/bulldogs-v-knights/
+2025,6,THURSDAY 10TH APRIL,FULL TIME,,Dolphins,Panthers,30,12,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-6/dolphins-v-panthers/
+2025,6,FRIDAY 11TH APRIL,FULL TIME,,Dragons,Titans,38,16,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-6/dragons-v-titans/
+2025,6,FRIDAY 11TH APRIL,FULL TIME,,Broncos,Roosters,16,26,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-6/broncos-v-roosters/
+2025,6,SATURDAY 12TH APRIL,FULL TIME,,Sharks,Sea Eagles,24,18,Optus Stadium,https://www.nrl.com/draw/nrl-premiership/2025/round-6/sharks-v-sea-eagles/
+2025,6,SATURDAY 12TH APRIL,FULL TIME,,Rabbitohs,Cowboys,16,24,Optus Stadium,https://www.nrl.com/draw/nrl-premiership/2025/round-6/rabbitohs-v-cowboys/
+2025,6,SATURDAY 12TH APRIL,FULL TIME,,Eels,Raiders,12,50,"TIO Stadium, Darwin",https://www.nrl.com/draw/nrl-premiership/2025/round-6/eels-v-raiders/
+2025,6,SUNDAY 13TH APRIL,FULL TIME,,Storm,Warriors,42,14,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-6/storm-v-warriors/
+2025,6,SUNDAY 13TH APRIL,FULL TIME,,Knights,Wests Tigers,4,20,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-6/knights-v-wests-tigers/
+2025,7,THURSDAY 17TH APRIL,FULL TIME,,Sea Eagles,Dragons,18,20,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-7/sea-eagles-v-dragons/
+2025,7,FRIDAY 18TH APRIL,FULL TIME,,Bulldogs,Rabbitohs,32,0,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-7/bulldogs-v-rabbitohs/
+2025,7,FRIDAY 18TH APRIL,FULL TIME,,Dolphins,Storm,42,22,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-7/dolphins-v-storm/
+2025,7,SATURDAY 19TH APRIL,FULL TIME,,Warriors,Broncos,20,18,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-7/warriors-v-broncos/
+2025,7,SATURDAY 19TH APRIL,FULL TIME,,Roosters,Panthers,12,40,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-7/roosters-v-panthers/
+2025,7,SUNDAY 20TH APRIL,FULL TIME,,Titans,Raiders,20,30,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-7/titans-v-raiders/
+2025,7,SUNDAY 20TH APRIL,FULL TIME,,Knights,Sharks,14,34,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-7/knights-v-sharks/
+2025,7,MONDAY 21ST APRIL,FULL TIME,,Wests Tigers,Eels,22,38,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-7/wests-tigers-v-eels/
+2025,8,THURSDAY 24TH APRIL,FULL TIME,,Broncos,Bulldogs,42,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-8/broncos-v-bulldogs/
+2025,8,FRIDAY 25TH APRIL,FULL TIME,,Roosters,Dragons,46,18,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-8/roosters-v-dragons/
+2025,8,FRIDAY 25TH APRIL,FULL TIME,,Warriors,Knights,26,12,"Apollo Projects Stadium, Christchurch",https://www.nrl.com/draw/nrl-premiership/2025/round-8/warriors-v-knights/
+2025,8,FRIDAY 25TH APRIL,FULL TIME,,Storm,Rabbitohs,24,16,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-8/storm-v-rabbitohs/
+2025,8,SATURDAY 26TH APRIL,FULL TIME,,Cowboys,Titans,50,18,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-8/cowboys-v-titans/
+2025,8,SATURDAY 26TH APRIL,FULL TIME,,Panthers,Sea Eagles,10,26,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-8/panthers-v-sea-eagles/
+2025,8,SUNDAY 27TH APRIL,FULL TIME,,Raiders,Dolphins,40,28,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-8/raiders-v-dolphins/
+2025,8,SUNDAY 27TH APRIL,FULL TIME,,Wests Tigers,Sharks,20,18,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-8/wests-tigers-v-sharks/
+2025,9,FRIDAY 2ND MAY,FULL TIME,,Sharks,Eels,28,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/sharks-v-eels/
+2025,9,FRIDAY 2ND MAY,FULL TIME,,Roosters,Dolphins,36,26,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/roosters-v-dolphins/
+2025,9,SATURDAY 3RD MAY,FULL TIME,,Rabbitohs,Knights,4,30,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/rabbitohs-v-knights/
+2025,9,SATURDAY 3RD MAY,FULL TIME,,Warriors,Cowboys,30,26,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/warriors-v-cowboys/
+2025,9,SATURDAY 3RD MAY,FULL TIME,,Wests Tigers,Dragons,34,28,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/wests-tigers-v-dragons/
+2025,9,SUNDAY 4TH MAY,FULL TIME,,Titans,Bulldogs,18,38,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/titans-v-bulldogs/
+2025,9,SUNDAY 4TH MAY,FULL TIME,,Panthers,Broncos,32,8,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/panthers-v-broncos/
+2025,9,SUNDAY 4TH MAY,FULL TIME,,Storm,Raiders,18,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-9/storm-v-raiders/
+2025,10,THURSDAY 8TH MAY,FULL TIME,,Eels,Dolphins,16,20,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-10/eels-v-dolphins/
+2025,10,FRIDAY 9TH MAY,FULL TIME,,Knights,Titans,20,24,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-10/knights-v-titans/
+2025,10,FRIDAY 9TH MAY,FULL TIME,,Rabbitohs,Broncos,22,14,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-10/rabbitohs-v-broncos/
+2025,10,SATURDAY 10TH MAY,FULL TIME,,Raiders,Bulldogs,20,32,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-10/raiders-v-bulldogs/
+2025,10,SATURDAY 10TH MAY,FULL TIME,,Dragons,Warriors,14,15,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-10/dragons-v-warriors/
+2025,10,SATURDAY 10TH MAY,FULL TIME,,Cowboys,Panthers,30,30,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-10/cowboys-v-panthers/
+2025,10,SUNDAY 11TH MAY,FULL TIME,,Storm,Wests Tigers,64,0,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-10/storm-v-wests-tigers/
+2025,10,SUNDAY 11TH MAY,FULL TIME,,Sea Eagles,Sharks,14,30,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-10/sea-eagles-v-sharks/
+2025,11,FRIDAY 16TH MAY,FULL TIME,,Knights,Eels,6,28,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-11/knights-v-eels/
+2025,11,FRIDAY 16TH MAY,FULL TIME,,Bulldogs,Roosters,24,20,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-11/bulldogs-v-roosters/
+2025,11,SATURDAY 17TH MAY,FULL TIME,,Dolphins,Warriors,12,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-11/dolphins-v-warriors/
+2025,11,SATURDAY 17TH MAY,FULL TIME,,Cowboys,Sea Eagles,6,24,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-11/cowboys-v-sea-eagles/
+2025,11,SATURDAY 17TH MAY,FULL TIME,,Sharks,Storm,31,26,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-11/sharks-v-storm/
+2025,11,SUNDAY 18TH MAY,FULL TIME,,Broncos,Dragons,26,30,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-11/broncos-v-dragons/
+2025,11,SUNDAY 18TH MAY,FULL TIME,,Raiders,Titans,40,24,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-11/raiders-v-titans/
+2025,11,SUNDAY 18TH MAY,FULL TIME,,Wests Tigers,Rabbitohs,12,22,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-11/wests-tigers-v-rabbitohs/
+2025,12,THURSDAY 22ND MAY,FULL TIME,,Bulldogs,Dolphins,8,44,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-12/bulldogs-v-dolphins/
+2025,12,FRIDAY 23RD MAY,FULL TIME,,Eels,Sea Eagles,30,10,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-12/eels-v-sea-eagles/
+2025,12,SATURDAY 24TH MAY,FULL TIME,,Panthers,Knights,6,25,"Carrington Park, Bathurst",https://www.nrl.com/draw/nrl-premiership/2025/round-12/panthers-v-knights/
+2025,12,SATURDAY 24TH MAY,FULL TIME,,Roosters,Sharks,42,16,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2025/round-12/roosters-v-sharks/
+2025,12,SUNDAY 25TH MAY,FULL TIME,,Warriors,Raiders,10,16,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-12/warriors-v-raiders/
+2025,13,FRIDAY 30TH MAY,FULL TIME,,Dragons,Knights,20,6,"Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-13/dragons-v-knights/
+2025,13,SATURDAY 31ST MAY,FULL TIME,,Titans,Storm,16,28,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-13/titans-v-storm/
+2025,13,SATURDAY 31ST MAY,FULL TIME,,Cowboys,Wests Tigers,32,28,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-13/cowboys-v-wests-tigers/
+2025,13,SATURDAY 31ST MAY,FULL TIME,,Sea Eagles,Broncos,34,6,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-13/sea-eagles-v-broncos/
+2025,13,SUNDAY 1ST JUNE,FULL TIME,,Rabbitohs,Warriors,30,36,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-13/rabbitohs-v-warriors/
+2025,13,SUNDAY 1ST JUNE,FULL TIME,,Panthers,Eels,18,10,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-13/panthers-v-eels/
+2025,13,SUNDAY 1ST JUNE,FULL TIME,,Roosters,Raiders,24,26,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-13/roosters-v-raiders/
+2025,14,THURSDAY 5TH JUNE,FULL TIME,,Knights,Sea Eagles,26,22,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-14/knights-v-sea-eagles/
+2025,14,FRIDAY 6TH JUNE,FULL TIME,,Storm,Cowboys,38,14,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-14/storm-v-cowboys/
+2025,14,FRIDAY 6TH JUNE,FULL TIME,,Dolphins,Dragons,56,6,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-14/dolphins-v-dragons/
+2025,14,SATURDAY 7TH JUNE,FULL TIME,,Sharks,Warriors,10,40,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-14/sharks-v-warriors/
+2025,14,SATURDAY 7TH JUNE,FULL TIME,,Broncos,Titans,44,14,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-14/broncos-v-titans/
+2025,14,SUNDAY 8TH JUNE,FULL TIME,,Raiders,Rabbitohs,36,12,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-14/raiders-v-rabbitohs/
+2025,14,SUNDAY 8TH JUNE,FULL TIME,,Wests Tigers,Panthers,14,18,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-14/wests-tigers-v-panthers/
+2025,14,MONDAY 9TH JUNE,FULL TIME,,Bulldogs,Eels,30,12,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-14/bulldogs-v-eels/
+2025,15,THURSDAY 12TH JUNE,FULL TIME,,Sharks,Dragons,30,18,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-15/sharks-v-dragons/
+2025,15,FRIDAY 13TH JUNE,FULL TIME,,Titans,Sea Eagles,28,8,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-15/titans-v-sea-eagles/
+2025,15,SATURDAY 14TH JUNE,FULL TIME,,Knights,Roosters,8,12,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-15/knights-v-roosters/
+2025,15,SATURDAY 14TH JUNE,FULL TIME,,Cowboys,Dolphins,4,58,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-15/cowboys-v-dolphins/
+2025,15,SUNDAY 15TH JUNE,FULL TIME,,Rabbitohs,Bulldogs,18,24,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-15/rabbitohs-v-bulldogs/
+2025,16,FRIDAY 20TH JUNE,FULL TIME,,Wests Tigers,Raiders,12,16,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-16/wests-tigers-v-raiders/
+2025,16,SATURDAY 21ST JUNE,FULL TIME,,Warriors,Panthers,18,28,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-16/warriors-v-panthers/
+2025,16,SATURDAY 21ST JUNE,FULL TIME,,Dolphins,Knights,20,26,"HBF Park, Perth",https://www.nrl.com/draw/nrl-premiership/2025/round-16/dolphins-v-knights/
+2025,16,SATURDAY 21ST JUNE,FULL TIME,,Rabbitohs,Storm,24,25,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-16/rabbitohs-v-storm/
+2025,16,SUNDAY 22ND JUNE,FULL TIME,,Broncos,Sharks,34,28,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-16/broncos-v-sharks/
+2025,16,SUNDAY 22ND JUNE,FULL TIME,,Roosters,Cowboys,42,8,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-16/roosters-v-cowboys/
+2025,16,SUNDAY 22ND JUNE,FULL TIME,,Eels,Titans,36,20,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-16/eels-v-titans/
+2025,17,THURSDAY 26TH JUNE,FULL TIME,,Panthers,Bulldogs,8,6,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-17/panthers-v-bulldogs/
+2025,17,FRIDAY 27TH JUNE,FULL TIME,,Sea Eagles,Wests Tigers,28,10,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-17/sea-eagles-v-wests-tigers/
+2025,17,FRIDAY 27TH JUNE,FULL TIME,,Knights,Raiders,18,22,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-17/knights-v-raiders/
+2025,17,SATURDAY 28TH JUNE,FULL TIME,,Broncos,Warriors,26,12,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-17/broncos-v-warriors/
+2025,17,SATURDAY 28TH JUNE,FULL TIME,,Dragons,Eels,34,20,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-17/dragons-v-eels/
+2025,17,SATURDAY 28TH JUNE,FULL TIME,,Dolphins,Rabbitohs,50,28,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-17/rabbitohs-v-dolphins/
+2025,17,SUNDAY 29TH JUNE,FULL TIME,,Storm,Sharks,30,6,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-17/storm-v-sharks/
+2025,17,SUNDAY 29TH JUNE,FULL TIME,,Titans,Cowboys,24,30,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-17/titans-v-cowboys/
+2025,18,FRIDAY 4TH JULY,FULL TIME,,Bulldogs,Broncos,18,22,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-18/bulldogs-v-broncos/
+2025,18,SATURDAY 5TH JULY,FULL TIME,,Raiders,Dragons,28,24,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-18/raiders-v-dragons/
+2025,18,SATURDAY 5TH JULY,FULL TIME,,Cowboys,Storm,20,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-18/cowboys-v-storm/
+2025,18,SUNDAY 6TH JULY,FULL TIME,,Roosters,Wests Tigers,28,30,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-18/roosters-v-wests-tigers/
+2025,18,SUNDAY 6TH JULY,FULL TIME,,Sea Eagles,Rabbitohs,30,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-18/sea-eagles-v-rabbitohs/
+2025,19,FRIDAY 11TH JULY,FULL TIME,,Sharks,Dolphins,24,12,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-19/sharks-v-dolphins/
+2025,19,SATURDAY 12TH JULY,FULL TIME,,Knights,Storm,14,32,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-19/knights-v-storm/
+2025,19,SATURDAY 12TH JULY,FULL TIME,,Dragons,Roosters,24,31,"Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-19/dragons-v-roosters/
+2025,19,SATURDAY 12TH JULY,FULL TIME,,Cowboys,Bulldogs,8,12,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-19/cowboys-v-bulldogs/
+2025,19,SUNDAY 13TH JULY,FULL TIME,,Warriors,Wests Tigers,34,14,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-19/warriors-v-wests-tigers/
+2025,19,SUNDAY 13TH JULY,FULL TIME,,Eels,Panthers,10,32,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-19/eels-v-panthers/
+2025,19,SUNDAY 13TH JULY,FULL TIME,,Titans,Broncos,14,26,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-19/titans-v-broncos/
+2025,20,THURSDAY 17TH JULY,FULL TIME,,Dolphins,Cowboys,43,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-20/dolphins-v-cowboys/
+2025,20,FRIDAY 18TH JULY,FULL TIME,,Sharks,Roosters,31,18,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-20/sharks-v-roosters/
+2025,20,FRIDAY 18TH JULY,FULL TIME,,Panthers,Rabbitohs,30,10,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-20/panthers-v-rabbitohs/
+2025,20,SATURDAY 19TH JULY,FULL TIME,,Raiders,Eels,40,16,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-20/raiders-v-eels/
+2025,20,SATURDAY 19TH JULY,FULL TIME,,Bulldogs,Dragons,20,18,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-20/bulldogs-v-dragons/
+2025,20,SATURDAY 19TH JULY,FULL TIME,,Storm,Sea Eagles,16,18,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-20/storm-v-sea-eagles/
+2025,20,SUNDAY 20TH JULY,FULL TIME,,Wests Tigers,Titans,21,20,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-20/wests-tigers-v-titans/
+2025,20,SUNDAY 20TH JULY,FULL TIME,,Knights,Warriors,15,20,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-20/knights-v-warriors/
+2025,21,THURSDAY 24TH JULY,FULL TIME,,Roosters,Storm,30,34,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-21/roosters-v-storm/
+2025,21,FRIDAY 25TH JULY,FULL TIME,,Cowboys,Dragons,38,32,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-21/cowboys-v-dragons/
+2025,21,FRIDAY 25TH JULY,FULL TIME,,Broncos,Eels,20,22,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-21/broncos-v-eels/
+2025,21,SATURDAY 26TH JULY,FULL TIME,,Warriors,Titans,16,24,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-21/warriors-v-titans/
+2025,21,SATURDAY 26TH JULY,FULL TIME,,Panthers,Wests Tigers,36,2,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-21/panthers-v-wests-tigers/
+2025,21,SATURDAY 26TH JULY,FULL TIME,,Rabbitohs,Sharks,12,14,"Polytec Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2025/round-21/rabbitohs-v-sharks/
+2025,21,SUNDAY 27TH JULY,FULL TIME,,Raiders,Knights,44,18,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-21/raiders-v-knights/
+2025,21,SUNDAY 27TH JULY,FULL TIME,,Bulldogs,Sea Eagles,42,4,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-21/bulldogs-v-sea-eagles/
+2025,22,THURSDAY 31ST JULY,FULL TIME,,Eels,Storm,10,16,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-22/eels-v-storm/
+2025,22,FRIDAY 1ST AUGUST,FULL TIME,,Warriors,Dolphins,18,20,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-22/warriors-v-dolphins/
+2025,22,FRIDAY 1ST AUGUST,FULL TIME,,Broncos,Rabbitohs,60,14,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-22/broncos-v-rabbitohs/
+2025,22,SATURDAY 2ND AUGUST,FULL TIME,,Titans,Panthers,26,30,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-22/titans-v-panthers/
+2025,22,SATURDAY 2ND AUGUST,FULL TIME,,Dragons,Raiders,18,12,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-22/dragons-v-raiders/
+2025,22,SATURDAY 2ND AUGUST,FULL TIME,,Sea Eagles,Roosters,4,20,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-22/sea-eagles-v-roosters/
+2025,22,SUNDAY 3RD AUGUST,FULL TIME,,Wests Tigers,Bulldogs,28,14,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-22/wests-tigers-v-bulldogs/
+2025,22,SUNDAY 3RD AUGUST,FULL TIME,,Sharks,Cowboys,32,12,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-22/sharks-v-cowboys/
+2025,23,THURSDAY 7TH AUGUST,FULL TIME,,Storm,Broncos,22,2,"AAMI Park, Melbourne Home of the Wurundjeri People",https://www.nrl.com/draw/nrl-premiership/2025/round-23/storm-v-broncos/
+2025,23,FRIDAY 8TH AUGUST,FULL TIME,,Knights,Panthers,12,48,"McDonald Jones Stadium, Newcastle Home of the Awabakal People",https://www.nrl.com/draw/nrl-premiership/2025/round-23/knights-v-panthers/
+2025,23,FRIDAY 8TH AUGUST,FULL TIME,,Raiders,Sea Eagles,28,12,"GIO Stadium, Canberra Home of the Ngunnawal People",https://www.nrl.com/draw/nrl-premiership/2025/round-23/raiders-v-sea-eagles/
+2025,23,SATURDAY 9TH AUGUST,FULL TIME,,Dragons,Sharks,22,14,"Jubilee Stadium, Sydney Home of the Bidjigal and Bediagal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-23/dragons-v-sharks/
+2025,23,SATURDAY 9TH AUGUST,FULL TIME,,Dolphins,Roosters,12,64,"Suncorp Stadium, Brisbane Home of the Yuggera & Turrbal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-23/dolphins-v-roosters/
+2025,23,SATURDAY 9TH AUGUST,FULL TIME,,Bulldogs,Warriors,32,14,"Accor Stadium, Sydney Home of the Burramattagal and Wann-gal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-23/bulldogs-v-warriors/
+2025,23,SUNDAY 10TH AUGUST,Upcoming,2:00pm,Titans,Rabbitohs,,,"Cbus Super Stadium, Gold Coast Home of the Yugembah People",https://www.nrl.com/draw/nrl-premiership/2025/round-23/titans-v-rabbitohs/
+2025,23,SUNDAY 10TH AUGUST,Upcoming,4:05pm,Eels,Cowboys,,,"CommBank Stadium, Sydney Home of the Burramattagal People",https://www.nrl.com/draw/nrl-premiership/2025/round-23/eels-v-cowboys/
+2025,24,THURSDAY 14TH AUGUST,Upcoming,7:50pm,Panthers,Storm,,,"CommBank Stadium, Sydney Home of the Burramattagal People",https://www.nrl.com/draw/nrl-premiership/2025/round-24/panthers-v-storm/
+2025,24,FRIDAY 15TH AUGUST,Upcoming,6:00pm,Warriors,Dragons,,,"Go Media Stadium, Auckland Te pā o Rarotonga",https://www.nrl.com/draw/nrl-premiership/2025/round-24/warriors-v-dragons/
+2025,24,FRIDAY 15TH AUGUST,Upcoming,8:00pm,Roosters,Bulldogs,,,"Allianz Stadium, Sydney Home of the Gadigal and Bidjigal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-24/roosters-v-bulldogs/
+2025,24,SATURDAY 16TH AUGUST,Upcoming,3:00pm,Sharks,Titans,,,"Sharks Stadium, Sydney Home of the Dharawal People",https://www.nrl.com/draw/nrl-premiership/2025/round-24/sharks-v-titans/
+2025,24,SATURDAY 16TH AUGUST,Upcoming,5:30pm,Broncos,Dolphins,,,"Suncorp Stadium, Brisbane Home of the Yuggera & Turrbal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-24/broncos-v-dolphins/
+2025,24,SATURDAY 16TH AUGUST,Upcoming,7:35pm,Rabbitohs,Eels,,,"Allianz Stadium, Sydney Home of the Gadigal and Bidjigal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-24/rabbitohs-v-eels/
+2025,24,SUNDAY 17TH AUGUST,Upcoming,2:00pm,Wests Tigers,Sea Eagles,,,"Allianz Stadium, Sydney Home of the Gadigal and Bidjigal Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-24/wests-tigers-v-sea-eagles/
+2025,24,SUNDAY 17TH AUGUST,Upcoming,4:05pm,Cowboys,Knights,,,"Queensland Country Bank Stadium, Townsville Home of the Wulgurukaba Peoples",https://www.nrl.com/draw/nrl-premiership/2025/round-24/cowboys-v-knights/
+2025,25,THURSDAY 21ST AUGUST,Upcoming,7:50pm,Rabbitohs,Dragons,,,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-25/rabbitohs-v-dragons/
+2025,25,FRIDAY 22ND AUGUST,Upcoming,6:00pm,Panthers,Raiders,,,"Glen Willow Oval, Mudgee",https://www.nrl.com/draw/nrl-premiership/2025/round-25/panthers-v-raiders/
+2025,25,FRIDAY 22ND AUGUST,Upcoming,8:00pm,Storm,Bulldogs,,,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-25/storm-v-bulldogs/
+2025,25,SATURDAY 23RD AUGUST,Upcoming,3:00pm,Sea Eagles,Dolphins,,,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-25/sea-eagles-v-dolphins/
+2025,25,SATURDAY 23RD AUGUST,Upcoming,5:30pm,Titans,Warriors,,,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-25/titans-v-warriors/
+2025,25,SATURDAY 23RD AUGUST,Upcoming,7:35pm,Eels,Roosters,,,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-25/eels-v-roosters/
+2025,25,SUNDAY 24TH AUGUST,Upcoming,2:00pm,Knights,Broncos,,,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2025/round-25/knights-v-broncos/
+2025,25,SUNDAY 24TH AUGUST,Upcoming,4:05pm,Wests Tigers,Cowboys,,,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-25/wests-tigers-v-cowboys/
+2025,26,THURSDAY 28TH AUGUST,Upcoming,7:50pm,Bulldogs,Panthers,,,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-26/bulldogs-v-panthers/
+2025,26,FRIDAY 29TH AUGUST,Upcoming,6:00pm,Warriors,Eels,,,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2025/round-26/warriors-v-eels/
+2025,26,FRIDAY 29TH AUGUST,Upcoming,8:00pm,Storm,Roosters,,,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2025/round-26/storm-v-roosters/
+2025,26,SATURDAY 30TH AUGUST,Upcoming,3:00pm,Raiders,Wests Tigers,,,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2025/round-26/raiders-v-wests-tigers/
+2025,26,SATURDAY 30TH AUGUST,Upcoming,5:30pm,Dragons,Sea Eagles,,,"Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-26/dragons-v-sea-eagles/
+2025,26,SATURDAY 30TH AUGUST,Upcoming,7:35pm,Cowboys,Broncos,,,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2025/round-26/cowboys-v-broncos/
+2025,26,SUNDAY 31ST AUGUST,Upcoming,2:00pm,Sharks,Knights,,,"Sharks Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-26/sharks-v-knights/
+2025,26,SUNDAY 31ST AUGUST,Upcoming,4:05pm,Dolphins,Titans,,,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-26/dolphins-v-titans/
+2025,27,THURSDAY 4TH SEPTEMBER,Upcoming,7:50pm,Broncos,Storm,,,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2025/round-27/broncos-v-storm/
+2025,27,FRIDAY 5TH SEPTEMBER,Upcoming,6:00pm,Sea Eagles,Warriors,,,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-27/sea-eagles-v-warriors/
+2025,27,FRIDAY 5TH SEPTEMBER,Upcoming,8:00pm,Roosters,Rabbitohs,,,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-27/roosters-v-rabbitohs/
+2025,27,SATURDAY 6TH SEPTEMBER,Upcoming,3:00pm,Dragons,Panthers,,,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2025/round-27/dragons-v-panthers/
+2025,27,SATURDAY 6TH SEPTEMBER,Upcoming,5:30pm,Titans,Wests Tigers,,,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2025/round-27/titans-v-wests-tigers/
+2025,27,SATURDAY 6TH SEPTEMBER,Upcoming,7:35pm,Bulldogs,Sharks,,,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-27/bulldogs-v-sharks/
+2025,27,SUNDAY 7TH SEPTEMBER,Upcoming,2:00pm,Dolphins,Raiders,,,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2025/round-27/dolphins-v-raiders/
+2025,27,SUNDAY 7TH SEPTEMBER,Upcoming,4:05pm,Eels,Knights,,,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2025/round-27/eels-v-knights/
