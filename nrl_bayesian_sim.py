@@ -116,22 +116,38 @@ st.write({
     "desktop_exists": DESKTOP_CSV.exists(),
 })
 
-if REPO_DATA_CSV.exists():
-    RESULTS_CSV = REPO_DATA_CSV
-elif DESKTOP_CSV.exists():
-    RESULTS_CSV = DESKTOP_CSV
-else:
-    RESULTS_CSV = None
+REPO_DATA_CSV = Path(__file__).parent / "data" / "nrl_results.csv"
+DESKTOP_CSV   = Path.home() / "Desktop" / "nrl_bayesian_app" / "data" / "nrl_results.csv"
 
+RESULTS_CSV = None
+for cand in (REPO_DATA_CSV, DESKTOP_CSV):
+    if cand.exists():
+        RESULTS_CSV = cand
+        break
+
+raw_df = None
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
-    raw_df = pd.read_csv(RESULTS_CSV)
-    results_df = prepare_completed_results(raw_df)
-    st.caption(f"Loaded {len(raw_df)} rows from: {RESULTS_CSV.resolve()} • Completed matches: {len(results_df)}")
-else:
-    st.error(f"No CSV found. Expected one of: {REPO_DATA_CSV} or {DESKTOP_CSV}.")
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+    try:
+        raw_df = pd.read_csv(RESULTS_CSV)
+    except Exception as e:
+        st.error(f"Failed to read CSV at {RESULTS_CSV}: {e}")
 
-st.divider()
+if isinstance(raw_df, pd.DataFrame):
+    results_df = prepare_completed_results(raw_df)
+    st.caption(
+        f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
+        f"Completed matches: {len(results_df)}"
+    )
+else:
+    st.error(
+        "No readable CSV found. "
+        f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
+        "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
+    )
+    # Keep the app alive even without data
+    results_df = pd.DataFrame(
+        columns=["home_team", "away_team", "home_score", "away_score", "status"]
+    )
 
 # -------------------------
 # Rest of the app logic follows...
