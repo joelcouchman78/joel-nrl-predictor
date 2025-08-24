@@ -69,6 +69,57 @@ def prepare_completed_results(df: pd.DataFrame) -> pd.DataFrame:
     """Filter to 'Full Time' and ensure numeric scores."""
     if df.empty:
         return df
+
+
+# -------------------------
+# Build future fixtures programmatically from the raw CSV
+# -------------------------
+def build_future_fixtures(raw_df: pd.DataFrame) -> list[dict]:
+    """
+    Construct the list of remaining fixtures from the same CSV we load for results.
+    We treat any row whose status is NOT 'full time' as a future match.
+    Team names are mapped through TEAM_NAME_MAP.
+    Returns a list of {"home": team, "away": team} dicts.
+    """
+    if raw_df is None or raw_df.empty:
+        return []
+    df = raw_df.copy()
+    # Identify future/unplayed rows
+    is_full_time = df["status"].fillna("").str.lower().eq("full time")
+    df = df[~is_full_time].copy()
+    # Map names to canonical app names
+    df["home"] = df["home_team"].map(TEAM_NAME_MAP).fillna(df["home_team"])
+    df["away"] = df["away_team"].map(TEAM_NAME_MAP).fillna(df["away_team"])
+    # Keep only rows with valid teams
+    df = df[df["home"].isin(ALL_TEAMS) & df["away"].isin(ALL_TEAMS)]
+    # Drop duplicates just in case
+    df = df.drop_duplicates(subset=["home", "away"], keep="first")
+    fixtures = df.loc[:, ["home", "away"]].to_dict(orient="records")
+
+    # Diagnostics (non-fatal)
+    from collections import Counter
+    ct = Counter([f["home"] for f in fixtures] + [f["away"] for f in fixtures])
+    if len(ct) > 0 and not len(set(ct.values())) == 1:
+        try:
+            st.warning(f"Uneven future fixtures per team (diagnostic): {dict(ct)}")
+        except Exception:
+            pass
+
+    seen = set()
+    dups = []
+    for f in fixtures:
+        key = (f["home"], f["away"])
+        if key in seen:
+            dups.append(key)
+        else:
+            seen.add(key)
+    if dups:
+        try:
+            st.warning(f"Duplicate fixtures detected (diagnostic): {dups}")
+        except Exception:
+            pass
+
+    return fixtures
     df = df[df["status"].fillna("").str.lower().eq("full time")].copy()
     if df.empty:
         return df
@@ -174,32 +225,12 @@ num_sims = st.sidebar.slider("🔁 Number of Simulations", 500, 10000, 2000, ste
 h = st.sidebar.slider("🏠 Home Advantage (strength units)", 0.0, 1.0, 0.3, 0.05)
 alpha = st.sidebar.slider("📈 Strength→Margin scale (α)", 5.0, 15.0, 10.0, 0.5)
 sigma = st.sidebar.slider("🎲 Match randomness (σ)", 6.0, 20.0, 12.0, 0.5)
-
 # -------------------------
-# Remaining fixtures (placeholder list you curated)
+# Remaining fixtures (derived from CSV)
 # -------------------------
-fixtures = [
-    {"home": "Knights", "away": "Panthers"}, {"home": "Raiders", "away": "Sea Eagles"},
-    {"home": "Dragons", "away": "Sharks"}, {"home": "Dolphins", "away": "Roosters"},
-    {"home": "Bulldogs", "away": "Warriors"}, {"home": "Titans", "away": "Rabbitohs"},
-    {"home": "Eels", "away": "Cowboys"}, {"home": "Panthers", "away": "Storm"},
-    {"home": "Warriors", "away": "Dragons"}, {"home": "Roosters", "away": "Bulldogs"},
-    {"home": "Sharks", "away": "Titans"}, {"home": "Broncos", "away": "Dolphins"},
-    {"home": "Rabbitohs", "away": "Eels"}, {"home": "Wests Tigers", "away": "Sea Eagles"},
-    {"home": "Cowboys", "away": "Knights"}, {"home": "Rabbitohs", "away": "Dragons"},
-    {"home": "Panthers", "away": "Raiders"}, {"home": "Storm", "away": "Bulldogs"},
-    {"home": "Sea Eagles", "away": "Dolphins"}, {"home": "Titans", "away": "Warriors"},
-    {"home": "Eels", "away": "Roosters"}, {"home": "Knights", "away": "Broncos"},
-    {"home": "Wests Tigers", "away": "Cowboys"}, {"home": "Bulldogs", "away": "Panthers"},
-    {"home": "Warriors", "away": "Eels"}, {"home": "Storm", "away": "Roosters"},
-    {"home": "Raiders", "away": "Wests Tigers"}, {"home": "Dragons", "away": "Sea Eagles"},
-    {"home": "Cowboys", "away": "Broncos"}, {"home": "Sharks", "away": "Knights"},
-    {"home": "Dolphins", "away": "Titans"}, {"home": "Broncos", "away": "Storm"},
-    {"home": "Sea Eagles", "away": "Warriors"}, {"home": "Roosters", "away": "Rabbitohs"},
-    {"home": "Dragons", "away": "Panthers"}, {"home": "Titans", "away": "Wests Tigers"},
-    {"home": "Bulldogs", "away": "Sharks"}, {"home": "Dolphins", "away": "Raiders"},
-    {"home": "Eels", "away": "Knights"},
-]
+fixtures = build_future_fixtures(raw_df)
+if not fixtures:
+    st.error('No future fixtures found in CSV. Ensure upcoming games are present with status != "Full Time".')
 
 # -------------------------
 # Simulation
@@ -236,8 +267,8 @@ if st.button("▶️ Run Simulation"):
                 pts[a_team] += 2
             else:
                 pts[h_team] += 1; pts[a_team] += 1
-            diffs[h_team] += max(0.0, margin)
-            diffs[a_team] -= max(0.0, margin)
+            diffs[h_team] += margin
+            diffs[a_team] -= margin
 
         return sorted(pts.items(), key=lambda x: (-x[1], -diffs[x[0]]))
 
