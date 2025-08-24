@@ -1,5 +1,3 @@
-# File: ~/Projects/joel-nrl-predictor/nrl_bayesian_sim.py
-
 # =========================
 # Joel's NRL Ladder Predictor (2025)
 # =========================
@@ -19,18 +17,6 @@ st.set_page_config(page_title="Big Joel's NRL Predictor", layout="wide")
 st.title("🏉 Joel's NRL Ladder Predictor (2025)")
 st.markdown("Adjust your beliefs about team strength & variability. Click Run Simulation to update predictions.")
 
-
-# --- Show deployed commit SHA ---
-import subprocess
-def _git_short_sha() -> str:
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"]
-        ).decode().strip()
-    except Exception:
-        return "unknown"
-
-st.caption(f"Deployed commit: `{_git_short_sha()}`")
 # -------------------------
 # Team name map (NRL.com -> canonical)
 # -------------------------
@@ -66,9 +52,54 @@ DESKTOP_CSV = Path(os.path.expanduser("~/Desktop/nrl_bayesian_app/nrl_results.cs
 # Helpers
 # -------------------------
 def prepare_completed_results(df: pd.DataFrame) -> pd.DataFrame:
-    """Filter to 'Full Time' and ensure numeric scores."""
     if df.empty:
         return df
+
+
+# -------------------------
+# Build future fixtures programmatically from the raw CSV
+# -------------------------
+def build_future_fixtures(raw_df: pd.DataFrame) -> list[dict]:
+    """
+    Construct the list of remaining fixtures from the same CSV we load for results.
+    We treat any row whose status is NOT 'full time' as a future match.
+    Team names are mapped through TEAM_NAME_MAP.
+    Returns a list of {"home": team, "away": team} dicts.
+    """
+    if raw_df is None or raw_df.empty:
+        return []
+    df = raw_df.copy()
+    # Identify future/unplayed rows
+    is_full_time = df["status"].fillna("").str.lower().eq("full time")
+    df = df[~is_full_time].copy()
+    # Map names to the canonical app names
+    df["home"] = df["home_team"].map(TEAM_NAME_MAP).fillna(df["home_team"])
+    df["away"] = df["away_team"].map(TEAM_NAME_MAP).fillna(df["away_team"])
+    # Keep only rows with valid teams
+    df = df[df["home"].isin(ALL_TEAMS) & df["away"].isin(ALL_TEAMS)]
+    # Drop duplicates just in case
+    df = df.drop_duplicates(subset=["home", "away"], keep="first")
+    fixtures = df.loc[:, ["home", "away"]].to_dict(orient="records")
+
+    # Sanity checks (non-fatal): uneven counts per team can indicate stale CSV
+    from collections import Counter
+    ct = Counter([f["home"] for f in fixtures] + [f["away"] for f in fixtures])
+    if len(ct) > 0 and not len(set(ct.values())) == 1:
+        st.warning(f"Uneven future fixtures per team (diagnostic): {dict(ct)}")
+
+    # Also detect accidental duplicates
+    seen = set()
+    dups = []
+    for f in fixtures:
+        key = (f["home"], f["away"])
+        if key in seen:
+            dups.append(key)
+        else:
+            seen.add(key)
+    if dups:
+        st.warning(f"Duplicate fixtures detected (diagnostic): {dups}")
+
+    return fixtures
     df = df[df["status"].fillna("").str.lower().eq("full time")].copy()
     if df.empty:
         return df
@@ -79,55 +110,18 @@ def prepare_completed_results(df: pd.DataFrame) -> pd.DataFrame:
     df["away_score"] = df["away_score"].astype(int)
     return df
 
-def compute_ladder_from_results(df: pd.DataFrame, all_teams: list[str]) -> pd.DataFrame:
-    """
-    Build ladder with GP, W, D, L, PF, PA, Diff, CompPts from completed matches.
-    Why: app needs a consistent starting ladder from historical results.
-    """
-    stats = {
-        t: {"GP": 0, "W": 0, "D": 0, "L": 0, "PF": 0, "PA": 0, "Diff": 0, "CompPts": 0}
-        for t in all_teams
-    }
-    for _, r in df.iterrows():
-        h, a = r["home_team"], r["away_team"]
-        if h not in stats or a not in stats:
-            continue
-        hs, as_ = int(r["home_score"]), int(r["away_score"])
-        stats[h]["GP"] += 1; stats[a]["GP"] += 1
-        stats[h]["PF"] += hs; stats[h]["PA"] += as_
-        stats[a]["PF"] += as_; stats[a]["PA"] += hs
-        if hs > as_:
-            stats[h]["W"] += 1; stats[a]["L"] += 1
-            stats[h]["CompPts"] += 2
-        elif hs < as_:
-            stats[a]["W"] += 1; stats[h]["L"] += 1
-            stats[a]["CompPts"] += 2
-        else:
-            stats[h]["D"] += 1; stats[a]["D"] += 1
-            stats[h]["CompPts"] += 1; stats[a]["CompPts"] += 1
-    for t in all_teams:
-        stats[t]["Diff"] = stats[t]["PF"] - stats[t]["PA"]
-    ladder_df = (
-        pd.DataFrame.from_dict(stats, orient="index")
-        .assign(Team=lambda x: x.index)
-        [["Team","GP","W","D","L","PF","PA","Diff","CompPts"]]
-        .sort_values(["CompPts","Diff","PF"], ascending=[False, False, False])
-        .reset_index(drop=True)
-    )
-    return ladder_df
-
 # -------------------------
 # Load CSV and prepare results (with diagnostics)
 # -------------------------
 st.divider()
-with st.expander("🔎 Diagnostics", expanded=False):
-    st.json({
-        "app_file": __file__,
-        "repo_csv": str(REPO_DATA_CSV),
-        "repo_exists": REPO_DATA_CSV.exists(),
-        "desktop_csv": str(DESKTOP_CSV),
-        "desktop_exists": DESKTOP_CSV.exists(),
-    })
+st.subheader("🔎 Diagnostics")
+st.write({
+    "app_file": __file__,
+    "repo_csv": str(REPO_DATA_CSV),
+    "repo_exists": REPO_DATA_CSV.exists(),
+    "desktop_csv": str(DESKTOP_CSV),
+    "desktop_exists": DESKTOP_CSV.exists(),
+})
 
 if REPO_DATA_CSV.exists():
     RESULTS_CSV = REPO_DATA_CSV
@@ -139,12 +133,22 @@ else:
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
     raw_df = pd.read_csv(RESULTS_CSV)
     results_df = prepare_completed_results(raw_df)
-    st.caption(f"Loaded {len(raw_df)} rows from: {Path(RESULTS_CSV).resolve()} • Completed matches: {len(results_df)}")
+    st.caption(f"Loaded {len(raw_df)} rows from: {RESULTS_CSV.resolve()} • Completed matches: {len(results_df)}")
 else:
     st.error(f"No CSV found. Expected one of: {REPO_DATA_CSV} or {DESKTOP_CSV}.")
     results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
 
 st.divider()
+
+# -------------------------
+# Rest of the app logic follows...
+# -------------------------
+
+# -------------------------
+# Rest of the app logic follows...
+# -------------------------
+
+
 
 # -------------------------
 # Ladder from completed results (top of app)
@@ -153,7 +157,6 @@ st.subheader("📥 Current Ladder (completed matches only)")
 ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
 st.dataframe(ladder_df.set_index("Team"), use_container_width=True)
 
-# Seeds for the sim:
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
 teams = list(teams_data.keys())
 
@@ -164,7 +167,7 @@ st.sidebar.header("🧠 Prior Beliefs")
 strength_ratings = {}
 variability_ratings = {}
 
-st.sidebar.caption("Give each team a **Strength** and **Variability** (5 = neutral).")
+st.sidebar.caption("Give each team a **Strength** (how good you think they are) and **Variability** (how up‑and‑down they are). 5 = neutral.")
 for team in teams:
     with st.sidebar.expander(team, expanded=False):
         strength_ratings[team] = st.slider(f"{team} – Strength", 0, 10, 5, key=f"s_{team}")
@@ -176,38 +179,21 @@ alpha = st.sidebar.slider("📈 Strength→Margin scale (α)", 5.0, 15.0, 10.0, 
 sigma = st.sidebar.slider("🎲 Match randomness (σ)", 6.0, 20.0, 12.0, 0.5)
 
 # -------------------------
-# Remaining fixtures (placeholder list you curated)
+# Remaining fixtures (derived from CSV)
 # -------------------------
-fixtures = [
-    {"home": "Knights", "away": "Panthers"}, {"home": "Raiders", "away": "Sea Eagles"},
-    {"home": "Dragons", "away": "Sharks"}, {"home": "Dolphins", "away": "Roosters"},
-    {"home": "Bulldogs", "away": "Warriors"}, {"home": "Titans", "away": "Rabbitohs"},
-    {"home": "Eels", "away": "Cowboys"}, {"home": "Panthers", "away": "Storm"},
-    {"home": "Warriors", "away": "Dragons"}, {"home": "Roosters", "away": "Bulldogs"},
-    {"home": "Sharks", "away": "Titans"}, {"home": "Broncos", "away": "Dolphins"},
-    {"home": "Rabbitohs", "away": "Eels"}, {"home": "Wests Tigers", "away": "Sea Eagles"},
-    {"home": "Cowboys", "away": "Knights"}, {"home": "Rabbitohs", "away": "Dragons"},
-    {"home": "Panthers", "away": "Raiders"}, {"home": "Storm", "away": "Bulldogs"},
-    {"home": "Sea Eagles", "away": "Dolphins"}, {"home": "Titans", "away": "Warriors"},
-    {"home": "Eels", "away": "Roosters"}, {"home": "Knights", "away": "Broncos"},
-    {"home": "Wests Tigers", "away": "Cowboys"}, {"home": "Bulldogs", "away": "Panthers"},
-    {"home": "Warriors", "away": "Eels"}, {"home": "Storm", "away": "Roosters"},
-    {"home": "Raiders", "away": "Wests Tigers"}, {"home": "Dragons", "away": "Sea Eagles"},
-    {"home": "Cowboys", "away": "Broncos"}, {"home": "Sharks", "away": "Knights"},
-    {"home": "Dolphins", "away": "Titans"}, {"home": "Broncos", "away": "Storm"},
-    {"home": "Sea Eagles", "away": "Warriors"}, {"home": "Roosters", "away": "Rabbitohs"},
-    {"home": "Dragons", "away": "Panthers"}, {"home": "Titans", "away": "Wests Tigers"},
-    {"home": "Bulldogs", "away": "Sharks"}, {"home": "Dolphins", "away": "Raiders"},
-    {"home": "Eels", "away": "Knights"},
-]
+fixtures = build_future_fixtures(raw_df)
+if not fixtures:
+    st.error('No future fixtures found in CSV. Check that your CSV includes upcoming games with status != "Full Time".')
 
 # -------------------------
 # Simulation
 # -------------------------
 if st.button("▶️ Run Simulation"):
+
+    # Normalize team-strength base from current points diff
     diffs_arr = np.array([info["Diff"] for info in teams_data.values()])
     mean_diff = np.mean(diffs_arr) if len(diffs_arr) else 0.0
-    std_diff = np.std(diffs_arr) if np.std(diffs_arr) > 0 else 1.0  # guard
+    std_diff = np.std(diffs_arr) if np.std(diffs_arr) > 0 else 1.0
 
     priors = {}
     for t in teams:
@@ -236,8 +222,8 @@ if st.button("▶️ Run Simulation"):
                 pts[a_team] += 2
             else:
                 pts[h_team] += 1; pts[a_team] += 1
-            diffs[h_team] += max(0.0, margin)
-            diffs[a_team] -= max(0.0, margin)
+            diffs[h_team] += margin
+            diffs[a_team] -= margin
 
         return sorted(pts.items(), key=lambda x: (-x[1], -diffs[x[0]]))
 
