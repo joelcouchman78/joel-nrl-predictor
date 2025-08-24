@@ -116,8 +116,11 @@ st.write({
     "desktop_exists": DESKTOP_CSV.exists(),
 })
 
+<<<<<<< HEAD
 # Locate and load results CSV robustly
 # -----------------------------------------------------------------------------
+=======
+>>>>>>> origin/main
 REPO_DATA_CSV = Path(__file__).parent / "data" / "nrl_results.csv"
 DESKTOP_CSV   = Path.home() / "Desktop" / "nrl_bayesian_app" / "data" / "nrl_results.csv"
 
@@ -135,6 +138,7 @@ if RESULTS_CSV is not None and RESULTS_CSV.exists():
         st.error(f"Failed to read CSV at {RESULTS_CSV}: {e}")
 
 if isinstance(raw_df, pd.DataFrame):
+<<<<<<< HEAD
     try:
         results_df = prepare_completed_results(raw_df)
         completed_n = int(results_df.shape[0]) if isinstance(results_df, pd.DataFrame) else 0
@@ -146,6 +150,12 @@ if isinstance(raw_df, pd.DataFrame):
     st.caption(
         f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
         f"Completed matches: {completed_n}"
+=======
+    results_df = prepare_completed_results(raw_df)
+    st.caption(
+        f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
+        f"Completed matches: {len(results_df)}"
+>>>>>>> origin/main
     )
 else:
     st.error(
@@ -153,7 +163,15 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
+<<<<<<< HEAD
     results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+=======
+    # Keep the app alive even without data
+    results_df = pd.DataFrame(
+        columns=["home_team", "away_team", "home_score", "away_score", "status"]
+    )
+
+>>>>>>> origin/main
 # -------------------------
 # Rest of the app logic follows...
 # -------------------------
