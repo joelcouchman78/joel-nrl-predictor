@@ -119,8 +119,7 @@ st.write({
 
 # Locate and load results CSV robustly
 # -----------------------------------------------------------------------------
-=======
->>>>>>> origin/main
+
 REPO_DATA_CSV = Path(__file__).parent / "data" / "nrl_results.csv"
 DESKTOP_CSV   = Path.home() / "Desktop" / "nrl_bayesian_app" / "data" / "nrl_results.csv"
 
