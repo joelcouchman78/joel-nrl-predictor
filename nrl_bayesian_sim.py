@@ -11,6 +11,52 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # -------------------------
+# Team name canonicalisation
+# -------------------------
+import re as _re
+
+def _norm_team(s: str) -> str:
+    return _re.sub(r"[^a-z0-9]", "", str(s).lower())
+
+_TEAM_ALIAS_NORM = {
+    "broncos":"Broncos","sharks":"Sharks","dragons":"Dragons","seaeagles":"Sea Eagles",
+    "warriors":"Warriors","bulldogs":"Bulldogs","rabbitohs":"Rabbitohs","roosters":"Roosters",
+    "panthers":"Panthers","eels":"Eels","knights":"Knights","titans":"Titans","storm":"Storm",
+    "cowboys":"Cowboys","raiders":"Raiders","dolphins":"Dolphins",
+    "weststigers":"Wests Tigers","westtigers":"Wests Tigers","tigers":"Wests Tigers",
+    "manlywarringahseaeagles":"Sea Eagles","manlyseaeagles":"Sea Eagles",
+    "stgeorgeillawarradragons":"Dragons","cronullasutherlandsharks":"Sharks","cronullasharks":"Sharks",
+    "newzealandwarriors":"Warriors","aucklandwarriors":"Warriors",
+    "canterburybankstownbulldogs":"Bulldogs","canterburybulldogs":"Bulldogs",
+    "southsydneyrabbitohs":"Rabbitohs","sydneyroosters":"Roosters",
+    "penrithpanthers":"Panthers","parramattaeels":"Eels","newcastleknights":"Knights",
+    "goldcoasttitans":"Titans","melbournestorm":"Storm","northqueenslandcowboys":"Cowboys",
+    "canberraraiders":"Raiders","thedolphins":"Dolphins",
+    "st.georgeillawarradragons":"Dragons",
+}
+
+def canonical_team_name(name: str) -> str | None:
+    if name is None:
+        return None
+    s = str(name).strip()
+    if "ALL_TEAMS" in globals() and s in ALL_TEAMS:
+        return s
+    if "TEAM_NAME_MAP" in globals():
+        mapped = TEAM_NAME_MAP.get(s)
+        if mapped is not None:
+            return mapped
+    key = _norm_team(s)
+    mapped = _TEAM_ALIAS_NORM.get(key)
+    if mapped is not None:
+        return mapped
+    if "ALL_TEAMS" in globals():
+        for t in ALL_TEAMS:
+            if _norm_team(t) in key or key in _norm_team(t):
+                return t
+    return None
+
+
+# -------------------------
 # Page config & header
 # -------------------------
 st.set_page_config(page_title="Big Joel's NRL Predictor", layout="wide")
@@ -85,57 +131,14 @@ else:
     RESULTS_CSV = None
 
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
-    try:
-        raw_df = pd.read_csv(RESULTS_CSV)
-    except Exception as e:
-        st.error(f"Failed to read CSV at {RESULTS_CSV}: {e}")
-        raw_df = None
-    if isinstance(raw_df, pd.DataFrame):
-        try:
-            results_df = prepare_completed_results(raw_df)
-        except Exception as e:
-            st.error(f"Failed to prepare completed results: {e}")
-            results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"]) 
-        st.caption(
-            f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • Completed matches: {results_df.shape[0]}"
-        )
-        
-    else:
-        st.error(
-            "No readable CSV found. "
-            f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
-            "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
-        )
-        results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    # === CSV diagnostics (place this immediately after you set `results_df`) ===
-    with st.expander("🔎 Raw CSV diagnostics", expanded=True):
-        st.write("results_df shape:", getattr(results_df, "shape", None))
-        st.write("results_df columns:", list(getattr(results_df, "columns", [])))
-        if isinstance(results_df, pd.DataFrame) and not results_df.empty:
-            st.write("Columns (lowercased):", [c.lower() for c in results_df.columns])
-        # Show the first 10 rows so we can see actual values:
-            st.dataframe(results_df.head(10), use_container_width=True)
-
-        # Helpful quick views for the columns we care about
-            maybe_cols = [c for c in results_df.columns
-                          if any(k in c.lower() for k in ["home", "away", "score", "points", "status"])]
-            st.write("Columns that look relevant to ladder:", maybe_cols)
-
-        # If status exists, show its distinct values (to see what "completed" looks like)
-            if "status" in results_df.columns:
-                st.write("status value counts:",
-                         results_df["status"].astype(str).str.strip().str.lower().value_counts())
-        else:
-            st.warning("`results_df` is empty or not a DataFrame — ladder will be all zeros.")
-# ========================================================================== 
+    raw_df = pd.read_csv(RESULTS_CSV)
+    results_df = prepare_completed_results(raw_df)
+    st.caption(f"Loaded {len(raw_df)} rows from: {RESULTS_CSV.resolve()} • Completed matches: {len(results_df)}")
 else:
-    st.error(
-        "No readable CSV found. "
-        f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
-        "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
-    )
+    st.error(f"No CSV found. Expected one of: {REPO_DATA_CSV} or {DESKTOP_CSV}.")
     results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    st.divider()
+
+st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -150,195 +153,63 @@ else:
 # -------------------------
 # Ladder from completed results (top of app)
 # -------------------------
-
-# -------------------------
-# Ensure ladder has standard columns and names
-# -------------------------
-
-def ensure_ladder_columns(df):
-    """
-    Normalize ladder to show: Team, Played, Won, Drawn, Lost, PF, PA, Diff, CompPts.
-    Renames common variants. Computes Played if missing, and Diff if PF/PA available.
-    """
-    import pandas as _pd
-    want = ["Team","Played","Won","Drawn","Lost","PF","PA","Diff","CompPts"]
-    if df is None or not isinstance(df, _pd.DataFrame):
-        return _pd.DataFrame(columns=want)
-
-    # Reset index if Team lives there
-    if "Team" not in df.columns:
-        df = df.reset_index()
-
-    # Case-insensitive rename
-    lower_map = {c.lower(): c for c in df.columns}
-    rename = {}
-    m = lambda key, to: rename.setdefault(lower_map[key], to) if key in lower_map else None
-    for key, to in [
-        ("team","Team"),
-        ("gp","Played"), ("played","Played"), ("games","Played"),
-        ("w","Won"), ("won","Won"), ("wins","Won"),
-        ("d","Drawn"), ("drawn","Drawn"), ("draws","Drawn"),
-        ("l","Lost"), ("lost","Lost"), ("losses","Lost"),
-        ("pf","PF"), ("points for","PF"),
-        ("pa","PA"), ("points against","PA"),
-        ("diff","Diff"), ("difference","Diff"),
-        ("comppts","CompPts"), ("points","CompPts")
-    ]:
-        if key in lower_map:
-            rename[lower_map[key]] = to
-    df = df.rename(columns=rename)
-
-    # Compute Played if missing
-    if "Played" not in df.columns:
-        if all(c in df.columns for c in ["Won","Drawn","Lost"]):
-            df["Played"] = df["Won"].fillna(0).astype(int) + df["Drawn"].fillna(0).astype(int) + df["Lost"].fillna(0).astype(int)
-        elif "GP" in df.columns:
-            df["Played"] = df["GP"]
-        else:
-            df["Played"] = 0
-
-    # Compute Diff if missing but PF/PA available
-    if "Diff" not in df.columns and all(c in df.columns for c in ["PF","PA"]):
-        df["Diff"] = df["PF"].fillna(0).astype(int) - df["PA"].fillna(0).astype(int)
-
-    # Fill any missing expected cols
-    for c in want:
-        if c not in df.columns:
-            df[c] = 0
-
-    return df[want]
-
-
-# -----------------------------------------------------------------------------
-# Canonicalise completed results (safe on frames without 'status')
-# -----------------------------------------------------------------------------
-def canonicalize_completed_results(df):
-    """
-    Return columns: home, away, home_score, away_score.
-    If a 'status' column exists, keep only completed rows.
-    If no 'status' column exists, assume df already contains completed matches.
-    Recognises 'home_team'/'away_team' and common score variants.
-    """
-    import pandas as _pd
-
-    cols_out = ["home", "away", "home_score", "away_score"]
-    if df is None or not isinstance(df, _pd.DataFrame) or df.empty:
-        return _pd.DataFrame(columns=cols_out)
-
-    out = df.copy()
-
-    # normalise home/away names
-    if "home" not in out.columns and "home_team" in out.columns:
-        out = out.rename(columns={"home_team": "home"})
-    if "away" not in out.columns and "away_team" in out.columns:
-        out = out.rename(columns={"away_team": "away"})
-
-    # status-based filtering ONLY if status exists
-    if "status" in out.columns:
-        s = out["status"].astype(str).str.strip().str.lower()
-        # treat a range of completed markers as completed
-        completed_mask = s.str.contains(r"^full\s*time$|^ft$|full\s*time|final|finished|complete", regex=True)
-        out = out[completed_mask].copy()
-
-    # choose score column names robustly
-    score_candidates = [
-        ("home_score", "away_score"),
-        ("home_points", "away_points"),
-        ("home_pts", "away_pts"),
-        ("home", "away"),  # very last resort if scores were already numeric columns (unlikely)
-    ]
-    use_hs, use_as = None, None
-    for hs, a_s in score_candidates:
-        if hs in out.columns and a_s in out.columns:
-            use_hs, use_as = hs, a_s
-            break
-    if use_hs is None:
-        # try to infer by pattern
-        for c in out.columns:
-            cl = c.lower()
-            if "home" in cl and ("score" in cl or "points" in cl or cl.endswith("_pts")):
-                use_hs = c
-            if "away" in cl and ("score" in cl or "points" in cl or cl.endswith("_pts")):
-                use_as = c
-        if use_hs is None or use_as is None:
-            # cannot determine, return empty canonical frame
-            return _pd.DataFrame(columns=cols_out)
-
-    # coerce scores to int
-    out["home_score"] = _pd.to_numeric(out[use_hs], errors="coerce").fillna(0).astype(int)
-    out["away_score"] = _pd.to_numeric(out[use_as], errors="coerce").fillna(0).astype(int)
-
-    # map team names to canonical ones if available
-    if "TEAM_NAME_MAP" in globals():
-        out["home"] = out["home"].map(TEAM_NAME_MAP).fillna(out["home"])
-        out["away"] = out["away"].map(TEAM_NAME_MAP).fillna(out["away"])
-
-    # filter to known teams if ALL_TEAMS is present
-    if "ALL_TEAMS" in globals():
-        out = out[out["home"].isin(ALL_TEAMS) & out["away"].isin(ALL_TEAMS)]
-
-    return out[cols_out]
-
 st.subheader("📥 Current Ladder (completed matches only)")
 
 # -------------------------
-# Ladder computation (robust)
+# Ladder computation (GP/W/D/L, PF/PA, Diff, CompPts)
 # -------------------------
-def compute_ladder_from_results(df, all_teams: list[str]) -> pd.DataFrame:
-    """
-    Build ladder with Team, CompPts, Diff from completed matches.
-    Accepts either columns (home_team, away_team, home_score, away_score) or
-    canonical (home, away, home_score, away_score).
-    """
+def compute_ladder_from_results(df: pd.DataFrame, all_teams: list[str]) -> pd.DataFrame:
     import pandas as _pd
-    # Empty -> zeroed ladder
+    base = {t: {"GP":0,"W":0,"D":0,"L":0,"PF":0,"PA":0,"Diff":0,"CompPts":0} for t in all_teams}
     if df is None or not isinstance(df, _pd.DataFrame) or df.empty:
-        ladder = _pd.DataFrame({"Team": all_teams, "CompPts": [0]*len(all_teams), "Diff": [0]*len(all_teams)})
-        return ladder.sort_values(["CompPts","Diff"], ascending=[False, False]).reset_index(drop=True)
-
-    # Normalise column names
-    low_cols = [c.lower() for c in df.columns]
-    use_home = "home" if "home" in low_cols else ("home_team" if "home_team" in df.columns else None)
-    use_away = "away" if "away" in low_cols else ("away_team" if "away_team" in df.columns else None)
-    use_hs   = "home_score"
-    use_as   = "away_score"
-    if not all(c in df.columns for c in [use_home, use_away, use_hs, use_as] if c):
-        raise ValueError("compute_ladder_from_results: missing required columns")
-
+        return (_pd.DataFrame.from_dict(base, orient="index")
+                .assign(Team=lambda x: x.index)
+                [["Team","GP","W","D","L","PF","PA","Diff","CompPts"]]
+                .sort_values(["CompPts","Diff","PF"], ascending=[False,False,False])
+                .reset_index(drop=True))
+    home_col = "home_team" if "home_team" in df.columns else ("home" if "home" in df.columns else None)
+    away_col = "away_team" if "away_team" in df.columns else ("away" if "away" in df.columns else None)
+    hs_col, as_col = "home_score", "away_score"
+    if not all(c in df.columns for c in [home_col, away_col, hs_col, as_col] if c):
+        return (_pd.DataFrame.from_dict(base, orient="index")
+                .assign(Team=lambda x: x.index)
+                [["Team","GP","W","D","L","PF","PA","Diff","CompPts"]]
+                .sort_values(["CompPts","Diff","PF"], ascending=[False,False,False])
+                .reset_index(drop=True))
     d = df.copy()
-    d[use_hs] = _pd.to_numeric(d[use_hs], errors="coerce").fillna(0).astype(int)
-    d[use_as] = _pd.to_numeric(d[use_as], errors="coerce").fillna(0).astype(int)
+    d[hs_col] = _pd.to_numeric(d[hs_col], errors="coerce").fillna(0).astype(int)
+    d[as_col] = _pd.to_numeric(d[as_col], errors="coerce").fillna(0).astype(int)
 
-    pts = {t: 0 for t in all_teams}
-    dif = {t: 0 for t in all_teams}
-
+    stats = {t: vals.copy() for t, vals in base.items()}
     for _, r in d.iterrows():
-        h = r[use_home]; a = r[use_away]
-        if h not in pts or a not in pts:
+        h = canonical_team_name(r[home_col])
+        a = canonical_team_name(r[away_col])
+        if h is None or a is None or h not in stats or a not in stats:
             continue
-        hs = int(r[use_hs]); as_ = int(r[use_as])
-        margin = hs - as_
-        # symmetric differential
-        dif[h] += margin
-        dif[a] -= margin
-        # competition points
+        hs, as_ = int(r[hs_col]), int(r[as_col])
+        stats[h]["GP"] += 1; stats[a]["GP"] += 1
+        stats[h]["PF"] += hs; stats[h]["PA"] += as_
+        stats[a]["PF"] += as_; stats[a]["PA"] += hs
         if hs > as_:
-            pts[h] += 2
+            stats[h]["W"] += 1; stats[a]["L"] += 1
+            stats[h]["CompPts"] += 2
         elif hs < as_:
-            pts[a] += 2
+            stats[a]["W"] += 1; stats[h]["L"] += 1
+            stats[a]["CompPts"] += 2
         else:
-            pts[h] += 1; pts[a] += 1
-
-    ladder = _pd.DataFrame({
-        "Team": all_teams,
-        "CompPts": [pts[t] for t in all_teams],
-        "Diff":    [dif[t] for t in all_teams],
-    })
-    return ladder.sort_values(["CompPts","Diff"], ascending=[False, False]).reset_index(drop=True)
+            stats[h]["D"] += 1; stats[a]["D"] += 1
+            stats[h]["CompPts"] += 1; stats[a]["CompPts"] += 1
+    for t in all_teams:
+        stats[t]["Diff"] = stats[t]["PF"] - stats[t]["PA"]
+    ladder_df = (_pd.DataFrame.from_dict(stats, orient="index")
+                 .assign(Team=lambda x: x.index)
+                 [["Team","GP","W","D","L","PF","PA","Diff","CompPts"]]
+                 .sort_values(["CompPts","Diff","PF"], ascending=[False,False,False])
+                 .reset_index(drop=True))
+    return ladder_df
 
 ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
-ladder_df = ensure_ladder_columns(ladder_df)
-st.dataframe(ladder_df[["Team","Played","Won","Drawn","Lost","PF","PA","Diff","CompPts"]], use_container_width=True)
+st.dataframe(ladder_df[["Team","GP","W","D","L","PF","PA","Diff","CompPts"]], use_container_width=True)
 
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
 teams = list(teams_data.keys())
@@ -361,40 +232,32 @@ h = st.sidebar.slider("🏠 Home Advantage (strength units)", 0.0, 1.0, 0.3, 0.0
 alpha = st.sidebar.slider("📈 Strength→Margin scale (α)", 5.0, 15.0, 10.0, 0.5)
 sigma = st.sidebar.slider("🎲 Match randomness (σ)", 6.0, 20.0, 12.0, 0.5)
 
-
-# -------------------------
-# Build future fixtures from CSV (status != Full Time)
-# -------------------------
-def build_future_fixtures(raw_df: pd.DataFrame) -> list[dict]:
-    if raw_df is None or not isinstance(raw_df, pd.DataFrame) or raw_df.empty:
-        return []
-    df = raw_df.copy()
-    if "status" not in df.columns:
-        return []
-    s = df["status"].astype(str).str.strip().str.lower()
-    df = df[~s.eq("full time")].copy()
-
-    # Derive home/away
-    if "TEAM_NAME_MAP" in globals():
-        df["home"] = df.get("home", df.get("home_team")).map(TEAM_NAME_MAP).fillna(df.get("home", df.get("home_team")))
-        df["away"] = df.get("away", df.get("away_team")).map(TEAM_NAME_MAP).fillna(df.get("away", df.get("away_team")))
-    else:
-        df["home"] = df.get("home", df.get("home_team"))
-        df["away"] = df.get("away", df.get("away_team"))
-
-    # Filter and dedupe
-    if "ALL_TEAMS" in globals():
-        df = df[df["home"].isin(ALL_TEAMS) & df["away"].isin(ALL_TEAMS)]
-    df = df.dropna(subset=["home","away"]).drop_duplicates(subset=["home","away"], keep="first")
-
-    return df[["home","away"]].to_dict(orient="records")
-
 # -------------------------
 # Remaining fixtures (placeholder list you curated)
 # -------------------------
-fixtures = build_future_fixtures(raw_df)
-if not fixtures:
-    st.error('No future fixtures found in CSV. Ensure upcoming games are present with status != "Full Time".')
+fixtures = [
+    {"home": "Knights", "away": "Panthers"}, {"home": "Raiders", "away": "Sea Eagles"},
+    {"home": "Dragons", "away": "Sharks"}, {"home": "Dolphins", "away": "Roosters"},
+    {"home": "Bulldogs", "away": "Warriors"}, {"home": "Titans", "away": "Rabbitohs"},
+    {"home": "Eels", "away": "Cowboys"}, {"home": "Panthers", "away": "Storm"},
+    {"home": "Warriors", "away": "Dragons"}, {"home": "Roosters", "away": "Bulldogs"},
+    {"home": "Sharks", "away": "Titans"}, {"home": "Broncos", "away": "Dolphins"},
+    {"home": "Rabbitohs", "away": "Eels"}, {"home": "Wests Tigers", "away": "Sea Eagles"},
+    {"home": "Cowboys", "away": "Knights"}, {"home": "Rabbitohs", "away": "Dragons"},
+    {"home": "Panthers", "away": "Raiders"}, {"home": "Storm", "away": "Bulldogs"},
+    {"home": "Sea Eagles", "away": "Dolphins"}, {"home": "Titans", "away": "Warriors"},
+    {"home": "Eels", "away": "Roosters"}, {"home": "Knights", "away": "Broncos"},
+    {"home": "Wests Tigers", "away": "Cowboys"}, {"home": "Bulldogs", "away": "Panthers"},
+    {"home": "Warriors", "away": "Eels"}, {"home": "Storm", "away": "Roosters"},
+    {"home": "Raiders", "away": "Wests Tigers"}, {"home": "Dragons", "away": "Sea Eagles"},
+    {"home": "Cowboys", "away": "Broncos"}, {"home": "Sharks", "away": "Knights"},
+    {"home": "Dolphins", "away": "Titans"}, {"home": "Broncos", "away": "Storm"},
+    {"home": "Sea Eagles", "away": "Warriors"}, {"home": "Roosters", "away": "Rabbitohs"},
+    {"home": "Dragons", "away": "Panthers"}, {"home": "Titans", "away": "Wests Tigers"},
+    {"home": "Bulldogs", "away": "Sharks"}, {"home": "Dolphins", "away": "Raiders"},
+    {"home": "Eels", "away": "Knights"},
+]
+
 # -------------------------
 # Simulation
 # -------------------------
@@ -432,8 +295,8 @@ if st.button("▶️ Run Simulation"):
                 pts[a_team] += 2
             else:
                 pts[h_team] += 1; pts[a_team] += 1
-            diffs[h_team] += margin
-            diffs[a_team] -= margin
+            diffs[h_team] += max(0.0, margin)
+            diffs[a_team] -= max(0.0, margin)
 
         return sorted(pts.items(), key=lambda x: (-x[1], -diffs[x[0]]))
 
