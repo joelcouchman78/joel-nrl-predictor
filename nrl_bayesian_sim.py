@@ -163,7 +163,7 @@ else:
         columns=["home_team","away_team","home_score","away_score","status"]
     )
 
->>>>>>> origin/main
+
 # -------------------------
 # Rest of the app logic follows...
 # -------------------------
