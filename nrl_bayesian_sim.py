@@ -1,4 +1,3 @@
-from __future__ import annotations
 # =========================
 # Joel's NRL Ladder Predictor (2025)
 # =========================
@@ -11,50 +10,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-
-# -----------------------------------------------------------------------------
-# Canonicalise completed results
-# -----------------------------------------------------------------------------
-def canonicalize_completed_results(df: 'pd.DataFrame') -> 'pd.DataFrame':
-    """
-    Produce columns: home, away, home_score, away_score with only Full Time rows.
-    Safe on None/empty input (returns empty canonical frame).
-    """
-    cols = ["home", "away", "home_score", "away_score", "status"]
-    if df is None or not isinstance(df, pd.DataFrame) or df.empty:
-        return pd.DataFrame(columns=cols)
-
-    out = df.copy()
-
-    # normalise column names
-    rename_map = {}
-    if "home" not in out.columns and "home_team" in out.columns:
-        rename_map["home_team"] = "home"
-    if "away" not in out.columns and "away_team" in out.columns:
-        rename_map["away_team"] = "away"
-    out = out.rename(columns=rename_map)
-
-    # ensure required columns exist
-    for c in cols:
-        if c not in out.columns:
-            out[c] = pd.Series(dtype="object")
-
-    # keep only completed games
-    s = out["status"].astype(str).str.strip().str.lower()
-    out = out[s.eq("full time")]
-
-    # coerce scores
-    for c in ["home_score", "away_score"]:
-        out[c] = pd.to_numeric(out[c], errors="coerce").fillna(0).astype(int)
-
-    # map names and filter to known teams if globals exist
-    if "TEAM_NAME_MAP" in globals():
-        out["home"] = out["home"].map(TEAM_NAME_MAP).fillna(out["home"])
-        out["away"] = out["away"].map(TEAM_NAME_MAP).fillna(out["away"])
-    if "ALL_TEAMS" in globals():
-        out = out[out["home"].isin(ALL_TEAMS) & out["away"].isin(ALL_TEAMS)]
-
-    return out[["home", "away", "home_score", "away_score"]]
 # -------------------------
 # Page config & header
 # -------------------------
@@ -99,45 +54,6 @@ DESKTOP_CSV = Path(os.path.expanduser("~/Desktop/nrl_bayesian_app/nrl_results.cs
 def prepare_completed_results(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
-
-
-# -----------------------------------------------------------------------------
-# Build remaining fixtures from CSV (status != "full time")
-# -----------------------------------------------------------------------------
-def build_future_fixtures(raw_df: pd.DataFrame) -> list[dict]:
-    """
-    Remaining games from the same CSV. We treat rows whose status is not 'full time' as future.
-    Team names are mapped through TEAM_NAME_MAP to canonical names.
-    """
-    if not isinstance(raw_df, pd.DataFrame) or raw_df.empty:
-        return []
-    df = raw_df.copy()
-    is_full_time = df["status"].fillna("").str.lower().eq(" full time") | df["status"].fillna("").str.lower().eq("full time")
-    df = df[~is_full_time].copy()
-
-    df["home"] = df["home_team"].map(TEAM_NAME_MAP).fillna(df["home_team"])
-    df["away"] = df["away_team"].map(TEAM_NAME_MAP).fillna(df["away_team"])
-    df = df[df["home"].isin(ALL_TEAMS) & df["away"].isin(ALL_TEAMS)]
-    df = df.drop_duplicates(subset=["home", "away"], keep="first")
-
-    fixtures = df.loc[:, ["home", "away"]].to_dict(orient="records")
-
-    # Diagnostics (non-fatal)
-    from collections import Counter
-    ct = Counter([f["home"] for f in fixtures] + [f["away"] for f in fixtures])
-    if ct and len(set(ct.values())) != 1:
-        try:
-            st.warning(f"Uneven future fixtures per team (diagnostic): {dict(ct)}")
-        except Exception:
-            pass
-    dups = [k for k,c in Counter((f['home'],f['away']) for f in fixtures).items() if c>1]
-    if dups:
-        try:
-            st.warning(f"Duplicate fixtures detected (diagnostic): {dups}")
-        except Exception:
-            pass
-
-    return fixtures
     df = df[df["status"].fillna("").str.lower().eq("full time")].copy()
     if df.empty:
         return df
@@ -169,26 +85,34 @@ else:
     RESULTS_CSV = None
 
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
-    raw_df = pd.read_csv(RESULTS_CSV)
-    results_df = prepare_completed_results(raw_df)
+    try:
+        raw_df = pd.read_csv(RESULTS_CSV)
+    except Exception as e:
+        st.error(f"Failed to read CSV at {RESULTS_CSV}: {e}")
+        raw_df = None
     if isinstance(raw_df, pd.DataFrame):
-    # ensure results_df exists and is a DataFrame
-        if not isinstance(results_df, pd.DataFrame):
-            results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+        try:
+            results_df = prepare_completed_results(raw_df)
+        except Exception as e:
+            st.error(f"Failed to prepare completed results: {e}")
+            results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"]) 
         st.caption(
-            f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
-            f"Completed matches: {results_df.shape[0]}"
+            f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • Completed matches: {results_df.shape[0]}"
         )
     else:
         st.error(
             "No readable CSV found. "
-            f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}."
+            f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
+            "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
         )
-    # Keep app alive
         results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    
-
-st.divider()
+else:
+    st.error(
+        "No readable CSV found. "
+        f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
+        "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
+    )
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -204,9 +128,63 @@ st.divider()
 # Ladder from completed results (top of app)
 # -------------------------
 st.subheader("📥 Current Ladder (completed matches only)")
-completed_df = canonicalize_completed_results(results_df)
-st.caption(f"Completed rows used for ladder: {completed_df.shape[0]} • cols={list(completed_df.columns)}")
-ladder_df = compute_ladder_from_results(completed_df, ALL_TEAMS)
+
+# -------------------------
+# Ladder computation (robust)
+# -------------------------
+def compute_ladder_from_results(df, all_teams: list[str]) -> pd.DataFrame:
+    """
+    Build ladder with Team, CompPts, Diff from completed matches.
+    Accepts either columns (home_team, away_team, home_score, away_score) or
+    canonical (home, away, home_score, away_score).
+    """
+    import pandas as _pd
+    # Empty -> zeroed ladder
+    if df is None or not isinstance(df, _pd.DataFrame) or df.empty:
+        ladder = _pd.DataFrame({"Team": all_teams, "CompPts": [0]*len(all_teams), "Diff": [0]*len(all_teams)})
+        return ladder.sort_values(["CompPts","Diff"], ascending=[False, False]).reset_index(drop=True)
+
+    # Normalise column names
+    low_cols = [c.lower() for c in df.columns]
+    use_home = "home" if "home" in low_cols else ("home_team" if "home_team" in df.columns else None)
+    use_away = "away" if "away" in low_cols else ("away_team" if "away_team" in df.columns else None)
+    use_hs   = "home_score"
+    use_as   = "away_score"
+    if not all(c in df.columns for c in [use_home, use_away, use_hs, use_as] if c):
+        raise ValueError("compute_ladder_from_results: missing required columns")
+
+    d = df.copy()
+    d[use_hs] = _pd.to_numeric(d[use_hs], errors="coerce").fillna(0).astype(int)
+    d[use_as] = _pd.to_numeric(d[use_as], errors="coerce").fillna(0).astype(int)
+
+    pts = {t: 0 for t in all_teams}
+    dif = {t: 0 for t in all_teams}
+
+    for _, r in d.iterrows():
+        h = r[use_home]; a = r[use_away]
+        if h not in pts or a not in pts:
+            continue
+        hs = int(r[use_hs]); as_ = int(r[use_as])
+        margin = hs - as_
+        # symmetric differential
+        dif[h] += margin
+        dif[a] -= margin
+        # competition points
+        if hs > as_:
+            pts[h] += 2
+        elif hs < as_:
+            pts[a] += 2
+        else:
+            pts[h] += 1; pts[a] += 1
+
+    ladder = _pd.DataFrame({
+        "Team": all_teams,
+        "CompPts": [pts[t] for t in all_teams],
+        "Diff":    [dif[t] for t in all_teams],
+    })
+    return ladder.sort_values(["CompPts","Diff"], ascending=[False, False]).reset_index(drop=True)
+
+ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
 st.dataframe(ladder_df.set_index("Team"), use_container_width=True)
 
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
@@ -230,8 +208,36 @@ h = st.sidebar.slider("🏠 Home Advantage (strength units)", 0.0, 1.0, 0.3, 0.0
 alpha = st.sidebar.slider("📈 Strength→Margin scale (α)", 5.0, 15.0, 10.0, 0.5)
 sigma = st.sidebar.slider("🎲 Match randomness (σ)", 6.0, 20.0, 12.0, 0.5)
 
+
 # -------------------------
-# Remaining fixtures (derived from CSV)
+# Build future fixtures from CSV (status != Full Time)
+# -------------------------
+def build_future_fixtures(raw_df: pd.DataFrame) -> list[dict]:
+    if raw_df is None or not isinstance(raw_df, pd.DataFrame) or raw_df.empty:
+        return []
+    df = raw_df.copy()
+    if "status" not in df.columns:
+        return []
+    s = df["status"].astype(str).str.strip().str.lower()
+    df = df[~s.eq("full time")].copy()
+
+    # Derive home/away
+    if "TEAM_NAME_MAP" in globals():
+        df["home"] = df.get("home", df.get("home_team")).map(TEAM_NAME_MAP).fillna(df.get("home", df.get("home_team")))
+        df["away"] = df.get("away", df.get("away_team")).map(TEAM_NAME_MAP).fillna(df.get("away", df.get("away_team")))
+    else:
+        df["home"] = df.get("home", df.get("home_team"))
+        df["away"] = df.get("away", df.get("away_team"))
+
+    # Filter and dedupe
+    if "ALL_TEAMS" in globals():
+        df = df[df["home"].isin(ALL_TEAMS) & df["away"].isin(ALL_TEAMS)]
+    df = df.dropna(subset=["home","away"]).drop_duplicates(subset=["home","away"], keep="first")
+
+    return df[["home","away"]].to_dict(orient="records")
+
+# -------------------------
+# Remaining fixtures (placeholder list you curated)
 # -------------------------
 fixtures = build_future_fixtures(raw_df)
 if not fixtures:
