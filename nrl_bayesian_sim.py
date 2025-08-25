@@ -138,24 +138,21 @@ if RESULTS_CSV is not None and RESULTS_CSV.exists():
         st.error(f"Failed to read CSV at {RESULTS_CSV}: {e}")
 
 if isinstance(raw_df, pd.DataFrame):
-<<<<<<< HEAD
+    # Prepare completed results defensively
     try:
         results_df = prepare_completed_results(raw_df)
-        completed_n = int(results_df.shape[0]) if isinstance(results_df, pd.DataFrame) else 0
     except Exception as e:
         st.error(f"Failed to prepare completed results: {e}")
-        results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-        completed_n = 0
+        results_df = pd.DataFrame(
+            columns=["home_team","away_team","home_score","away_score","status"]
+        )
 
+    # Safe caption: only uses DataFrame attributes
+    completed_n = int(results_df.shape[0]) if isinstance(results_df, pd.DataFrame) else 0
+    # Use either RESULTS_CSV.resolve() (Path) or Path(RESULTS_CSV).resolve() if your var isn't a Path
     st.caption(
         f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
         f"Completed matches: {completed_n}"
-=======
-    results_df = prepare_completed_results(raw_df)
-    st.caption(
-        f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
-        f"Completed matches: {len(results_df)}"
->>>>>>> origin/main
     )
 else:
     st.error(
@@ -163,12 +160,8 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-<<<<<<< HEAD
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-=======
-    # Keep the app alive even without data
     results_df = pd.DataFrame(
-        columns=["home_team", "away_team", "home_score", "away_score", "status"]
+        columns=["home_team","away_team","home_score","away_score","status"]
     )
 
 >>>>>>> origin/main
