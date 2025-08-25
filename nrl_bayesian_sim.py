@@ -112,7 +112,8 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+    st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -203,7 +204,7 @@ for team in teams:
         strength_ratings[team] = st.slider(f"{team} – Strength", 0, 10, 5, key=f"s_{team}")
         variability_ratings[team] = st.slider(f"{team} – Variability", 0, 10, 5, key=f"v_{team}")
 
-num_sims = st.sidebar.slider("🔁 Number of Simulations", 500, 10000, 2000, step=500)
+num_sims = st.sidebar.slider("🔁 Number of Simulations", 500, 20000, 2000, step=500)
 h = st.sidebar.slider("🏠 Home Advantage (strength units)", 0.0, 1.0, 0.3, 0.05)
 alpha = st.sidebar.slider("📈 Strength→Margin scale (α)", 5.0, 15.0, 10.0, 0.5)
 sigma = st.sidebar.slider("🎲 Match randomness (σ)", 6.0, 20.0, 12.0, 0.5)
