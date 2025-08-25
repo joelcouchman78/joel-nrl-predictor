@@ -4,6 +4,53 @@
 
 from pathlib import Path
 import os
+
+
+# -----------------------------------------------------------------------------
+# Canonicalise completed results
+# -----------------------------------------------------------------------------
+def canonicalize_completed_results(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Ensure completed results use columns: home, away, home_score, away_score.
+    Returns an empty DataFrame with those columns if df is None/empty.
+    """
+    cols = ["home", "away", "home_score", "away_score", "status"]
+    if df is None or not isinstance(df, pd.DataFrame) or df.empty:
+        return pd.DataFrame(columns=cols)
+
+    out = df.copy()
+
+    # normalise column names
+    rename_map = {}
+    if "home" not in out.columns and "home_team" in out.columns:
+        rename_map["home_team"] = "home"
+    if "away" not in out.columns and "away_team" in out.columns:
+        rename_map["away_team"] = "away"
+    out = out.rename(columns=rename_map)
+
+    # ensure required columns exist
+    for c in cols:
+        if c not in out.columns:
+            out[c] = pd.Series(dtype="object")
+
+    # filter to completed only
+    s = out["status"].astype(str).str.strip().str.lower()
+    out = out[s.eq("full time")]
+
+    # coerce score dtypes
+    for c in ["home_score", "away_score"]:
+        out[c] = pd.to_numeric(out[c], errors="coerce").fillna(0).astype(int)
+
+    # map team names to canonical ones if TEAM_NAME_MAP exists
+    if "TEAM_NAME_MAP" in globals():
+        out["home"] = out["home"].map(TEAM_NAME_MAP).fillna(out["home"])
+        out["away"] = out["away"].map(TEAM_NAME_MAP).fillna(out["away"])
+
+    # restrict to known teams
+    if "ALL_TEAMS" in globals():
+        out = out[out["home"].isin(ALL_TEAMS) & out["away"].isin(ALL_TEAMS)]
+
+    return out[["home", "away", "home_score", "away_score"]]
 from collections import Counter
 import numpy as np
 import pandas as pd
@@ -178,7 +225,9 @@ else:
 # Ladder from completed results (top of app)
 # -------------------------
 st.subheader("📥 Current Ladder (completed matches only)")
-ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
+completed_df = canonicalize_completed_results(results_df)
+st.caption(f"Completed rows used for ladder: {completed_df.shape[0]} • cols={list(completed_df.columns)}")
+ladder_df = compute_ladder_from_results(completed_df, ALL_TEAMS)
 st.dataframe(ladder_df.set_index("Team"), use_container_width=True)
 
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
@@ -344,3 +393,54 @@ if st.button("▶️ Run Simulation"):
         for combo, count in top4_ordered_counts.most_common(10)
     ])
     st.dataframe(top4_ordered_table)
+
+def compute_ladder_from_results(df: pd.DataFrame, teams: list[str]) -> pd.DataFrame:
+    """
+    Build ladder (competition points + points differential) from completed matches.
+    Assumes df has columns: home, away, home_score, away_score.
+    Handles empty df gracefully.
+    """
+    # empty/None -> zeroed ladder
+    if df is None or not isinstance(df, pd.DataFrame) or df.empty:
+        ladder = pd.DataFrame({
+            "team": teams,
+            "points": [0]*len(teams),
+            "diff":   [0]*len(teams),
+        })
+        return ladder.sort_values(["points","diff"], ascending=[False, False]).reset_index(drop=True)
+
+    need = ["home", "away", "home_score", "away_score"]
+    missing = [c for c in need if c not in df.columns]
+    if missing:
+        raise ValueError(f"compute_ladder_from_results: missing columns {missing}")
+
+    df = df.copy()
+    for c in ["home_score", "away_score"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0).astype(int)
+
+    pts = {t: 0 for t in teams}
+    dif = {t: 0 for t in teams}
+
+    for _, r in df.iterrows():
+        h, a = r["home"], r["away"]
+        if h not in pts or a not in pts:
+            continue
+        hs, as_ = int(r["home_score"]), int(r["away_score"])
+        margin = hs - as_
+        dif[h] += margin
+        dif[a] -= margin
+        if hs > as_:
+            pts[h] += 2
+        elif hs < as_:
+            pts[a] += 2
+        else:
+            pts[h] += 1
+            pts[a] += 1
+
+    ladder = pd.DataFrame({
+        "team": teams,
+        "points": [pts[t] for t in teams],
+        "diff":   [dif[t] for t in teams],
+    })
+    return ladder.sort_values(["points","diff"], ascending=[False, False]).reset_index(drop=True)
+
