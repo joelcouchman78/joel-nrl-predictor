@@ -112,8 +112,7 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    st.divider()
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -181,6 +180,77 @@ def ensure_ladder_columns(df):
 
     # Order and return
     return df[["Team","Played","Won","Drawn","Lost","CompPts","Diff"]]
+
+
+# -----------------------------------------------------------------------------
+# Canonicalise completed results (safe on frames without 'status')
+# -----------------------------------------------------------------------------
+def canonicalize_completed_results(df):
+    """
+    Return columns: home, away, home_score, away_score.
+    If a 'status' column exists, keep only completed rows.
+    If no 'status' column exists, assume df already contains completed matches.
+    Recognises 'home_team'/'away_team' and common score variants.
+    """
+    import pandas as _pd
+
+    cols_out = ["home", "away", "home_score", "away_score"]
+    if df is None or not isinstance(df, _pd.DataFrame) or df.empty:
+        return _pd.DataFrame(columns=cols_out)
+
+    out = df.copy()
+
+    # normalise home/away names
+    if "home" not in out.columns and "home_team" in out.columns:
+        out = out.rename(columns={"home_team": "home"})
+    if "away" not in out.columns and "away_team" in out.columns:
+        out = out.rename(columns={"away_team": "away"})
+
+    # status-based filtering ONLY if status exists
+    if "status" in out.columns:
+        s = out["status"].astype(str).str.strip().str.lower()
+        # treat a range of completed markers as completed
+        completed_mask = s.str.contains(r"^full\s*time$|^ft$|full\s*time|final|finished|complete", regex=True)
+        out = out[completed_mask].copy()
+
+    # choose score column names robustly
+    score_candidates = [
+        ("home_score", "away_score"),
+        ("home_points", "away_points"),
+        ("home_pts", "away_pts"),
+        ("home", "away"),  # very last resort if scores were already numeric columns (unlikely)
+    ]
+    use_hs, use_as = None, None
+    for hs, a_s in score_candidates:
+        if hs in out.columns and a_s in out.columns:
+            use_hs, use_as = hs, a_s
+            break
+    if use_hs is None:
+        # try to infer by pattern
+        for c in out.columns:
+            cl = c.lower()
+            if "home" in cl and ("score" in cl or "points" in cl or cl.endswith("_pts")):
+                use_hs = c
+            if "away" in cl and ("score" in cl or "points" in cl or cl.endswith("_pts")):
+                use_as = c
+        if use_hs is None or use_as is None:
+            # cannot determine, return empty canonical frame
+            return _pd.DataFrame(columns=cols_out)
+
+    # coerce scores to int
+    out["home_score"] = _pd.to_numeric(out[use_hs], errors="coerce").fillna(0).astype(int)
+    out["away_score"] = _pd.to_numeric(out[use_as], errors="coerce").fillna(0).astype(int)
+
+    # map team names to canonical ones if available
+    if "TEAM_NAME_MAP" in globals():
+        out["home"] = out["home"].map(TEAM_NAME_MAP).fillna(out["home"])
+        out["away"] = out["away"].map(TEAM_NAME_MAP).fillna(out["away"])
+
+    # filter to known teams if ALL_TEAMS is present
+    if "ALL_TEAMS" in globals():
+        out = out[out["home"].isin(ALL_TEAMS) & out["away"].isin(ALL_TEAMS)]
+
+    return out[cols_out]
 
 st.subheader("📥 Current Ladder (completed matches only)")
 
