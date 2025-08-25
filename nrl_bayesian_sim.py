@@ -127,7 +127,21 @@ else:
 if RESULTS_CSV is not None and RESULTS_CSV.exists():
     raw_df = pd.read_csv(RESULTS_CSV)
     results_df = prepare_completed_results(raw_df)
-    st.caption(f"Loaded {len(raw_df)} rows from: {RESULTS_CSV.resolve()} • Completed matches: {len(results_df)}")
+    if isinstance(raw_df, pd.DataFrame):
+    # ensure results_df exists and is a DataFrame
+    if not isinstance(results_df, pd.DataFrame):
+        results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+    st.caption(
+        f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • "
+        f"Completed matches: {results_df.shape[0]}"
+    )
+else:
+    st.error(
+        "No readable CSV found. "
+        f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}."
+    )
+    # Keep app alive
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
 else:
     st.error(f"No CSV found. Expected one of: {REPO_DATA_CSV} or {DESKTOP_CSV}.")
     results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
