@@ -99,6 +99,7 @@ if RESULTS_CSV is not None and RESULTS_CSV.exists():
         st.caption(
             f"Loaded {raw_df.shape[0]} rows from: {RESULTS_CSV.resolve()} • Completed matches: {results_df.shape[0]}"
         )
+        
     else:
         st.error(
             "No readable CSV found. "
@@ -106,6 +107,27 @@ if RESULTS_CSV is not None and RESULTS_CSV.exists():
             "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
         )
         results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+    # === CSV diagnostics (place this immediately after you set `results_df`) ===
+    with st.expander("🔎 Raw CSV diagnostics", expanded=True):
+        st.write("results_df shape:", getattr(results_df, "shape", None))
+        st.write("results_df columns:", list(getattr(results_df, "columns", [])))
+        if isinstance(results_df, pd.DataFrame) and not results_df.empty:
+            st.write("Columns (lowercased):", [c.lower() for c in results_df.columns])
+        # Show the first 10 rows so we can see actual values:
+            st.dataframe(results_df.head(10), use_container_width=True)
+
+        # Helpful quick views for the columns we care about
+            maybe_cols = [c for c in results_df.columns
+                          if any(k in c.lower() for k in ["home", "away", "score", "points", "status"])]
+            st.write("Columns that look relevant to ladder:", maybe_cols)
+
+        # If status exists, show its distinct values (to see what "completed" looks like)
+            if "status" in results_df.columns:
+                st.write("status value counts:",
+                         results_df["status"].astype(str).str.strip().str.lower().value_counts())
+        else:
+            st.warning("`results_df` is empty or not a DataFrame — ladder will be all zeros.")
+# ========================================================================== 
 else:
     st.error(
         "No readable CSV found. "
