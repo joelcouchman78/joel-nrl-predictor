@@ -112,7 +112,8 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
+    st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
