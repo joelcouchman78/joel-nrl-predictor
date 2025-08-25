@@ -112,8 +112,7 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    st.divider()
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -186,7 +185,7 @@ def compute_ladder_from_results(df, all_teams: list[str]) -> pd.DataFrame:
     return ladder.sort_values(["CompPts","Diff"], ascending=[False, False]).reset_index(drop=True)
 
 ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
-st.dataframe(ladder_df.set_index("Team"), use_container_width=True)
+st.dataframe(ladder_df[["Team","Played","Won","Drawn","Lost","CompPts","Diff"]], use_container_width=True)
 
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
 teams = list(teams_data.keys())
