@@ -116,7 +116,7 @@ st.write({
     "desktop_exists": DESKTOP_CSV.exists(),
 })
 
-<<<<<<< HEAD
+
 # Locate and load results CSV robustly
 # -----------------------------------------------------------------------------
 =======
