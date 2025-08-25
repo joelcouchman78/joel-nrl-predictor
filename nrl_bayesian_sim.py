@@ -365,29 +365,31 @@ if st.button("▶️ Run Simulation"):
     def sim_once():
 
     # draw a strength sample per team from priors
-        strengths = {}
-        for t in teams:
-            mu, tau = prior_params[t]["mu"], prior_params[t]["tau"]
-            strengths[t] = np.random.normal(mu, tau)
+    strengths = {}
+    for t in teams:
+        mu, tau = priors[t]["mean"], priors[t]["std"]
+        strengths[t] = np.random.normal(mu, tau)
 
     # start from the real ladder
-        pts   = {t: int(teams_data[t]["CompPts"]) for t in teams}
-        diffs = {t: float(teams_data[t]["Diff"])   for t in teams}
+    pts   = {t: int(teams_data[t]["CompPts"]) for t in teams}
+    diffs = {t: float(teams_data[t]["Diff"])   for t in teams}
 
     # simulate each remaining fixture (from CSV only)
-        for m in fixtures:
-            h_team, a_team = m["home"], m["away"]
-            if h_team not in strengths or a_team not in strengths:
-                continue
-            margin = np.random.normal(alpha * (strengths[h_team] + h - strengths[a_team]), sigma)
-            if margin > 0:
-                pts[h_team] += 2
-            elif margin < 0:
-                pts[a_team] += 2
-            else:
-                pts[h_team] += 1; pts[a_team] += 1
-            diffs[h_team] += max(0.0, margin)
-            diffs[a_team] -= max(0.0, margin)
+    for m in fixtures:
+        h_team, a_team = m["home"], m["away"]
+        if h_team not in strengths or a_team not in strengths:
+            continue
+        margin = np.random.normal(alpha * (strengths[h_team] + h - strengths[a_team]), sigma)
+        if margin > 0:
+            pts[h_team] += 2
+        elif margin < 0:
+            pts[a_team] += 2
+        else:
+            pts[h_team] += 1; pts[a_team] += 1
+        diffs[h_team] += max(0.0, margin)
+        diffs[a_team] -= max(0.0, margin)
+
+
 
         return sorted(pts.items(), key=lambda x: (-x[1], -diffs[x[0]]))
 
