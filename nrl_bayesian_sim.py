@@ -112,8 +112,7 @@ else:
         f"Checked: {REPO_DATA_CSV} and {DESKTOP_CSV}. "
         "Commit a CSV to the repo (data/nrl_results.csv) or update the path."
     )
-    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])
-    st.divider()
+    results_df = pd.DataFrame(columns=["home_team","away_team","home_score","away_score","status"])st.divider()
 
 # -------------------------
 # Rest of the app logic follows...
@@ -132,55 +131,59 @@ else:
 # -------------------------
 # Ensure ladder has standard columns and names
 # -------------------------
+
 def ensure_ladder_columns(df):
     """
-    Normalize/complete ladder columns so we can always display:
-    ['Team','Played','Won','Drawn','Lost','CompPts','Diff']
-    - Renames common variants (team/points/diff/gp/games/wins/losses/draws).
-    - If Team is in the index, moves it to a column.
-    - If Played missing but Won/Drawn/Lost exist, computes Played = Won+Drawn+Lost.
-    - Fills any still-missing columns with zeros.
+    Normalize ladder to show: Team, Played, Won, Drawn, Lost, PF, PA, Diff, CompPts.
+    Renames common variants. Computes Played if missing, and Diff if PF/PA available.
     """
     import pandas as _pd
+    want = ["Team","Played","Won","Drawn","Lost","PF","PA","Diff","CompPts"]
     if df is None or not isinstance(df, _pd.DataFrame):
-        return _pd.DataFrame(columns=["Team","Played","Won","Drawn","Lost","CompPts","Diff"])
+        return _pd.DataFrame(columns=want)
 
-    # If Team is not a column but the index looks like teams, bring it out.
+    # Reset index if Team lives there
     if "Team" not in df.columns:
-        if df.index.name and df.index.name.lower() == "team":
-            df = df.reset_index()
-        else:
-            # generic: promote index to a column if it's unnamed
-            df = df.reset_index()
+        df = df.reset_index()
 
-    # Build a case-insensitive rename map for common variants
+    # Case-insensitive rename
     lower_map = {c.lower(): c for c in df.columns}
     rename = {}
-    if "team" in lower_map:   rename[lower_map["team"]]   = "Team"
-    if "points" in lower_map: rename[lower_map["points"]] = "CompPts"
-    if "comppts" in lower_map:rename[lower_map["comppts"]]= "CompPts"
-    if "diff" in lower_map:   rename[lower_map["diff"]]   = "Diff"
-    if "played" in lower_map: rename[lower_map["played"]] = "Played"
-    if "gp" in lower_map:     rename[lower_map["gp"]]     = "Played"
-    if "games" in lower_map:  rename[lower_map["games"]]  = "Played"
-    if "won" in lower_map:    rename[lower_map["won"]]    = "Won"
-    if "wins" in lower_map:   rename[lower_map["wins"]]   = "Won"
-    if "drawn" in lower_map:  rename[lower_map["drawn"]]  = "Drawn"
-    if "draws" in lower_map:  rename[lower_map["draws"]]  = "Drawn"
-    if "lost" in lower_map:   rename[lower_map["lost"]]   = "Lost"
-    if "losses" in lower_map: rename[lower_map["losses"]] = "Lost"
+    m = lambda key, to: rename.setdefault(lower_map[key], to) if key in lower_map else None
+    for key, to in [
+        ("team","Team"),
+        ("gp","Played"), ("played","Played"), ("games","Played"),
+        ("w","Won"), ("won","Won"), ("wins","Won"),
+        ("d","Drawn"), ("drawn","Drawn"), ("draws","Drawn"),
+        ("l","Lost"), ("lost","Lost"), ("losses","Lost"),
+        ("pf","PF"), ("points for","PF"),
+        ("pa","PA"), ("points against","PA"),
+        ("diff","Diff"), ("difference","Diff"),
+        ("comppts","CompPts"), ("points","CompPts")
+    ]:
+        if key in lower_map:
+            rename[lower_map[key]] = to
     df = df.rename(columns=rename)
 
-    # Add any missing columns (compute Played when possible)
-    for col in ["Team","Played","Won","Drawn","Lost","CompPts","Diff"]:
-        if col not in df.columns:
-            if col == "Played" and all(x in df.columns for x in ["Won","Drawn","Lost"]):
-                df["Played"] = df["Won"].fillna(0).astype(int) + df["Drawn"].fillna(0).astype(int) + df["Lost"].fillna(0).astype(int)
-            else:
-                df[col] = 0
+    # Compute Played if missing
+    if "Played" not in df.columns:
+        if all(c in df.columns for c in ["Won","Drawn","Lost"]):
+            df["Played"] = df["Won"].fillna(0).astype(int) + df["Drawn"].fillna(0).astype(int) + df["Lost"].fillna(0).astype(int)
+        elif "GP" in df.columns:
+            df["Played"] = df["GP"]
+        else:
+            df["Played"] = 0
 
-    # Order and return
-    return df[["Team","Played","Won","Drawn","Lost","CompPts","Diff"]]
+    # Compute Diff if missing but PF/PA available
+    if "Diff" not in df.columns and all(c in df.columns for c in ["PF","PA"]):
+        df["Diff"] = df["PF"].fillna(0).astype(int) - df["PA"].fillna(0).astype(int)
+
+    # Fill any missing expected cols
+    for c in want:
+        if c not in df.columns:
+            df[c] = 0
+
+    return df[want]
 
 
 # -----------------------------------------------------------------------------
@@ -312,7 +315,7 @@ def compute_ladder_from_results(df, all_teams: list[str]) -> pd.DataFrame:
 
 ladder_df = compute_ladder_from_results(results_df, ALL_TEAMS)
 ladder_df = ensure_ladder_columns(ladder_df)
-st.dataframe(ladder_df, use_container_width=True)
+st.dataframe(ladder_df[["Team","Played","Won","Drawn","Lost","PF","PA","Diff","CompPts"]], use_container_width=True)
 
 teams_data = {r.Team: {"CompPts": int(r.CompPts), "Diff": int(r.Diff)} for r in ladder_df.itertuples(index=False)}
 teams = list(teams_data.keys())
