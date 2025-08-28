@@ -1,0 +1,193 @@
+season,round,date_header,status,kickoff_local,home_team,away_team,home_score,away_score,venue,match_href
+2022,1,THURSDAY 10TH MARCH,FULL TIME,,Panthers,Sea Eagles,28,6,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-1/panthers-v-sea-eagles/
+2022,1,FRIDAY 11TH MARCH,FULL TIME,,Raiders,Sharks,24,19,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-1/raiders-v-sharks/
+2022,1,FRIDAY 11TH MARCH,FULL TIME,,Broncos,Rabbitohs,11,4,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-1/broncos-v-rabbitohs/
+2022,1,SATURDAY 12TH MARCH,FULL TIME,,Roosters,Knights,6,20,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-1/roosters-v-knights/
+2022,1,SATURDAY 12TH MARCH,FULL TIME,,Warriors,Dragons,16,28,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-1/warriors-v-dragons/
+2022,1,SATURDAY 12TH MARCH,FULL TIME,,Wests Tigers,Storm,16,26,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-1/wests-tigers-v-storm/
+2022,1,SUNDAY 13TH MARCH,FULL TIME,,Eels,Titans,32,28,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-1/eels-v-titans/
+2022,1,SUNDAY 13TH MARCH,FULL TIME,,Cowboys,Bulldogs,4,6,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-1/cowboys-v-bulldogs/
+2022,2,THURSDAY 17TH MARCH,FULL TIME,,Storm,Rabbitohs,15,14,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-2/storm-v-rabbitohs/
+2022,2,FRIDAY 18TH MARCH,FULL TIME,,Dragons,Panthers,16,20,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-2/dragons-v-panthers/
+2022,2,FRIDAY 18TH MARCH,FULL TIME,,Roosters,Sea Eagles,26,12,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-2/roosters-v-sea-eagles/
+2022,2,SATURDAY 19TH MARCH,FULL TIME,,Titans,Warriors,20,18,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-2/titans-v-warriors/
+2022,2,SATURDAY 19TH MARCH,FULL TIME,,Sharks,Eels,18,16,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-2/sharks-v-eels/
+2022,2,SATURDAY 19TH MARCH,FULL TIME,,Cowboys,Raiders,26,6,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-2/cowboys-v-raiders/
+2022,2,SUNDAY 20TH MARCH,FULL TIME,,Knights,Wests Tigers,26,4,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-2/knights-v-wests-tigers/
+2022,2,SUNDAY 20TH MARCH,FULL TIME,,Bulldogs,Broncos,10,16,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-2/bulldogs-v-broncos/
+2022,3,THURSDAY 24TH MARCH,FULL TIME,,Dragons,Sharks,12,36,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-3/dragons-v-sharks/
+2022,3,FRIDAY 25TH MARCH,FULL TIME,,Wests Tigers,Warriors,12,16,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-3/wests-tigers-v-warriors/
+2022,3,FRIDAY 25TH MARCH,FULL TIME,,Rabbitohs,Roosters,28,16,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-3/rabbitohs-v-roosters/
+2022,3,SATURDAY 26TH MARCH,FULL TIME,,Panthers,Knights,38,20,"Carrington Park, Bathurst",https://www.nrl.com/draw/nrl-premiership/2022/round-3/panthers-v-knights/
+2022,3,SATURDAY 26TH MARCH,FULL TIME,,Storm,Eels,24,28,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-3/storm-v-eels/
+2022,3,SATURDAY 26TH MARCH,FULL TIME,,Raiders,Titans,24,22,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-3/raiders-v-titans/
+2022,3,SUNDAY 27TH MARCH,FULL TIME,,Broncos,Cowboys,12,38,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-3/broncos-v-cowboys/
+2022,3,SUNDAY 27TH MARCH,FULL TIME,,Sea Eagles,Bulldogs,13,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-3/sea-eagles-v-bulldogs/
+2022,4,THURSDAY 31ST MARCH,FULL TIME,,Titans,Wests Tigers,8,6,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-4/titans-v-wests-tigers/
+2022,4,FRIDAY 1ST APRIL,FULL TIME,,Sharks,Knights,18,0,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-4/sharks-v-knights/
+2022,4,FRIDAY 1ST APRIL,FULL TIME,,Panthers,Rabbitohs,26,12,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-4/panthers-v-rabbitohs/
+2022,4,SATURDAY 2ND APRIL,FULL TIME,,Warriors,Broncos,20,6,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2022/round-4/warriors-v-broncos/
+2022,4,SATURDAY 2ND APRIL,FULL TIME,,Sea Eagles,Raiders,25,6,"Glen Willow Oval, Mudgee",https://www.nrl.com/draw/nrl-premiership/2022/round-4/sea-eagles-v-raiders/
+2022,4,SATURDAY 2ND APRIL,FULL TIME,,Cowboys,Roosters,4,28,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-4/cowboys-v-roosters/
+2022,4,SUNDAY 3RD APRIL,FULL TIME,,Storm,Bulldogs,44,0,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-4/storm-v-bulldogs/
+2022,4,SUNDAY 3RD APRIL,FULL TIME,,Eels,Dragons,48,14,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-4/eels-v-dragons/
+2022,5,THURSDAY 7TH APRIL,FULL TIME,,Knights,Sea Eagles,6,30,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-5/knights-v-sea-eagles/
+2022,5,FRIDAY 8TH APRIL,FULL TIME,,Warriors,Cowboys,25,24,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2022/round-5/warriors-v-cowboys/
+2022,5,FRIDAY 8TH APRIL,FULL TIME,,Broncos,Roosters,20,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-5/broncos-v-roosters/
+2022,5,SATURDAY 9TH APRIL,FULL TIME,,Raiders,Storm,16,30,"McDonalds Park, Wagga Wagga",https://www.nrl.com/draw/nrl-premiership/2022/round-5/raiders-v-storm/
+2022,5,SATURDAY 9TH APRIL,FULL TIME,,Rabbitohs,Dragons,24,12,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-5/rabbitohs-v-dragons/
+2022,5,SATURDAY 9TH APRIL,FULL TIME,,Titans,Eels,20,26,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-5/titans-v-eels/
+2022,5,SUNDAY 10TH APRIL,FULL TIME,,Sharks,Wests Tigers,30,4,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-5/sharks-v-wests-tigers/
+2022,5,SUNDAY 10TH APRIL,FULL TIME,,Bulldogs,Panthers,12,32,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-5/bulldogs-v-panthers/
+2022,6,THURSDAY 14TH APRIL,FULL TIME,,Raiders,Cowboys,12,18,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-6/raiders-v-cowboys/
+2022,6,FRIDAY 15TH APRIL,FULL TIME,,Rabbitohs,Bulldogs,36,16,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-6/rabbitohs-v-bulldogs/
+2022,6,FRIDAY 15TH APRIL,FULL TIME,,Panthers,Broncos,40,12,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-6/panthers-v-broncos/
+2022,6,SATURDAY 16TH APRIL,FULL TIME,,Sea Eagles,Titans,26,18,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-6/sea-eagles-v-titans/
+2022,6,SATURDAY 16TH APRIL,FULL TIME,,Storm,Sharks,34,18,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-6/storm-v-sharks/
+2022,6,SUNDAY 17TH APRIL,FULL TIME,,Roosters,Warriors,22,14,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-6/roosters-v-warriors/
+2022,6,SUNDAY 17TH APRIL,FULL TIME,,Dragons,Knights,21,16,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-6/dragons-v-knights/
+2022,6,MONDAY 18TH APRIL,FULL TIME,,Eels,Wests Tigers,20,21,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-6/eels-v-wests-tigers/
+2022,7,THURSDAY 21ST APRIL,FULL TIME,,Sharks,Sea Eagles,34,22,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-7/sharks-v-sea-eagles/
+2022,7,FRIDAY 22ND APRIL,FULL TIME,,Broncos,Bulldogs,34,14,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-7/broncos-v-bulldogs/
+2022,7,SATURDAY 23RD APRIL,FULL TIME,,Cowboys,Titans,30,4,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-7/cowboys-v-titans/
+2022,7,SATURDAY 23RD APRIL,FULL TIME,,Wests Tigers,Rabbitohs,23,22,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-7/wests-tigers-v-rabbitohs/
+2022,7,SUNDAY 24TH APRIL,FULL TIME,,Knights,Eels,2,39,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-7/knights-v-eels/
+2022,7,SUNDAY 24TH APRIL,FULL TIME,,Panthers,Raiders,36,6,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-7/panthers-v-raiders/
+2022,7,MONDAY 25TH APRIL,FULL TIME,,Dragons,Roosters,14,12,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-7/dragons-v-roosters/
+2022,7,MONDAY 25TH APRIL,FULL TIME,,Storm,Warriors,70,10,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-7/storm-v-warriors/
+2022,8,THURSDAY 28TH APRIL,FULL TIME,,Broncos,Sharks,16,7,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-8/broncos-v-sharks/
+2022,8,FRIDAY 29TH APRIL,FULL TIME,,Titans,Panthers,4,18,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-8/titans-v-panthers/
+2022,8,FRIDAY 29TH APRIL,FULL TIME,,Rabbitohs,Sea Eagles,40,22,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2022/round-8/rabbitohs-v-sea-eagles/
+2022,8,SATURDAY 30TH APRIL,FULL TIME,,Warriors,Raiders,21,20,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2022/round-8/warriors-v-raiders/
+2022,8,SATURDAY 30TH APRIL,FULL TIME,,Bulldogs,Roosters,16,12,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-8/bulldogs-v-roosters/
+2022,8,SATURDAY 30TH APRIL,FULL TIME,,Eels,Cowboys,4,35,"TIO Stadium, Darwin",https://www.nrl.com/draw/nrl-premiership/2022/round-8/eels-v-cowboys/
+2022,8,SUNDAY 1ST MAY,FULL TIME,,Knights,Storm,2,50,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-8/knights-v-storm/
+2022,8,SUNDAY 1ST MAY,FULL TIME,,Dragons,Wests Tigers,12,6,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-8/dragons-v-wests-tigers/
+2022,9,THURSDAY 5TH MAY,FULL TIME,,Rabbitohs,Broncos,12,32,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-9/rabbitohs-v-broncos/
+2022,9,FRIDAY 6TH MAY,FULL TIME,,Raiders,Bulldogs,14,4,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-9/raiders-v-bulldogs/
+2022,9,FRIDAY 6TH MAY,FULL TIME,,Panthers,Eels,20,22,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-9/panthers-v-eels/
+2022,9,SATURDAY 7TH MAY,FULL TIME,,Sea Eagles,Wests Tigers,36,22,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-9/sea-eagles-v-wests-tigers/
+2022,9,SATURDAY 7TH MAY,FULL TIME,,Roosters,Titans,44,16,"BB Print Stadium, Mackay",https://www.nrl.com/draw/nrl-premiership/2022/round-9/roosters-v-titans/
+2022,9,SATURDAY 7TH MAY,FULL TIME,,Cowboys,Knights,36,16,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-9/cowboys-v-knights/
+2022,9,SUNDAY 8TH MAY,FULL TIME,,Storm,Dragons,42,6,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-9/storm-v-dragons/
+2022,9,SUNDAY 8TH MAY,FULL TIME,,Sharks,Warriors,29,10,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-9/sharks-v-warriors/
+2022,10,FRIDAY 13TH MAY,FULL TIME,,Bulldogs,Knights,6,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/bulldogs-v-knights/
+2022,10,FRIDAY 13TH MAY,FULL TIME,,Sea Eagles,Broncos,0,38,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/sea-eagles-v-broncos/
+2022,10,SATURDAY 14TH MAY,FULL TIME,,Warriors,Rabbitohs,30,32,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/warriors-v-rabbitohs/
+2022,10,SATURDAY 14TH MAY,FULL TIME,,Titans,Dragons,20,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/titans-v-dragons/
+2022,10,SATURDAY 14TH MAY,FULL TIME,,Storm,Panthers,6,32,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/storm-v-panthers/
+2022,10,SUNDAY 15TH MAY,FULL TIME,,Sharks,Raiders,10,30,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/sharks-v-raiders/
+2022,10,SUNDAY 15TH MAY,FULL TIME,,Roosters,Eels,31,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/roosters-v-eels/
+2022,10,SUNDAY 15TH MAY,FULL TIME,,Wests Tigers,Cowboys,12,36,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-10/wests-tigers-v-cowboys/
+2022,11,THURSDAY 19TH MAY,FULL TIME,,Knights,Broncos,12,36,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-11/knights-v-broncos/
+2022,11,FRIDAY 20TH MAY,FULL TIME,,Wests Tigers,Bulldogs,36,22,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-11/wests-tigers-v-bulldogs/
+2022,11,FRIDAY 20TH MAY,FULL TIME,,Eels,Sea Eagles,22,20,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-11/eels-v-sea-eagles/
+2022,11,SATURDAY 21ST MAY,FULL TIME,,Dragons,Warriors,24,18,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-11/dragons-v-warriors/
+2022,11,SATURDAY 21ST MAY,FULL TIME,,Cowboys,Storm,36,6,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-11/cowboys-v-storm/
+2022,11,SATURDAY 21ST MAY,FULL TIME,,Roosters,Panthers,12,32,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-11/roosters-v-panthers/
+2022,11,SUNDAY 22ND MAY,FULL TIME,,Rabbitohs,Raiders,12,32,"Apex Oval, Dubbo",https://www.nrl.com/draw/nrl-premiership/2022/round-11/rabbitohs-v-raiders/
+2022,11,SUNDAY 22ND MAY,FULL TIME,,Titans,Sharks,18,25,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-11/titans-v-sharks/
+2022,12,THURSDAY 26TH MAY,FULL TIME,,Storm,Sea Eagles,28,8,"AAMI Park, Melbourne Home of the Wurundjeri People",https://www.nrl.com/draw/nrl-premiership/2022/round-12/storm-v-sea-eagles/
+2022,12,FRIDAY 27TH MAY,FULL TIME,,Panthers,Cowboys,22,0,"Penrith Park, Penrith Home of the Dharug People",https://www.nrl.com/draw/nrl-premiership/2022/round-12/panthers-v-cowboys/
+2022,12,FRIDAY 27TH MAY,FULL TIME,,Broncos,Titans,35,24,"Suncorp Stadium, Brisbane Home of the Yuggera & Turrbal Peoples",https://www.nrl.com/draw/nrl-premiership/2022/round-12/broncos-v-titans/
+2022,12,SATURDAY 28TH MAY,FULL TIME,,Warriors,Knights,16,24,"Kayo Stadium, Redcliffe Home of the Yuggera, Jinibara, and Kabi Kabi Peoples",https://www.nrl.com/draw/nrl-premiership/2022/round-12/warriors-v-knights/
+2022,12,SATURDAY 28TH MAY,FULL TIME,,Rabbitohs,Wests Tigers,44,18,"Accor Stadium, Sydney Home of the Burramattagal and Wann-gal Peoples",https://www.nrl.com/draw/nrl-premiership/2022/round-12/rabbitohs-v-wests-tigers/
+2022,12,SATURDAY 28TH MAY,FULL TIME,,Sharks,Roosters,16,36,"PointsBet Stadium, Sydney Home of the Dharawal People",https://www.nrl.com/draw/nrl-premiership/2022/round-12/sharks-v-roosters/
+2022,12,SUNDAY 29TH MAY,FULL TIME,,Bulldogs,Dragons,24,34,"Belmore Sports Ground, Sydney Home of the Dharug, Eora & Bediagal Peoples",https://www.nrl.com/draw/nrl-premiership/2022/round-12/bulldogs-v-dragons/
+2022,12,SUNDAY 29TH MAY,FULL TIME,,Raiders,Eels,20,28,"GIO Stadium, Canberra Home of the Ngunnawal People",https://www.nrl.com/draw/nrl-premiership/2022/round-12/raiders-v-eels/
+2022,13,THURSDAY 2ND JUNE,FULL TIME,,Titans,Cowboys,6,32,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-13/titans-v-cowboys/
+2022,13,FRIDAY 3RD JUNE,FULL TIME,,Panthers,Bulldogs,30,18,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-13/panthers-v-bulldogs/
+2022,13,SATURDAY 4TH JUNE,FULL TIME,,Sea Eagles,Warriors,44,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-13/sea-eagles-v-warriors/
+2022,13,SUNDAY 5TH JUNE,FULL TIME,,Raiders,Roosters,22,16,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-13/raiders-v-roosters/
+2022,14,FRIDAY 10TH JUNE,FULL TIME,,Cowboys,Dragons,31,12,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-14/cowboys-v-dragons/
+2022,14,SATURDAY 11TH JUNE,FULL TIME,,Titans,Rabbitohs,16,30,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-14/titans-v-rabbitohs/
+2022,14,SATURDAY 11TH JUNE,FULL TIME,,Roosters,Storm,18,26,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-14/roosters-v-storm/
+2022,14,SATURDAY 11TH JUNE,FULL TIME,,Broncos,Raiders,24,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-14/broncos-v-raiders/
+2022,14,SUNDAY 12TH JUNE,FULL TIME,,Wests Tigers,Sea Eagles,4,30,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-14/wests-tigers-v-sea-eagles/
+2022,14,SUNDAY 12TH JUNE,FULL TIME,,Knights,Panthers,6,42,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-14/knights-v-panthers/
+2022,14,SUNDAY 12TH JUNE,FULL TIME,,Warriors,Sharks,16,38,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2022/round-14/warriors-v-sharks/
+2022,14,MONDAY 13TH JUNE,FULL TIME,,Bulldogs,Eels,34,4,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-14/bulldogs-v-eels/
+2022,15,THURSDAY 16TH JUNE,FULL TIME,,Dragons,Rabbitohs,32,12,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-15/dragons-v-rabbitohs/
+2022,15,FRIDAY 17TH JUNE,FULL TIME,,Sea Eagles,Cowboys,26,28,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-15/sea-eagles-v-cowboys/
+2022,15,FRIDAY 17TH JUNE,FULL TIME,,Storm,Broncos,32,20,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-15/storm-v-broncos/
+2022,15,SATURDAY 18TH JUNE,FULL TIME,,Sharks,Titans,18,10,"C.ex Coffs International Stadium, Coffs Harbour",https://www.nrl.com/draw/nrl-premiership/2022/round-15/sharks-v-titans/
+2022,15,SATURDAY 18TH JUNE,FULL TIME,,Warriors,Panthers,6,40,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2022/round-15/warriors-v-panthers/
+2022,15,SATURDAY 18TH JUNE,FULL TIME,,Eels,Roosters,26,16,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-15/eels-v-roosters/
+2022,15,SUNDAY 19TH JUNE,FULL TIME,,Raiders,Knights,20,18,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-15/raiders-v-knights/
+2022,15,SUNDAY 19TH JUNE,FULL TIME,,Bulldogs,Wests Tigers,36,12,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-15/bulldogs-v-wests-tigers/
+2022,16,THURSDAY 30TH JUNE,FULL TIME,,Sea Eagles,Storm,36,30,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-16/sea-eagles-v-storm/
+2022,16,FRIDAY 1ST JULY,FULL TIME,,Knights,Titans,38,12,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-16/knights-v-titans/
+2022,16,FRIDAY 1ST JULY,FULL TIME,,Panthers,Roosters,26,18,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-16/panthers-v-roosters/
+2022,16,SATURDAY 2ND JULY,FULL TIME,,Bulldogs,Sharks,6,18,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-16/bulldogs-v-sharks/
+2022,16,SATURDAY 2ND JULY,FULL TIME,,Cowboys,Broncos,40,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-16/cowboys-v-broncos/
+2022,16,SATURDAY 2ND JULY,FULL TIME,,Rabbitohs,Eels,30,12,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-16/rabbitohs-v-eels/
+2022,16,SUNDAY 3RD JULY,FULL TIME,,Warriors,Wests Tigers,22,2,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2022/round-16/warriors-v-wests-tigers/
+2022,16,SUNDAY 3RD JULY,FULL TIME,,Dragons,Raiders,12,10,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-16/dragons-v-raiders/
+2022,17,THURSDAY 7TH JULY,FULL TIME,,Sharks,Storm,28,6,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-17/sharks-v-storm/
+2022,17,FRIDAY 8TH JULY,FULL TIME,,Knights,Rabbitohs,28,40,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-17/knights-v-rabbitohs/
+2022,17,SATURDAY 9TH JULY,FULL TIME,,Wests Tigers,Eels,20,28,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-17/wests-tigers-v-eels/
+2022,17,SUNDAY 10TH JULY,FULL TIME,,Broncos,Dragons,32,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-17/broncos-v-dragons/
+2022,18,FRIDAY 15TH JULY,FULL TIME,,Cowboys,Sharks,12,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-18/cowboys-v-sharks/
+2022,18,FRIDAY 15TH JULY,FULL TIME,,Eels,Warriors,28,18,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-18/eels-v-warriors/
+2022,18,SATURDAY 16TH JULY,FULL TIME,,Roosters,Dragons,54,26,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2022/round-18/roosters-v-dragons/
+2022,18,SATURDAY 16TH JULY,FULL TIME,,Sea Eagles,Knights,42,12,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-18/sea-eagles-v-knights/
+2022,18,SATURDAY 16TH JULY,FULL TIME,,Titans,Broncos,12,16,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-18/titans-v-broncos/
+2022,18,SUNDAY 17TH JULY,FULL TIME,,Wests Tigers,Panthers,16,18,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-18/wests-tigers-v-panthers/
+2022,18,SUNDAY 17TH JULY,FULL TIME,,Storm,Raiders,16,20,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-18/storm-v-raiders/
+2022,18,SUNDAY 17TH JULY,FULL TIME,,Bulldogs,Rabbitohs,28,36,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-18/bulldogs-v-rabbitohs/
+2022,19,THURSDAY 21ST JULY,FULL TIME,,Eels,Broncos,14,36,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-19/eels-v-broncos/
+2022,19,FRIDAY 22ND JULY,FULL TIME,,Dragons,Sea Eagles,20,6,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-19/dragons-v-sea-eagles/
+2022,19,FRIDAY 22ND JULY,FULL TIME,,Knights,Roosters,12,42,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-19/knights-v-roosters/
+2022,19,SATURDAY 23RD JULY,FULL TIME,,Raiders,Warriors,26,14,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-19/raiders-v-warriors/
+2022,19,SATURDAY 23RD JULY,FULL TIME,,Panthers,Sharks,20,10,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-19/panthers-v-sharks/
+2022,19,SATURDAY 23RD JULY,FULL TIME,,Rabbitohs,Storm,24,12,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-19/rabbitohs-v-storm/
+2022,19,SUNDAY 24TH JULY,FULL TIME,,Bulldogs,Titans,36,26,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-19/bulldogs-v-titans/
+2022,19,SUNDAY 24TH JULY,FULL TIME,,Cowboys,Wests Tigers,27,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-19/cowboys-v-wests-tigers/
+2022,20,THURSDAY 28TH JULY,FULL TIME,,Sea Eagles,Roosters,10,20,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-20/sea-eagles-v-roosters/
+2022,20,FRIDAY 29TH JULY,FULL TIME,,Warriors,Storm,12,24,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2022/round-20/warriors-v-storm/
+2022,20,FRIDAY 29TH JULY,FULL TIME,,Eels,Panthers,34,10,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-20/eels-v-panthers/
+2022,20,SATURDAY 30TH JULY,FULL TIME,,Titans,Raiders,24,36,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-20/titans-v-raiders/
+2022,20,SATURDAY 30TH JULY,FULL TIME,,Sharks,Rabbitohs,21,20,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-20/sharks-v-rabbitohs/
+2022,20,SATURDAY 30TH JULY,FULL TIME,,Broncos,Wests Tigers,18,32,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-20/broncos-v-wests-tigers/
+2022,20,SUNDAY 31ST JULY,FULL TIME,,Knights,Bulldogs,10,24,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-20/knights-v-bulldogs/
+2022,20,SUNDAY 31ST JULY,FULL TIME,,Dragons,Cowboys,8,34,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-20/dragons-v-cowboys/
+2022,21,THURSDAY 4TH AUGUST,FULL TIME,,Roosters,Broncos,34,16,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-21/roosters-v-broncos/
+2022,21,FRIDAY 5TH AUGUST,FULL TIME,,Storm,Titans,32,14,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-21/storm-v-titans/
+2022,21,FRIDAY 5TH AUGUST,FULL TIME,,Sea Eagles,Eels,20,36,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-21/sea-eagles-v-eels/
+2022,21,SATURDAY 6TH AUGUST,FULL TIME,,Rabbitohs,Warriors,48,10,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-21/rabbitohs-v-warriors/
+2022,21,SATURDAY 6TH AUGUST,FULL TIME,,Raiders,Panthers,6,26,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-21/raiders-v-panthers/
+2022,21,SATURDAY 6TH AUGUST,FULL TIME,,Sharks,Dragons,24,18,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-21/sharks-v-dragons/
+2022,21,SUNDAY 7TH AUGUST,FULL TIME,,Bulldogs,Cowboys,14,28,"Salter Oval, Bundaberg",https://www.nrl.com/draw/nrl-premiership/2022/round-21/bulldogs-v-cowboys/
+2022,21,SUNDAY 7TH AUGUST,FULL TIME,,Wests Tigers,Knights,10,14,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-21/wests-tigers-v-knights/
+2022,22,THURSDAY 11TH AUGUST,FULL TIME,,Panthers,Storm,0,16,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-22/panthers-v-storm/
+2022,22,FRIDAY 12TH AUGUST,FULL TIME,,Warriors,Bulldogs,42,18,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2022/round-22/warriors-v-bulldogs/
+2022,22,FRIDAY 12TH AUGUST,FULL TIME,,Eels,Rabbitohs,0,26,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-22/eels-v-rabbitohs/
+2022,22,SATURDAY 13TH AUGUST,FULL TIME,,Roosters,Cowboys,32,18,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-22/roosters-v-cowboys/
+2022,22,SATURDAY 13TH AUGUST,FULL TIME,,Wests Tigers,Sharks,12,36,"Scully Park, Tamworth",https://www.nrl.com/draw/nrl-premiership/2022/round-22/wests-tigers-v-sharks/
+2022,22,SATURDAY 13TH AUGUST,FULL TIME,,Broncos,Knights,28,10,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-22/broncos-v-knights/
+2022,22,SUNDAY 14TH AUGUST,FULL TIME,,Raiders,Dragons,24,22,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-22/raiders-v-dragons/
+2022,22,SUNDAY 14TH AUGUST,FULL TIME,,Titans,Sea Eagles,44,24,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-22/titans-v-sea-eagles/
+2022,23,THURSDAY 18TH AUGUST,FULL TIME,,Rabbitohs,Panthers,22,26,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-23/rabbitohs-v-panthers/
+2022,23,FRIDAY 19TH AUGUST,FULL TIME,,Cowboys,Warriors,48,4,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-23/cowboys-v-warriors/
+2022,23,FRIDAY 19TH AUGUST,FULL TIME,,Broncos,Storm,12,60,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-23/broncos-v-storm/
+2022,23,SATURDAY 20TH AUGUST,FULL TIME,,Eels,Bulldogs,42,6,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-23/eels-v-bulldogs/
+2022,23,SATURDAY 20TH AUGUST,FULL TIME,,Sea Eagles,Sharks,6,40,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-23/sea-eagles-v-sharks/
+2022,23,SATURDAY 20TH AUGUST,FULL TIME,,Roosters,Wests Tigers,72,6,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-23/roosters-v-wests-tigers/
+2022,23,SUNDAY 21ST AUGUST,FULL TIME,,Dragons,Titans,46,26,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2022/round-23/dragons-v-titans/
+2022,23,SUNDAY 21ST AUGUST,FULL TIME,,Knights,Raiders,22,28,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-23/knights-v-raiders/
+2022,24,THURSDAY 25TH AUGUST,FULL TIME,,Broncos,Eels,6,53,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2022/round-24/broncos-v-eels/
+2022,24,FRIDAY 26TH AUGUST,FULL TIME,,Panthers,Warriors,46,12,"Penrith Park, Penrith",https://www.nrl.com/draw/nrl-premiership/2022/round-24/panthers-v-warriors/
+2022,24,FRIDAY 26TH AUGUST,FULL TIME,,Storm,Roosters,14,18,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2022/round-24/storm-v-roosters/
+2022,24,SATURDAY 27TH AUGUST,FULL TIME,,Raiders,Sea Eagles,48,6,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2022/round-24/raiders-v-sea-eagles/
+2022,24,SATURDAY 27TH AUGUST,FULL TIME,,Sharks,Bulldogs,16,0,"PointsBet Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-24/sharks-v-bulldogs/
+2022,24,SATURDAY 27TH AUGUST,FULL TIME,,Rabbitohs,Cowboys,20,10,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-24/rabbitohs-v-cowboys/
+2022,24,SUNDAY 28TH AUGUST,FULL TIME,,Wests Tigers,Dragons,22,24,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-24/wests-tigers-v-dragons/
+2022,24,SUNDAY 28TH AUGUST,FULL TIME,,Titans,Knights,36,26,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2022/round-24/titans-v-knights/
+2022,25,THURSDAY 1ST SEPTEMBER,FULL TIME,,Eels,Storm,22,14,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-25/eels-v-storm/
+2022,25,FRIDAY 2ND SEPTEMBER,FULL TIME,,Bulldogs,Sea Eagles,21,20,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-25/bulldogs-v-sea-eagles/
+2022,25,FRIDAY 2ND SEPTEMBER,FULL TIME,,Roosters,Rabbitohs,26,16,"Allianz Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-25/roosters-v-rabbitohs/
+2022,25,SATURDAY 3RD SEPTEMBER,FULL TIME,,Warriors,Titans,26,27,"Go Media Stadium, Auckland",https://www.nrl.com/draw/nrl-premiership/2022/round-25/warriors-v-titans/
+2022,25,SATURDAY 3RD SEPTEMBER,FULL TIME,,Dragons,Broncos,22,12,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-25/dragons-v-broncos/
+2022,25,SATURDAY 3RD SEPTEMBER,FULL TIME,,Cowboys,Panthers,38,8,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2022/round-25/cowboys-v-panthers/
+2022,25,SUNDAY 4TH SEPTEMBER,FULL TIME,,Knights,Sharks,16,38,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2022/round-25/knights-v-sharks/
+2022,25,SUNDAY 4TH SEPTEMBER,FULL TIME,,Wests Tigers,Raiders,10,56,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2022/round-25/wests-tigers-v-raiders/
