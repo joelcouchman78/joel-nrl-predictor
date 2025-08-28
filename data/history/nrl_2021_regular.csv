@@ -1,0 +1,193 @@
+season,round,date_header,status,kickoff_local,home_team,away_team,home_score,away_score,venue,match_href
+2021,1,THURSDAY 11TH MARCH,FULL TIME,,Storm,Rabbitohs,26,18,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2021/round-1/storm-v-rabbitohs/
+2021,1,FRIDAY 12TH MARCH,FULL TIME,,Knights,Bulldogs,32,16,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-1/knights-v-bulldogs/
+2021,1,FRIDAY 12TH MARCH,FULL TIME,,Broncos,Eels,16,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-1/broncos-v-eels/
+2021,1,SATURDAY 13TH MARCH,FULL TIME,,Warriors,Titans,19,6,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-1/warriors-v-titans/
+2021,1,SATURDAY 13TH MARCH,FULL TIME,,Roosters,Sea Eagles,46,4,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-1/roosters-v-sea-eagles/
+2021,1,SATURDAY 13TH MARCH,FULL TIME,,Panthers,Cowboys,24,0,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-1/panthers-v-cowboys/
+2021,1,SUNDAY 14TH MARCH,FULL TIME,,Raiders,Wests Tigers,30,12,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-1/raiders-v-wests-tigers/
+2021,1,SUNDAY 14TH MARCH,FULL TIME,,Dragons,Sharks,18,32,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-1/dragons-v-sharks/
+2021,2,THURSDAY 18TH MARCH,FULL TIME,,Eels,Storm,16,12,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-2/eels-v-storm/
+2021,2,FRIDAY 19TH MARCH,FULL TIME,,Warriors,Knights,16,20,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-2/warriors-v-knights/
+2021,2,FRIDAY 19TH MARCH,FULL TIME,,Titans,Broncos,28,16,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-2/titans-v-broncos/
+2021,2,SATURDAY 20TH MARCH,FULL TIME,,Bulldogs,Panthers,0,28,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-2/bulldogs-v-panthers/
+2021,2,SATURDAY 20TH MARCH,FULL TIME,,Sea Eagles,Rabbitohs,12,26,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-2/sea-eagles-v-rabbitohs/
+2021,2,SATURDAY 20TH MARCH,FULL TIME,,Cowboys,Dragons,18,25,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-2/cowboys-v-dragons/
+2021,2,SUNDAY 21ST MARCH,FULL TIME,,Wests Tigers,Roosters,6,40,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-2/wests-tigers-v-roosters/
+2021,2,SUNDAY 21ST MARCH,FULL TIME,,Sharks,Raiders,10,12,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-2/sharks-v-raiders/
+2021,3,THURSDAY 25TH MARCH,FULL TIME,,Panthers,Storm,12,10,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-3/panthers-v-storm/
+2021,3,FRIDAY 26TH MARCH,FULL TIME,,Dragons,Sea Eagles,38,12,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2021/round-3/dragons-v-sea-eagles/
+2021,3,FRIDAY 26TH MARCH,FULL TIME,,Rabbitohs,Roosters,26,16,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-3/rabbitohs-v-roosters/
+2021,3,SATURDAY 27TH MARCH,FULL TIME,,Raiders,Warriors,31,34,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-3/raiders-v-warriors/
+2021,3,SATURDAY 27TH MARCH,FULL TIME,,Broncos,Bulldogs,24,0,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-3/broncos-v-bulldogs/
+2021,3,SATURDAY 27TH MARCH,FULL TIME,,Eels,Sharks,28,4,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-3/eels-v-sharks/
+2021,3,SUNDAY 28TH MARCH,FULL TIME,,Knights,Wests Tigers,20,24,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-3/knights-v-wests-tigers/
+2021,3,SUNDAY 28TH MARCH,FULL TIME,,Cowboys,Titans,8,44,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-3/cowboys-v-titans/
+2021,4,THURSDAY 1ST APRIL,FULL TIME,,Sea Eagles,Panthers,6,46,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/sea-eagles-v-panthers/
+2021,4,FRIDAY 2ND APRIL,FULL TIME,,Bulldogs,Rabbitohs,0,38,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/bulldogs-v-rabbitohs/
+2021,4,FRIDAY 2ND APRIL,FULL TIME,,Storm,Broncos,40,6,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2021/round-4/storm-v-broncos/
+2021,4,SATURDAY 3RD APRIL,FULL TIME,,Sharks,Cowboys,48,10,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/sharks-v-cowboys/
+2021,4,SATURDAY 3RD APRIL,FULL TIME,,Titans,Raiders,4,20,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/titans-v-raiders/
+2021,4,SUNDAY 4TH APRIL,FULL TIME,,Knights,Dragons,13,22,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-4/knights-v-dragons/
+2021,4,SUNDAY 4TH APRIL,FULL TIME,,Roosters,Warriors,32,12,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/roosters-v-warriors/
+2021,4,MONDAY 5TH APRIL,FULL TIME,,Wests Tigers,Eels,22,36,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-4/wests-tigers-v-eels/
+2021,5,THURSDAY 8TH APRIL,FULL TIME,,Rabbitohs,Broncos,35,6,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-5/rabbitohs-v-broncos/
+2021,5,FRIDAY 9TH APRIL,FULL TIME,,Warriors,Sea Eagles,12,13,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-5/warriors-v-sea-eagles/
+2021,5,FRIDAY 9TH APRIL,FULL TIME,,Panthers,Raiders,30,10,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-5/panthers-v-raiders/
+2021,5,SATURDAY 10TH APRIL,FULL TIME,,Titans,Knights,42,16,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-5/titans-v-knights/
+2021,5,SATURDAY 10TH APRIL,FULL TIME,,Bulldogs,Storm,18,52,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-5/bulldogs-v-storm/
+2021,5,SATURDAY 10TH APRIL,FULL TIME,,Roosters,Sharks,26,18,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-5/roosters-v-sharks/
+2021,5,SUNDAY 11TH APRIL,FULL TIME,,Wests Tigers,Cowboys,30,34,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-5/wests-tigers-v-cowboys/
+2021,5,SUNDAY 11TH APRIL,FULL TIME,,Eels,Dragons,12,26,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-5/eels-v-dragons/
+2021,6,THURSDAY 15TH APRIL,FULL TIME,,Broncos,Panthers,12,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-6/broncos-v-panthers/
+2021,6,FRIDAY 16TH APRIL,FULL TIME,,Knights,Sharks,26,22,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-6/knights-v-sharks/
+2021,6,FRIDAY 16TH APRIL,FULL TIME,,Storm,Roosters,20,4,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2021/round-6/storm-v-roosters/
+2021,6,SATURDAY 17TH APRIL,FULL TIME,,Sea Eagles,Titans,36,0,"Glen Willow Oval, Mudgee",https://www.nrl.com/draw/nrl-premiership/2021/round-6/sea-eagles-v-titans/
+2021,6,SATURDAY 17TH APRIL,FULL TIME,,Rabbitohs,Wests Tigers,18,14,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-6/rabbitohs-v-wests-tigers/
+2021,6,SATURDAY 17TH APRIL,FULL TIME,,Raiders,Eels,10,35,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-6/raiders-v-eels/
+2021,6,SUNDAY 18TH APRIL,FULL TIME,,Dragons,Warriors,14,20,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-6/dragons-v-warriors/
+2021,6,SUNDAY 18TH APRIL,FULL TIME,,Cowboys,Bulldogs,30,18,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-6/cowboys-v-bulldogs/
+2021,7,THURSDAY 22ND APRIL,FULL TIME,,Panthers,Knights,24,6,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-7/panthers-v-knights/
+2021,7,FRIDAY 23RD APRIL,FULL TIME,,Titans,Rabbitohs,30,40,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-7/titans-v-rabbitohs/
+2021,7,FRIDAY 23RD APRIL,FULL TIME,,Eels,Broncos,46,6,"TIO Stadium, Darwin",https://www.nrl.com/draw/nrl-premiership/2021/round-7/eels-v-broncos/
+2021,7,SATURDAY 24TH APRIL,FULL TIME,,Sharks,Bulldogs,12,18,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-7/sharks-v-bulldogs/
+2021,7,SATURDAY 24TH APRIL,FULL TIME,,Cowboys,Raiders,26,24,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-7/cowboys-v-raiders/
+2021,7,SUNDAY 25TH APRIL,FULL TIME,,Wests Tigers,Sea Eagles,6,40,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-7/wests-tigers-v-sea-eagles/
+2021,7,SUNDAY 25TH APRIL,FULL TIME,,Roosters,Dragons,34,10,"Sydney Cricket Ground, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-7/roosters-v-dragons/
+2021,7,SUNDAY 25TH APRIL,FULL TIME,,Storm,Warriors,42,20,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2021/round-7/storm-v-warriors/
+2021,8,THURSDAY 29TH APRIL,FULL TIME,,Raiders,Rabbitohs,20,34,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-8/raiders-v-rabbitohs/
+2021,8,FRIDAY 30TH APRIL,FULL TIME,,Storm,Sharks,40,14,"AAMI Park, Melbourne",https://www.nrl.com/draw/nrl-premiership/2021/round-8/storm-v-sharks/
+2021,8,FRIDAY 30TH APRIL,FULL TIME,,Broncos,Titans,36,28,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-8/broncos-v-titans/
+2021,8,SATURDAY 1ST MAY,FULL TIME,,Panthers,Sea Eagles,28,16,"Carrington Park, Bathurst",https://www.nrl.com/draw/nrl-premiership/2021/round-8/panthers-v-sea-eagles/
+2021,8,SATURDAY 1ST MAY,FULL TIME,,Bulldogs,Eels,10,32,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-8/bulldogs-v-eels/
+2021,8,SATURDAY 1ST MAY,FULL TIME,,Knights,Roosters,4,38,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-8/knights-v-roosters/
+2021,8,SUNDAY 2ND MAY,FULL TIME,,Warriors,Cowboys,24,20,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-8/warriors-v-cowboys/
+2021,8,SUNDAY 2ND MAY,FULL TIME,,Dragons,Wests Tigers,8,16,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2021/round-8/dragons-v-wests-tigers/
+2021,9,THURSDAY 6TH MAY,FULL TIME,,Rabbitohs,Storm,0,50,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-9/rabbitohs-v-storm/
+2021,9,FRIDAY 7TH MAY,FULL TIME,,Panthers,Sharks,48,0,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-9/panthers-v-sharks/
+2021,9,FRIDAY 7TH MAY,FULL TIME,,Eels,Roosters,31,18,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-9/eels-v-roosters/
+2021,9,SATURDAY 8TH MAY,FULL TIME,,Raiders,Knights,16,24,"McDonalds Park, Wagga Wagga",https://www.nrl.com/draw/nrl-premiership/2021/round-9/raiders-v-knights/
+2021,9,SATURDAY 8TH MAY,FULL TIME,,Wests Tigers,Titans,28,36,"Campbelltown Sports Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-9/wests-tigers-v-titans/
+2021,9,SATURDAY 8TH MAY,FULL TIME,,Cowboys,Broncos,19,18,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-9/cowboys-v-broncos/
+2021,9,SUNDAY 9TH MAY,FULL TIME,,Sea Eagles,Warriors,38,32,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-9/sea-eagles-v-warriors/
+2021,9,SUNDAY 9TH MAY,FULL TIME,,Dragons,Bulldogs,32,12,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-9/dragons-v-bulldogs/
+2021,10,FRIDAY 14TH MAY,FULL TIME,,Wests Tigers,Knights,36,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/wests-tigers-v-knights/
+2021,10,FRIDAY 14TH MAY,FULL TIME,,Sea Eagles,Broncos,50,6,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/sea-eagles-v-broncos/
+2021,10,SATURDAY 15TH MAY,FULL TIME,,Bulldogs,Raiders,18,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/bulldogs-v-raiders/
+2021,10,SATURDAY 15TH MAY,FULL TIME,,Sharks,Rabbitohs,22,32,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/sharks-v-rabbitohs/
+2021,10,SATURDAY 15TH MAY,FULL TIME,,Roosters,Cowboys,30,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/roosters-v-cowboys/
+2021,10,SUNDAY 16TH MAY,FULL TIME,,Warriors,Eels,18,34,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/warriors-v-eels/
+2021,10,SUNDAY 16TH MAY,FULL TIME,,Storm,Dragons,44,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/storm-v-dragons/
+2021,10,SUNDAY 16TH MAY,FULL TIME,,Titans,Panthers,12,48,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-10/titans-v-panthers/
+2021,11,THURSDAY 20TH MAY,FULL TIME,,Cowboys,Knights,36,20,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-11/cowboys-v-knights/
+2021,11,FRIDAY 21ST MAY,FULL TIME,,Warriors,Wests Tigers,30,26,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-11/warriors-v-wests-tigers/
+2021,11,FRIDAY 21ST MAY,FULL TIME,,Sharks,Dragons,13,12,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-11/sharks-v-dragons/
+2021,11,SATURDAY 22ND MAY,FULL TIME,,Titans,Bulldogs,30,20,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-11/titans-v-bulldogs/
+2021,11,SATURDAY 22ND MAY,FULL TIME,,Roosters,Broncos,16,34,"Sydney Cricket Ground*, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-11/roosters-v-broncos/
+2021,11,SATURDAY 22ND MAY,FULL TIME,,Raiders,Storm,10,34,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-11/raiders-v-storm/
+2021,11,SUNDAY 23RD MAY,FULL TIME,,Rabbitohs,Panthers,12,56,"Apex Oval, Dubbo",https://www.nrl.com/draw/nrl-premiership/2021/round-11/rabbitohs-v-panthers/
+2021,11,SUNDAY 23RD MAY,FULL TIME,,Eels,Sea Eagles,6,28,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-11/eels-v-sea-eagles/
+2021,12,THURSDAY 27TH MAY,FULL TIME,,Broncos,Storm,12,40,"Suncorp Stadium, Brisbane Home of the Yuggera & Turrbal Peoples",https://www.nrl.com/draw/nrl-premiership/2021/round-12/broncos-v-storm/
+2021,12,FRIDAY 28TH MAY,FULL TIME,,Cowboys,Warriors,29,28,"Queensland Country Bank Stadium, Townsville Home of the Wulgurukaba Peoples",https://www.nrl.com/draw/nrl-premiership/2021/round-12/cowboys-v-warriors/
+2021,12,FRIDAY 28TH MAY,FULL TIME,,Wests Tigers,Dragons,34,18,"CommBank Stadium, Sydney Home of the Burramattagal People",https://www.nrl.com/draw/nrl-premiership/2021/round-12/wests-tigers-v-dragons/
+2021,12,SATURDAY 29TH MAY,FULL TIME,,Panthers,Bulldogs,30,4,"BlueBet Stadium, Penrith Home of the Dharug People",https://www.nrl.com/draw/nrl-premiership/2021/round-12/panthers-v-bulldogs/
+2021,12,SATURDAY 29TH MAY,FULL TIME,,Rabbitohs,Eels,38,20,"Accor Stadium, Sydney Home of the Burramattagal and Wann-gal Peoples",https://www.nrl.com/draw/nrl-premiership/2021/round-12/rabbitohs-v-eels/
+2021,12,SATURDAY 29TH MAY,FULL TIME,,Roosters,Raiders,44,16,"Industree Group Stadium, Gosford Home of the Darkinjung People",https://www.nrl.com/draw/nrl-premiership/2021/round-12/roosters-v-raiders/
+2021,12,SUNDAY 30TH MAY,FULL TIME,,Sharks,Titans,38,10,"C.ex Coffs International Stadium, Coffs Harbour Home of the Gumbaynggirr People",https://www.nrl.com/draw/nrl-premiership/2021/round-12/sharks-v-titans/
+2021,12,SUNDAY 30TH MAY,FULL TIME,,Knights,Sea Eagles,18,10,"McDonald Jones Stadium, Newcastle Home of the Awabakal People",https://www.nrl.com/draw/nrl-premiership/2021/round-12/knights-v-sea-eagles/
+2021,13,THURSDAY 3RD JUNE,FULL TIME,,Dragons,Broncos,52,24,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-13/dragons-v-broncos/
+2021,13,FRIDAY 4TH JUNE,FULL TIME,,Wests Tigers,Panthers,26,6,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-13/wests-tigers-v-panthers/
+2021,13,SATURDAY 5TH JUNE,FULL TIME,,Storm,Titans,20,14,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-13/storm-v-titans/
+2021,13,SUNDAY 6TH JUNE,FULL TIME,,Knights,Eels,4,40,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-13/knights-v-eels/
+2021,14,FRIDAY 11TH JUNE,FULL TIME,,Sea Eagles,Cowboys,50,18,"4 Pines Park, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-14/sea-eagles-v-cowboys/
+2021,14,FRIDAY 11TH JUNE,FULL TIME,,Sharks,Panthers,19,18,"Netstrata Jubilee Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-14/sharks-v-panthers/
+2021,14,SATURDAY 12TH JUNE,FULL TIME,,Titans,Roosters,34,35,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-14/titans-v-roosters/
+2021,14,SATURDAY 12TH JUNE,FULL TIME,,Rabbitohs,Knights,24,10,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-14/rabbitohs-v-knights/
+2021,14,SATURDAY 12TH JUNE,FULL TIME,,Raiders,Broncos,38,16,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-14/raiders-v-broncos/
+2021,14,SUNDAY 13TH JUNE,FULL TIME,,Warriors,Storm,16,42,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-14/warriors-v-storm/
+2021,14,SUNDAY 13TH JUNE,FULL TIME,,Eels,Wests Tigers,40,12,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-14/eels-v-wests-tigers/
+2021,14,MONDAY 14TH JUNE,FULL TIME,,Bulldogs,Dragons,28,6,"Accor Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-14/bulldogs-v-dragons/
+2021,15,THURSDAY 17TH JUNE,FULL TIME,,Broncos,Rabbitohs,0,46,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-15/broncos-v-rabbitohs/
+2021,15,FRIDAY 18TH JUNE,FULL TIME,,Cowboys,Sharks,24,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-15/cowboys-v-sharks/
+2021,15,FRIDAY 18TH JUNE,FULL TIME,,Panthers,Roosters,38,12,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-15/panthers-v-roosters/
+2021,15,SATURDAY 19TH JUNE,FULL TIME,,Knights,Warriors,10,6,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-15/knights-v-warriors/
+2021,15,SATURDAY 19TH JUNE,FULL TIME,,Dragons,Raiders,22,20,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2021/round-15/dragons-v-raiders/
+2021,15,SATURDAY 19TH JUNE,FULL TIME,,Storm,Wests Tigers,66,16,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-15/storm-v-wests-tigers/
+2021,15,SUNDAY 20TH JUNE,FULL TIME,,Eels,Bulldogs,36,10,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-15/eels-v-bulldogs/
+2021,15,SUNDAY 20TH JUNE,FULL TIME,,Titans,Sea Eagles,24,56,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-15/titans-v-sea-eagles/
+2021,16,THURSDAY 17TH JUNE,FULL TIME,,Broncos,Rabbitohs,0,46,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-15/broncos-v-rabbitohs/
+2021,16,FRIDAY 18TH JUNE,FULL TIME,,Cowboys,Sharks,24,26,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-15/cowboys-v-sharks/
+2021,16,FRIDAY 18TH JUNE,FULL TIME,,Panthers,Roosters,38,12,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-15/panthers-v-roosters/
+2021,16,SATURDAY 19TH JUNE,FULL TIME,,Knights,Warriors,10,6,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-15/knights-v-warriors/
+2021,16,SATURDAY 19TH JUNE,FULL TIME,,Dragons,Raiders,22,20,"WIN Stadium, Wollongong",https://www.nrl.com/draw/nrl-premiership/2021/round-15/dragons-v-raiders/
+2021,16,SATURDAY 19TH JUNE,FULL TIME,,Knights,Cowboys,38,0,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-15/storm-v-wests-tigers/
+2021,16,SUNDAY 4TH JULY,FULL TIME,,Broncos,Sharks,26,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-16/broncos-v-sharks/
+2021,16,SUNDAY 4TH JULY,FULL TIME,,Wests Tigers,Rabbitohs,22,38,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-16/wests-tigers-v-rabbitohs/
+2021,17,THURSDAY 1ST JULY,FULL TIME,,Roosters,Storm,0,46,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-16/roosters-v-storm/
+2021,17,FRIDAY 2ND JULY,FULL TIME,,Warriors,Dragons,18,19,"Industree Group Stadium, Gosford",https://www.nrl.com/draw/nrl-premiership/2021/round-16/warriors-v-dragons/
+2021,17,FRIDAY 2ND JULY,FULL TIME,,Panthers,Eels,13,12,"BlueBet Stadium, Penrith",https://www.nrl.com/draw/nrl-premiership/2021/round-16/panthers-v-eels/
+2021,17,SATURDAY 3RD JULY,FULL TIME,,Bulldogs,Sea Eagles,0,66,"CommBank Stadium, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-16/bulldogs-v-sea-eagles/
+2021,17,SATURDAY 3RD JULY,FULL TIME,,Raiders,Titans,6,44,"GIO Stadium, Canberra",https://www.nrl.com/draw/nrl-premiership/2021/round-16/raiders-v-titans/
+2021,17,SATURDAY 3RD JULY,FULL TIME,,Knights,Cowboys,38,0,"McDonald Jones Stadium, Newcastle",https://www.nrl.com/draw/nrl-premiership/2021/round-16/knights-v-cowboys/
+2021,17,SUNDAY 4TH JULY,FULL TIME,,Broncos,Sharks,26,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-16/broncos-v-sharks/
+2021,17,SUNDAY 4TH JULY,FULL TIME,,Wests Tigers,Rabbitohs,22,38,"Leichhardt Oval, Sydney",https://www.nrl.com/draw/nrl-premiership/2021/round-16/wests-tigers-v-rabbitohs/
+2021,18,THURSDAY 8TH JULY,FULL TIME,,Sea Eagles,Raiders,16,30,"4 Pines Park, Sydney Home of the Garigal People",https://www.nrl.com/draw/nrl-premiership/2021/round-17/sea-eagles-v-raiders/
+2021,18,FRIDAY 9TH JULY,FULL TIME,,Rabbitohs,Cowboys,46,18,"McDonald Jones Stadium, Newcastle Home of the Awabakal People",https://www.nrl.com/draw/nrl-premiership/2021/round-17/rabbitohs-v-cowboys/
+2021,18,SATURDAY 10TH JULY,FULL TIME,,Bulldogs,Roosters,16,22,"CommBank Stadium, Sydney Home of the Burramattagal People",https://www.nrl.com/draw/nrl-premiership/2021/round-17/bulldogs-v-roosters/
+2021,18,SUNDAY 11TH JULY,FULL TIME,,Sharks,Warriors,20,12,"Netstrata Jubilee Stadium, Sydney Home of the Bidjigal and Bediagal Peoples",https://www.nrl.com/draw/nrl-premiership/2021/round-17/sharks-v-warriors/
+2021,19,THURSDAY 22ND JULY,FULL TIME,,Eels,Raiders,10,12,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-19/eels-v-raiders/
+2021,19,FRIDAY 23RD JULY,FULL TIME,,Roosters,Knights,28,8,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-19/roosters-v-knights/
+2021,19,FRIDAY 23RD JULY,FULL TIME,,Cowboys,Storm,16,20,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-19/cowboys-v-storm/
+2021,19,SATURDAY 24TH JULY,FULL TIME,,Rabbitohs,Warriors,60,22,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-19/rabbitohs-v-warriors/
+2021,19,SATURDAY 24TH JULY,FULL TIME,,Sea Eagles,Wests Tigers,44,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-19/sea-eagles-v-wests-tigers/
+2021,19,SATURDAY 24TH JULY,FULL TIME,,Panthers,Broncos,18,12,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-19/panthers-v-broncos/
+2021,19,SUNDAY 25TH JULY,FULL TIME,,Dragons,Titans,10,32,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-19/dragons-v-titans/
+2021,19,SUNDAY 25TH JULY,FULL TIME,,Bulldogs,Sharks,24,44,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-19/bulldogs-v-sharks/
+2021,20,THURSDAY 29TH JULY,FULL TIME,,Roosters,Eels,28,0,"BB Print Stadium, Mackay",https://www.nrl.com/draw/nrl-premiership/2021/round-20/roosters-v-eels/
+2021,20,FRIDAY 30TH JULY,FULL TIME,,Wests Tigers,Warriors,16,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/wests-tigers-v-warriors/
+2021,20,FRIDAY 30TH JULY,FULL TIME,,Broncos,Cowboys,37,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/broncos-v-cowboys/
+2021,20,SUNDAY 1ST AUGUST,FULL TIME,,Knights,Raiders,34,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/knights-v-raiders/
+2021,20,SUNDAY 1ST AUGUST,FULL TIME,,Storm,Panthers,37,10,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/storm-v-panthers/
+2021,20,SUNDAY 1ST AUGUST,FULL TIME,,Dragons,Rabbitohs,14,50,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/dragons-v-rabbitohs/
+2021,20,MONDAY 2ND AUGUST,FULL TIME,,Bulldogs,Titans,6,34,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/bulldogs-v-titans/
+2021,20,MONDAY 2ND AUGUST,FULL TIME,,Sharks,Sea Eagles,22,40,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/sharks-v-sea-eagles/
+2021,21,THURSDAY 29TH JULY,FULL TIME,,Roosters,Eels,28,0,"BB Print Stadium, Mackay",https://www.nrl.com/draw/nrl-premiership/2021/round-20/roosters-v-eels/
+2021,21,FRIDAY 30TH JULY,FULL TIME,,Wests Tigers,Warriors,16,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/wests-tigers-v-warriors/
+2021,21,FRIDAY 30TH JULY,FULL TIME,,Broncos,Cowboys,37,18,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/broncos-v-cowboys/
+2021,21,SUNDAY 1ST AUGUST,FULL TIME,,Knights,Raiders,34,24,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/knights-v-raiders/
+2021,21,SUNDAY 1ST AUGUST,FULL TIME,,Storm,Panthers,37,10,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/storm-v-panthers/
+2021,21,SUNDAY 1ST AUGUST,FULL TIME,,Dragons,Rabbitohs,14,50,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/dragons-v-rabbitohs/
+2021,21,MONDAY 2ND AUGUST,FULL TIME,,Bulldogs,Titans,6,34,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/bulldogs-v-titans/
+2021,21,MONDAY 2ND AUGUST,FULL TIME,,Sharks,Sea Eagles,22,40,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-20/sharks-v-sea-eagles/
+2021,22,THURSDAY 5TH AUGUST,FULL TIME,,Knights,Broncos,28,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-21/knights-v-broncos/
+2021,22,FRIDAY 6TH AUGUST,FULL TIME,,Raiders,Dragons,20,12,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-21/raiders-v-dragons/
+2021,22,FRIDAY 6TH AUGUST,FULL TIME,,Eels,Rabbitohs,12,40,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-21/eels-v-rabbitohs/
+2021,22,SATURDAY 7TH AUGUST,FULL TIME,,Warriors,Sharks,18,16,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-21/warriors-v-sharks/
+2021,22,SATURDAY 7TH AUGUST,FULL TIME,,Roosters,Panthers,14,20,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-21/roosters-v-panthers/
+2021,22,SATURDAY 7TH AUGUST,FULL TIME,,Sea Eagles,Storm,18,28,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-21/sea-eagles-v-storm/
+2021,22,SUNDAY 8TH AUGUST,FULL TIME,,Bulldogs,Wests Tigers,16,28,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-21/bulldogs-v-wests-tigers/
+2021,22,SUNDAY 8TH AUGUST,FULL TIME,,Titans,Cowboys,36,14,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-21/titans-v-cowboys/
+2021,23,THURSDAY 19TH AUGUST,FULL TIME,,Titans,Storm,20,34,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-23/titans-v-storm/
+2021,23,FRIDAY 20TH AUGUST,FULL TIME,,Raiders,Sea Eagles,18,19,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-23/raiders-v-sea-eagles/
+2021,23,FRIDAY 20TH AUGUST,FULL TIME,,Panthers,Rabbitohs,25,12,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-23/panthers-v-rabbitohs/
+2021,23,SATURDAY 21ST AUGUST,FULL TIME,,Wests Tigers,Sharks,20,50,"Browne Park, Rockhampton",https://www.nrl.com/draw/nrl-premiership/2021/round-23/wests-tigers-v-sharks/
+2021,23,SATURDAY 21ST AUGUST,FULL TIME,,Bulldogs,Knights,16,22,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-23/bulldogs-v-knights/
+2021,23,SATURDAY 21ST AUGUST,FULL TIME,,Eels,Cowboys,32,16,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-23/eels-v-cowboys/
+2021,23,SUNDAY 22ND AUGUST,FULL TIME,,Dragons,Roosters,22,40,"Toowoomba Sports Ground, Toowoomba",https://www.nrl.com/draw/nrl-premiership/2021/round-23/dragons-v-roosters/
+2021,23,SUNDAY 22ND AUGUST,FULL TIME,,Broncos,Warriors,24,22,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-23/broncos-v-warriors/
+2021,24,THURSDAY 26TH AUGUST,FULL TIME,,Knights,Titans,15,14,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-24/knights-v-titans/
+2021,24,FRIDAY 27TH AUGUST,FULL TIME,,Warriors,Raiders,16,28,"BB Print Stadium, Mackay",https://www.nrl.com/draw/nrl-premiership/2021/round-24/warriors-v-raiders/
+2021,24,FRIDAY 27TH AUGUST,FULL TIME,,Roosters,Rabbitohs,12,54,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-24/roosters-v-rabbitohs/
+2021,24,SATURDAY 28TH AUGUST,FULL TIME,,Dragons,Cowboys,26,38,"Browne Park, Rockhampton",https://www.nrl.com/draw/nrl-premiership/2021/round-24/dragons-v-cowboys/
+2021,24,SATURDAY 28TH AUGUST,FULL TIME,,Sharks,Broncos,24,16,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-24/sharks-v-broncos/
+2021,24,SATURDAY 28TH AUGUST,FULL TIME,,Storm,Eels,10,22,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-24/storm-v-eels/
+2021,24,SUNDAY 29TH AUGUST,FULL TIME,,Sea Eagles,Bulldogs,36,18,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2021/round-24/sea-eagles-v-bulldogs/
+2021,24,SUNDAY 29TH AUGUST,FULL TIME,,Panthers,Wests Tigers,30,16,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2021/round-24/panthers-v-wests-tigers/
+2021,25,THURSDAY 2ND SEPTEMBER,FULL TIME,,Raiders,Roosters,16,40,"BB Print Stadium, Mackay",https://www.nrl.com/draw/nrl-premiership/2021/round-25/raiders-v-roosters/
+2021,25,FRIDAY 3RD SEPTEMBER,FULL TIME,,Sharks,Storm,16,28,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-25/sharks-v-storm/
+2021,25,FRIDAY 3RD SEPTEMBER,FULL TIME,,Eels,Panthers,6,40,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-25/eels-v-panthers/
+2021,25,SATURDAY 4TH SEPTEMBER,FULL TIME,,Broncos,Knights,35,22,"Suncorp Stadium, Brisbane",https://www.nrl.com/draw/nrl-premiership/2021/round-25/broncos-v-knights/
+2021,25,SATURDAY 4TH SEPTEMBER,FULL TIME,,Cowboys,Sea Eagles,18,46,"Queensland Country Bank Stadium, Townsville",https://www.nrl.com/draw/nrl-premiership/2021/round-25/cowboys-v-sea-eagles/
+2021,25,SATURDAY 4TH SEPTEMBER,FULL TIME,,Rabbitohs,Dragons,20,16,"Sunshine Coast Stadium, Sunshine Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-25/rabbitohs-v-dragons/
+2021,25,SUNDAY 5TH SEPTEMBER,FULL TIME,,Titans,Warriors,44,0,"Cbus Super Stadium, Gold Coast",https://www.nrl.com/draw/nrl-premiership/2021/round-25/titans-v-warriors/
+2021,25,SUNDAY 5TH SEPTEMBER,FULL TIME,,Wests Tigers,Bulldogs,0,38,"Kayo Stadium, Redcliffe",https://www.nrl.com/draw/nrl-premiership/2021/round-25/wests-tigers-v-bulldogs/
