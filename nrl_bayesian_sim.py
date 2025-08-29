@@ -386,8 +386,8 @@ if st.button("▶️ Run Simulation"):
                 pts[a_team] += 2
             else:
                 pts[h_team] += 1; pts[a_team] += 1
-            diffs[h_team] += max(0.0, margin)
-            diffs[a_team] -= max(0.0, margin)
+            diffs[h_team] += margin
+            diffs[a_team] -= margin
 
 
 
