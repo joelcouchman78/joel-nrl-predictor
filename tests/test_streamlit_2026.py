@@ -31,7 +31,7 @@ def test_2026_app_initial_render() -> None:
     )
 
     assert any(
-        "Rounds 1-13 complete"
+        "Rounds 1-14 complete"
         in caption.value
         for caption in app.caption
     )

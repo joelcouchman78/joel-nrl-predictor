@@ -31,7 +31,7 @@ def test_deployed_entrypoint_runs_2026_app() -> None:
     )
 
     assert any(
-        "Rounds 1-13 complete"
+        "Rounds 1-14 complete"
         in caption.value
         for caption in app.caption
     )

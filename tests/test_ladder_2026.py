@@ -57,8 +57,8 @@ def test_2026_input_contract() -> None:
         .value_counts()
         .to_dict()
         == {
-            "Upcoming": 104,
-            "Full Time": 100,
+            "Upcoming": 96,
+            "Full Time": 108,
         }
     )
 
@@ -76,10 +76,10 @@ def test_credited_bye_contract() -> None:
 
     credited = credited_byes(byes)
 
-    assert len(credited) == 21
+    assert len(credited) == 22
     assert int(
         credited["bye_points"].sum()
-    ) == 42
+    ) == 44
 
     credited_counts = (
         credited["team"]
@@ -94,7 +94,7 @@ def test_credited_bye_contract() -> None:
         "Sharks": 2,
         "Wests Tigers": 2,
         "Panthers": 1,
-        "Warriors": 1,
+        "Warriors": 2,
         "Knights": 1,
         "Sea Eagles": 1,
         "Broncos": 1,
@@ -106,7 +106,7 @@ def test_credited_bye_contract() -> None:
     }
 
 
-def test_round_13_ladder_snapshot() -> None:
+def test_round_14_ladder_snapshot() -> None:
     ladder = build_ladder_from_files(
         RESULTS_PATH,
         BYES_PATH,
@@ -116,19 +116,19 @@ def test_round_13_ladder_snapshot() -> None:
         "Panthers",
         "Warriors",
         "Roosters",
-        "Knights",
         "Sea Eagles",
-        "Rabbitohs",
         "Dolphins",
         "Sharks",
+        "Knights",
+        "Rabbitohs",
         "Cowboys",
         "Wests Tigers",
-        "Broncos",
-        "Raiders",
         "Storm",
+        "Broncos",
         "Bulldogs",
-        "Eels",
+        "Raiders",
         "Titans",
+        "Eels",
         "Dragons",
     ]
 
@@ -137,22 +137,22 @@ def test_round_13_ladder_snapshot() -> None:
     )
 
     expected_points = {
-        "Panthers": 24,
-        "Warriors": 20,
-        "Roosters": 18,
+        "Panthers": 26,
+        "Warriors": 22,
+        "Roosters": 20,
+        "Sea Eagles": 18,
+        "Dolphins": 18,
+        "Sharks": 18,
         "Knights": 18,
-        "Sea Eagles": 16,
         "Rabbitohs": 16,
-        "Dolphins": 16,
-        "Sharks": 16,
         "Cowboys": 16,
         "Wests Tigers": 16,
+        "Storm": 12,
         "Broncos": 12,
+        "Bulldogs": 12,
         "Raiders": 12,
-        "Storm": 10,
-        "Bulldogs": 10,
+        "Titans": 10,
         "Eels": 10,
-        "Titans": 8,
         "Dragons": 4,
     }
 
@@ -165,7 +165,7 @@ def test_round_13_ladder_snapshot() -> None:
 
     assert actual_points == expected_points
 
-    assert int(ladder["GP"].sum()) == 200
+    assert int(ladder["GP"].sum()) == 216
     assert int(ladder["PF"].sum()) == int(
         ladder["PA"].sum()
     )
