@@ -57,8 +57,8 @@ def test_2026_input_contract() -> None:
         .value_counts()
         .to_dict()
         == {
-            "Upcoming": 96,
-            "Full Time": 108,
+            "Upcoming": 95,
+            "Full Time": 109,
         }
     )
 
@@ -106,7 +106,7 @@ def test_credited_bye_contract() -> None:
     }
 
 
-def test_round_14_ladder_snapshot() -> None:
+def test_round_15_partial_ladder_snapshot() -> None:
     ladder = build_ladder_from_files(
         RESULTS_PATH,
         BYES_PATH,
@@ -115,9 +115,9 @@ def test_round_14_ladder_snapshot() -> None:
     expected_order = [
         "Panthers",
         "Warriors",
+        "Dolphins",
         "Roosters",
         "Sea Eagles",
-        "Dolphins",
         "Sharks",
         "Knights",
         "Rabbitohs",
@@ -141,7 +141,7 @@ def test_round_14_ladder_snapshot() -> None:
         "Warriors": 22,
         "Roosters": 20,
         "Sea Eagles": 18,
-        "Dolphins": 18,
+        "Dolphins": 20,
         "Sharks": 18,
         "Knights": 18,
         "Rabbitohs": 16,
@@ -165,7 +165,7 @@ def test_round_14_ladder_snapshot() -> None:
 
     assert actual_points == expected_points
 
-    assert int(ladder["GP"].sum()) == 216
+    assert int(ladder["GP"].sum()) == 218
     assert int(ladder["PF"].sum()) == int(
         ladder["PA"].sum()
     )

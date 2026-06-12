@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "generated_at_australia_sydney": "2026-06-09T13:04:24.340953+10:00",
+  "generated_at_australia_sydney": "2026-06-13T07:35:54.668816+10:00",
   "data_cutoff": "Rounds 1-14 complete",
   "completed_rounds": [
     1,
@@ -18,17 +18,19 @@
     13,
     14
   ],
-  "partial_rounds": [],
+  "partial_rounds": [
+    15
+  ],
   "fixture_count": 204,
-  "completed_match_count": 108,
-  "remaining_fixture_count": 96,
+  "completed_match_count": 109,
+  "remaining_fixture_count": 95,
   "team_count": 17,
   "bye_row_count": 51,
   "database_path": "/Users/joelcouchman/total_nrl_scraper/data/smoke/season_2026_r1_r13/nrl.db",
-  "database_sha256": "1d1ba457c11ae233660c7588bb70552b9b839a864d34bdbca93a299b68e10d94",
+  "database_sha256": "ef307f6a8ef67c52b816201d78128c187b6e59e8044a6495fd93183ce5c8f8e2",
   "fixture_path": "/Users/joelcouchman/total_nrl_scraper/data/fixtures/nrl_2026_regular_season.csv",
   "fixture_sha256": "8a82b56d128d95c794b5310f1d8956f3834f3cb5ae09867d9f3c86b67e468791",
-  "scraper_git_commit": "e3db98f1622bee5d875f10d3b978105c54e523a9",
+  "scraper_git_commit": "6c7fcdeb39c938ffd1b685283860f94b9ca14c29",
   "outputs": {
     "results_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_results.csv",
     "byes_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_byes.csv"

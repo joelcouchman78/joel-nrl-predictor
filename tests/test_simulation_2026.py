@@ -64,7 +64,7 @@ def test_future_schedule_contract() -> None:
         byes
     )
 
-    assert len(fixtures) == 96
+    assert len(fixtures) == 95
     assert sum(
         future_byes.values()
     ) == 29
@@ -352,7 +352,7 @@ def test_position_distribution_occupancy() -> None:
         seed=67890,
     )
 
-    assert result.fixture_count == 96
+    assert result.fixture_count == 95
     assert result.simulation_count == (
         simulations
     )

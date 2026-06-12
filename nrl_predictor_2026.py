@@ -339,6 +339,32 @@ data_cutoff = metadata.get(
     "Unknown cutoff",
 )
 
+partial_rounds = [
+    int(value)
+    for value in metadata.get(
+        "partial_rounds",
+        [],
+    )
+]
+
+if partial_rounds:
+    partial_label = (
+        "Round"
+        if len(partial_rounds) == 1
+        else "Rounds"
+    )
+
+    partial_numbers = ", ".join(
+        str(value)
+        for value in partial_rounds
+    )
+
+    data_cutoff = (
+        f"{data_cutoff}; "
+        f"{partial_label} "
+        f"{partial_numbers} partial"
+    )
+
 st.caption(
     f"Data cutoff: {data_cutoff}"
 )
