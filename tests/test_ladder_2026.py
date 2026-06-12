@@ -57,8 +57,8 @@ def test_2026_input_contract() -> None:
         .value_counts()
         .to_dict()
         == {
-            "Upcoming": 95,
-            "Full Time": 109,
+            "Upcoming": 94,
+            "Full Time": 110,
         }
     )
 
@@ -118,15 +118,15 @@ def test_round_15_partial_ladder_snapshot() -> None:
         "Dolphins",
         "Roosters",
         "Sea Eagles",
+        "Rabbitohs",
         "Sharks",
         "Knights",
-        "Rabbitohs",
         "Cowboys",
         "Wests Tigers",
         "Storm",
-        "Broncos",
         "Bulldogs",
         "Raiders",
+        "Broncos",
         "Titans",
         "Eels",
         "Dragons",
@@ -144,7 +144,7 @@ def test_round_15_partial_ladder_snapshot() -> None:
         "Dolphins": 20,
         "Sharks": 18,
         "Knights": 18,
-        "Rabbitohs": 16,
+        "Rabbitohs": 18,
         "Cowboys": 16,
         "Wests Tigers": 16,
         "Storm": 12,
@@ -165,7 +165,7 @@ def test_round_15_partial_ladder_snapshot() -> None:
 
     assert actual_points == expected_points
 
-    assert int(ladder["GP"].sum()) == 218
+    assert int(ladder["GP"].sum()) == 220
     assert int(ladder["PF"].sum()) == int(
         ladder["PA"].sum()
     )
