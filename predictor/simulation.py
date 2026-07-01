@@ -37,9 +37,9 @@ class TeamPrior:
 
 @dataclass(frozen=True)
 class SimulationParameters:
-    home_advantage: float = 0.3
+    home_advantage: float = 0.1
     alpha: float = 10.0
-    margin_sigma: float = 12.0
+    margin_sigma: float = 16.0
     total_sigma: float | None = None
     strength_adjustment_scale: float = 1.5
 

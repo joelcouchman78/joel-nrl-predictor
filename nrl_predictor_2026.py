@@ -57,6 +57,27 @@ META_PATH = (
 )
 
 
+DEFAULT_STRENGTH_RATINGS = {
+    "Broncos": 4.0,
+    "Bulldogs": 5.5,
+    "Cowboys": 5.5,
+    "Dolphins": 6.0,
+    "Dragons": 5.5,
+    "Eels": 5.0,
+    "Knights": 4.5,
+    "Panthers": 4.5,
+    "Rabbitohs": 5.5,
+    "Raiders": 4.5,
+    "Roosters": 5.0,
+    "Sea Eagles": 5.5,
+    "Sharks": 5.0,
+    "Storm": 5.0,
+    "Titans": 5.0,
+    "Warriors": 5.0,
+    "Wests Tigers": 3.5,
+}
+
+
 @st.cache_data(show_spinner=False)
 def load_app_inputs(
     results_path: str,
@@ -375,13 +396,13 @@ st.markdown(
     "the remaining regular-season fixtures."
 )
 
-st.warning(
-    "This is a provisional baseline model. "
-    "It uses current differential per game, "
-    "user ratings, home advantage and "
-    "match-level randomness. Model calibration "
-    "and the exact tertiary NRL ladder "
-    "countback remain to be finalised."
+st.info(
+    "The default controls are calibrated through "
+    "Round 17. Differential per game supplies the "
+    "season baseline, while the team-strength "
+    "presets apply six-round current-form "
+    "corrections. The app remains an approximation "
+    "of the full Bayesian model."
 )
 
 metric_columns = st.columns(4)
@@ -456,8 +477,12 @@ simulation_count = st.sidebar.slider(
     "Number of simulations",
     min_value=500,
     max_value=50000,
-    value=2000,
+    value=20000,
     step=500,
+    help=(
+        "Use 20,000 for routine analysis and "
+        "50,000 for published probabilities."
+    ),
     key="simulation_count",
 )
 
@@ -474,8 +499,13 @@ home_advantage = st.sidebar.slider(
     "Home advantage",
     min_value=0.0,
     max_value=1.0,
-    value=0.3,
+    value=0.1,
     step=0.05,
+    help=(
+        "At strength-to-margin scale 10, "
+        "0.1 contributes approximately one "
+        "margin point to the listed home team."
+    ),
     key="home_advantage",
 )
 
@@ -492,8 +522,13 @@ margin_sigma = st.sidebar.slider(
     "Match randomness",
     min_value=6.0,
     max_value=20.0,
-    value=12.0,
+    value=16.0,
     step=0.5,
+    help=(
+        "Independent match-to-match margin noise. "
+        "Persistent team-strength uncertainty is "
+        "handled separately by variability."
+    ),
     key="margin_sigma",
 )
 
@@ -502,10 +537,11 @@ st.sidebar.header(
 )
 
 st.sidebar.caption(
-    "Strength changes expected performance. "
-    "Variability changes how widely a team's "
-    "sampled performance moves between "
-    "simulated seasons. Five is neutral."
+    "Strength presets apply the Round 17 "
+    "six-round current-form correction to the "
+    "differential-per-game baseline. Variability "
+    "represents uncertainty about persistent team "
+    "strength; zero is the calibrated minimum."
 )
 
 strength_ratings = {}
@@ -520,11 +556,16 @@ for team in EXPECTED_TEAMS:
             team
         ] = st.slider(
             f"{team} strength",
-            min_value=0,
-            max_value=10,
-            value=5,
-            step=1,
-            key=f"strength_{team}",
+            min_value=0.0,
+            max_value=10.0,
+            value=float(
+                DEFAULT_STRENGTH_RATINGS[
+                    team
+                ]
+            ),
+            step=0.5,
+            format="%.1f",
+            key=f"strength_r17_{team}",
         )
 
         variability_ratings[
@@ -533,9 +574,14 @@ for team in EXPECTED_TEAMS:
             f"{team} variability",
             min_value=0,
             max_value=10,
-            value=5,
+            value=0,
             step=1,
-            key=f"variability_{team}",
+            help=(
+                "Persistent season-long strength "
+                "uncertainty, not match-to-match "
+                "volatility."
+            ),
+            key=f"variability_r17_{team}",
         )
 
 run_requested = st.sidebar.button(
