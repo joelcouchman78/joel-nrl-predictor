@@ -21,17 +21,17 @@ season,round,team,credited,bye_points
 2026,13,Rabbitohs,True,2
 2026,13,Titans,True,2
 2026,14,Warriors,True,2
-2026,15,Bulldogs,False,0
-2026,15,Cowboys,False,0
-2026,15,Dragons,False,0
-2026,15,Knights,False,0
-2026,15,Panthers,False,0
-2026,15,Sea Eagles,False,0
-2026,15,Storm,False,0
-2026,16,Broncos,False,0
-2026,16,Eels,False,0
-2026,16,Rabbitohs,False,0
-2026,17,Sharks,False,0
+2026,15,Bulldogs,True,2
+2026,15,Cowboys,True,2
+2026,15,Dragons,True,2
+2026,15,Knights,True,2
+2026,15,Panthers,True,2
+2026,15,Sea Eagles,True,2
+2026,15,Storm,True,2
+2026,16,Broncos,True,2
+2026,16,Eels,True,2
+2026,16,Rabbitohs,True,2
+2026,17,Sharks,True,2
 2026,18,Bulldogs,False,0
 2026,18,Cowboys,False,0
 2026,18,Raiders,False,0

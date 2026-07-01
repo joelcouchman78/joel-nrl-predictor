@@ -109,24 +109,24 @@ season,round,date_header,status,kickoff_local,home_team,away_team,home_score,awa
 2026,14,2026-06-08,Full Time,2026-06-08,Bulldogs,Eels,14,12,Accor Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-14/bulldogs-v-eels/
 2026,15,2026-06-11,Full Time,2026-06-11,Rabbitohs,Broncos,48,6,Accor Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/rabbitohs-v-broncos/
 2026,15,2026-06-12,Full Time,2026-06-12,Dolphins,Roosters,48,10,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/dolphins-v-roosters/
-2026,15,2026-06-13,Upcoming,2026-06-13,Warriors,Sharks,,,Go Media Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/warriors-v-sharks/
-2026,15,2026-06-13,Upcoming,2026-06-13,Eels,Raiders,,,CommBank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/eels-v-raiders/
-2026,15,2026-06-14,Upcoming,2026-06-14,Wests Tigers,Titans,,,Leichhardt Oval,https://www.nrl.com/draw/nrl-premiership/2026/round-15/wests-tigers-v-titans/
-2026,16,2026-06-19,Upcoming,2026-06-19,Knights,Dragons,,,McDonald Jones Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/knights-v-dragons/
-2026,16,2026-06-20,Upcoming,2026-06-20,Wests Tigers,Dolphins,,,Campbelltown Sports Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/wests-tigers-v-dolphins/
-2026,16,2026-06-20,Upcoming,2026-06-20,Titans,Panthers,,,Cbus Super Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/titans-v-panthers/
-2026,16,2026-06-20,Upcoming,2026-06-20,Bulldogs,Sea Eagles,,,Accor Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/bulldogs-v-sea-eagles/
-2026,16,2026-06-21,Upcoming,2026-06-21,Warriors,Cowboys,,,One NZ Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/warriors-v-cowboys/
-2026,16,2026-06-21,Upcoming,2026-06-21,Storm,Raiders,,,AAMI Park,https://www.nrl.com/draw/nrl-premiership/2026/round-16/storm-v-raiders/
-2026,16,2026-06-21,Upcoming,2026-06-21,Roosters,Sharks,,,Allianz Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/roosters-v-sharks/
-2026,17,2026-06-25,Upcoming,2026-06-25,Eels,Rabbitohs,,,CommBank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/eels-v-rabbitohs/
-2026,17,2026-06-26,Upcoming,2026-06-26,Titans,Bulldogs,,,Cbus Super Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/titans-v-bulldogs/
-2026,17,2026-06-26,Upcoming,2026-06-26,Broncos,Roosters,,,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/broncos-v-roosters/
-2026,17,2026-06-27,Upcoming,2026-06-27,Dolphins,Warriors,,,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/dolphins-v-warriors/
-2026,17,2026-06-27,Upcoming,2026-06-27,Cowboys,Panthers,,,Queensland Country Bank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/cowboys-v-panthers/
-2026,17,2026-06-27,Upcoming,2026-06-27,Sea Eagles,Storm,,,4 Pines Park,https://www.nrl.com/draw/nrl-premiership/2026/round-17/sea-eagles-v-storm/
-2026,17,2026-06-28,Upcoming,2026-06-28,Raiders,Dragons,,,GIO Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/raiders-v-dragons/
-2026,17,2026-06-28,Upcoming,2026-06-28,Knights,Wests Tigers,,,McDonald Jones Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/knights-v-wests-tigers/
+2026,15,2026-06-13,Full Time,2026-06-13,Warriors,Sharks,8,10,Go Media Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/warriors-v-sharks/
+2026,15,2026-06-13,Full Time,2026-06-13,Eels,Raiders,15,12,CommBank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-15/eels-v-raiders/
+2026,15,2026-06-14,Full Time,2026-06-14,Wests Tigers,Titans,36,28,Leichhardt Oval,https://www.nrl.com/draw/nrl-premiership/2026/round-15/wests-tigers-v-titans/
+2026,16,2026-06-19,Full Time,2026-06-19,Knights,Dragons,22,20,McDonald Jones Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/knights-v-dragons/
+2026,16,2026-06-20,Full Time,2026-06-20,Wests Tigers,Dolphins,22,36,Campbelltown Sports Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/wests-tigers-v-dolphins/
+2026,16,2026-06-20,Full Time,2026-06-20,Titans,Panthers,19,18,Cbus Super Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/titans-v-panthers/
+2026,16,2026-06-20,Full Time,2026-06-20,Bulldogs,Sea Eagles,13,12,Accor Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/bulldogs-v-sea-eagles/
+2026,16,2026-06-21,Full Time,2026-06-21,Warriors,Cowboys,38,20,One NZ Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/warriors-v-cowboys/
+2026,16,2026-06-21,Full Time,2026-06-21,Storm,Raiders,42,20,AAMI Park,https://www.nrl.com/draw/nrl-premiership/2026/round-16/storm-v-raiders/
+2026,16,2026-06-21,Full Time,2026-06-21,Roosters,Sharks,27,8,Allianz Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-16/roosters-v-sharks/
+2026,17,2026-06-25,Full Time,2026-06-25,Eels,Rabbitohs,12,32,CommBank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/eels-v-rabbitohs/
+2026,17,2026-06-26,Full Time,2026-06-26,Titans,Bulldogs,12,30,Cbus Super Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/titans-v-bulldogs/
+2026,17,2026-06-26,Full Time,2026-06-26,Broncos,Roosters,18,24,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/broncos-v-roosters/
+2026,17,2026-06-27,Full Time,2026-06-27,Dolphins,Warriors,26,24,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/dolphins-v-warriors/
+2026,17,2026-06-27,Full Time,2026-06-27,Cowboys,Panthers,26,12,Queensland Country Bank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/cowboys-v-panthers/
+2026,17,2026-06-27,Full Time,2026-06-27,Sea Eagles,Storm,30,4,4 Pines Park,https://www.nrl.com/draw/nrl-premiership/2026/round-17/sea-eagles-v-storm/
+2026,17,2026-06-28,Full Time,2026-06-28,Raiders,Dragons,24,16,GIO Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/raiders-v-dragons/
+2026,17,2026-06-28,Full Time,2026-06-28,Knights,Wests Tigers,12,6,McDonald Jones Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-17/knights-v-wests-tigers/
 2026,18,2026-07-03,Upcoming,2026-07-03,Panthers,Rabbitohs,,,CommBank Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-18/panthers-v-rabbitohs/
 2026,18,2026-07-04,Upcoming,2026-07-04,Dragons,Wests Tigers,,,St George Venues Jubilee Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-18/dragons-v-wests-tigers/
 2026,18,2026-07-04,Upcoming,2026-07-04,Broncos,Sharks,,,Suncorp Stadium,https://www.nrl.com/draw/nrl-premiership/2026/round-18/broncos-v-sharks/
