@@ -62,12 +62,12 @@ DEFAULT_STRENGTH_RATINGS = {
     "Bulldogs": 5.5,
     "Cowboys": 5.5,
     "Dolphins": 6.0,
-    "Dragons": 5.5,
-    "Eels": 5.0,
+    "Dragons": 6.0,
+    "Eels": 5.5,
     "Knights": 4.5,
     "Panthers": 4.5,
-    "Rabbitohs": 5.5,
-    "Raiders": 4.5,
+    "Rabbitohs": 5.0,
+    "Raiders": 5.0,
     "Roosters": 5.0,
     "Sea Eagles": 5.5,
     "Sharks": 5.0,
@@ -397,10 +397,11 @@ st.markdown(
 )
 
 st.info(
-    "The default controls are calibrated through "
-    "Round 17. Differential per game supplies the "
-    "season baseline, while the team-strength "
-    "presets apply six-round current-form "
+    "The default controls are calibrated from "
+    "131 completed 2026 matches, through "
+    "Round 18 partial. Differential per game "
+    "supplies the season baseline, while the "
+    "team-strength presets apply six-round current-form "
     "corrections. The app remains an approximation "
     "of the full Bayesian model."
 )
@@ -522,7 +523,7 @@ margin_sigma = st.sidebar.slider(
     "Match randomness",
     min_value=6.0,
     max_value=20.0,
-    value=16.0,
+    value=11.0,
     step=0.5,
     help=(
         "Independent match-to-match margin noise. "
