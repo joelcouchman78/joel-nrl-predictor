@@ -20,9 +20,11 @@
   "recommended_app_settings": {
     "alpha": 10.0,
     "home_advantage": 0.1,
-    "match_randomness": 11.0,
+    "match_randomness": 16.0,
+    "match_randomness_override_reason": "The weighted six-round likelihood sigma was useful for estimating current-strength shifts, but it is not the same quantity as the app's future-match randomness control. The app retains match randomness 16.0 so that total predictive margin dispersion stays near 17.5 points when team variability is zero.",
     "published_probability_runs": 50000,
     "random_seed": 20260701,
+    "raw_weighted_half_life_sigma": 11.0,
     "simulation_count": 20000,
     "strength_slider_step": 0.5,
     "team_strengths": {
@@ -64,7 +66,7 @@
       "Warriors": 0,
       "Wests Tigers": 0
     },
-    "total_margin_sd_at_defaults": 13.076696830622021
+    "total_margin_sd_at_defaults": 17.4928556845359
   },
   "round_counts": {
     "1": 8,

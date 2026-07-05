@@ -523,7 +523,7 @@ margin_sigma = st.sidebar.slider(
     "Match randomness",
     min_value=6.0,
     max_value=20.0,
-    value=11.0,
+    value=16.0,
     step=0.5,
     help=(
         "Independent match-to-match margin noise. "

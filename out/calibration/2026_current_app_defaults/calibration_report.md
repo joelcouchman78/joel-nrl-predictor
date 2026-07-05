@@ -13,9 +13,22 @@ Maximum round represented: **18**
 | Published probability runs | 50,000 |
 | Home advantage | 0.1 |
 | Strength-to-margin scale | 10.0 |
-| Match randomness | 11.0 |
+| Match randomness | 16.0 |
 | Team variability | 0 for every team |
 | Strength slider step | 0.5 |
+
+
+## Match-randomness override
+
+The fitted weighted six-round model produced a raw sigma of approximately 11.0. That value was not used as the app's future-match randomness setting, because the weighted likelihood sigma is not the same quantity as independent future match noise in the app.
+
+The app uses **match randomness = 16.0** with team variability set to zero. Since the app still supplies 5 margin points of persistent uncertainty for each team at variability zero, this gives total margin dispersion:
+
+```text
+sqrt(16^2 + 5^2 + 5^2) ≈ 17.49
+```
+
+This preserves the updated current-form team sliders while avoiding unrealistically narrow simulations.
 
 ## Team strength sliders
 
