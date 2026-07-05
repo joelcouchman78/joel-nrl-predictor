@@ -1,52 +1,52 @@
 season,round,team,credited,bye_points
-2026,1,Wests Tigers,True,2
-2026,2,Bulldogs,True,2
-2026,3,Sea Eagles,True,2
-2026,4,Rabbitohs,True,2
-2026,5,Roosters,True,2
-2026,6,Dolphins,True,2
-2026,7,Sharks,True,2
-2026,8,Titans,True,2
-2026,9,Dragons,True,2
-2026,10,Warriors,True,2
-2026,11,Raiders,True,2
-2026,12,Broncos,True,2
-2026,12,Eels,True,2
-2026,12,Knights,True,2
-2026,12,Panthers,True,2
-2026,12,Roosters,True,2
-2026,12,Sharks,True,2
-2026,12,Wests Tigers,True,2
-2026,13,Dolphins,True,2
-2026,13,Rabbitohs,True,2
-2026,13,Titans,True,2
-2026,14,Warriors,True,2
-2026,15,Bulldogs,True,2
-2026,15,Cowboys,True,2
-2026,15,Dragons,True,2
-2026,15,Knights,True,2
-2026,15,Panthers,True,2
-2026,15,Sea Eagles,True,2
-2026,15,Storm,True,2
-2026,16,Broncos,True,2
-2026,16,Eels,True,2
-2026,16,Rabbitohs,True,2
-2026,17,Sharks,True,2
-2026,18,Bulldogs,False,0
-2026,18,Cowboys,False,0
-2026,18,Raiders,False,0
-2026,18,Roosters,False,0
-2026,18,Storm,False,0
-2026,18,Titans,False,0
-2026,18,Warriors,False,0
-2026,19,Broncos,False,0
-2026,19,Dragons,False,0
-2026,19,Panthers,False,0
-2026,20,Eels,False,0
-2026,21,Dolphins,False,0
-2026,22,Sea Eagles,False,0
-2026,23,Wests Tigers,False,0
-2026,24,Storm,False,0
-2026,25,Cowboys,False,0
-2026,26,Raiders,False,0
-2026,27,Knights,False,0
+2026,1,Wests Tigers,true,2
+2026,2,Bulldogs,true,2
+2026,3,Sea Eagles,true,2
+2026,4,Rabbitohs,true,2
+2026,5,Roosters,true,2
+2026,6,Dolphins,true,2
+2026,7,Sharks,true,2
+2026,8,Titans,true,2
+2026,9,Dragons,true,2
+2026,10,Warriors,true,2
+2026,11,Raiders,true,2
+2026,12,Broncos,true,2
+2026,12,Eels,true,2
+2026,12,Knights,true,2
+2026,12,Panthers,true,2
+2026,12,Roosters,true,2
+2026,12,Sharks,true,2
+2026,12,Wests Tigers,true,2
+2026,13,Dolphins,true,2
+2026,13,Rabbitohs,true,2
+2026,13,Titans,true,2
+2026,14,Warriors,true,2
+2026,15,Bulldogs,true,2
+2026,15,Cowboys,true,2
+2026,15,Dragons,true,2
+2026,15,Knights,true,2
+2026,15,Panthers,true,2
+2026,15,Sea Eagles,true,2
+2026,15,Storm,true,2
+2026,16,Broncos,true,2
+2026,16,Eels,true,2
+2026,16,Rabbitohs,true,2
+2026,17,Sharks,true,2
+2026,18,Bulldogs,true,0
+2026,18,Cowboys,true,0
+2026,18,Raiders,true,0
+2026,18,Roosters,true,0
+2026,18,Storm,true,0
+2026,18,Titans,true,0
+2026,18,Warriors,true,0
+2026,19,Broncos,false,0
+2026,19,Dragons,false,0
+2026,19,Panthers,false,0
+2026,20,Eels,false,0
+2026,21,Dolphins,false,0
+2026,22,Sea Eagles,false,0
+2026,23,Wests Tigers,false,0
+2026,24,Storm,false,0
+2026,25,Cowboys,false,0
+2026,26,Raiders,false,0
+2026,27,Knights,false,0

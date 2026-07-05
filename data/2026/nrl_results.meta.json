@@ -1,7 +1,25 @@
 {
-  "season": 2026,
-  "generated_at_australia_sydney": "2026-07-01T14:52:49.571773+10:00",
-  "data_cutoff": "Rounds 1-17 complete",
+  "bye_row_count": 51,
+  "complete_rounds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "completed_match_count": 131,
   "completed_rounds": [
     1,
     2,
@@ -21,19 +39,27 @@
     16,
     17
   ],
-  "partial_rounds": [],
-  "fixture_count": 204,
-  "completed_match_count": 128,
-  "remaining_fixture_count": 76,
-  "team_count": 17,
-  "bye_row_count": 51,
+  "credited_bye_count": 40,
+  "data_cutoff": "Rounds 1-17 complete",
+  "database_completed_match_count": 131,
   "database_path": "/Users/joelcouchman/total_nrl_scraper/data/smoke/season_2026_r1_r13/nrl.db",
   "database_sha256": "0c7c4d54ccf011b34aa10442871c579c54dff31c263a5d6ff255ff157d5ff156",
+  "export_method": "merge current SQLite completed matches onto predictor fixture schedule",
+  "fixture_count": 204,
   "fixture_path": "/Users/joelcouchman/total_nrl_scraper/data/fixtures/nrl_2026_regular_season.csv",
   "fixture_sha256": "8a82b56d128d95c794b5310f1d8956f3834f3cb5ae09867d9f3c86b67e468791",
-  "scraper_git_commit": "8dc198afe2673af4ede8cd82037891209c9d3493",
+  "generated_at_australia_sydney": "2026-07-05T13:34:09.929259+10:00",
+  "last_complete_round": 17,
   "outputs": {
-    "results_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_results.csv",
-    "byes_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_byes.csv"
-  }
+    "byes_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_byes.csv",
+    "results_csv": "/Users/joelcouchman/total_nrl_scraper/data/derived/predictor_2026/nrl_results.csv"
+  },
+  "partial_rounds": [
+    18
+  ],
+  "remaining_fixture_count": 73,
+  "scraper_git_commit": "8dc198afe2673af4ede8cd82037891209c9d3493",
+  "season": 2026,
+  "team_count": 17,
+  "upstream_scraper_commit": "8dc198afe2673af4ede8cd82037891209c9d3493"
 }
