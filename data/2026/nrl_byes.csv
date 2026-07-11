@@ -39,9 +39,9 @@ season,round,team,credited,bye_points
 2026,18,Storm,true,0
 2026,18,Titans,true,0
 2026,18,Warriors,true,0
-2026,19,Broncos,false,0
-2026,19,Dragons,false,0
-2026,19,Panthers,false,0
+2026,19,Broncos,true,0
+2026,19,Dragons,true,0
+2026,19,Panthers,true,0
 2026,20,Eels,false,0
 2026,21,Dolphins,false,0
 2026,22,Sea Eagles,false,0
