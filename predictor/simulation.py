@@ -218,6 +218,62 @@ def build_team_priors(
 
     return priors
 
+def build_point_team_priors(
+    team_strength_points: Mapping[str, float],
+    team_strength_sd_points: Mapping[str, float] | None = None,
+    teams: Iterable[str] = EXPECTED_TEAMS,
+    default_sd_points: float = 4.5,
+) -> dict[str, TeamPrior]:
+    """Build priors whose units are already margin points.
+
+    This is the preferred path for the Bayesian 2026 model. The old
+    build_team_priors path derives a latent baseline from differential
+    per game and then uses 0-10 sliders as latent adjustments. In point
+    mode the fitted model supplies team means directly in expected margin
+    points, and the Streamlit sliders supply optional user adjustments in
+    the same units.
+    """
+
+    team_list = list(teams)
+    missing = sorted(set(team_list) - set(team_strength_points))
+    if missing:
+        raise ValueError(
+            "Point-based team strengths are missing teams: "
+            f"{missing}"
+        )
+
+    priors: dict[str, TeamPrior] = {}
+    for team in team_list:
+        mean = float(team_strength_points[team])
+        if team_strength_sd_points is None:
+            std = float(default_sd_points)
+        else:
+            std = float(
+                team_strength_sd_points.get(
+                    team,
+                    default_sd_points,
+                )
+            )
+
+        if not np.isfinite(mean):
+            raise ValueError(
+                f"Point-based strength for {team} is not finite: {mean}"
+            )
+        if not np.isfinite(std) or std <= 0.0:
+            raise ValueError(
+                f"Point-based strength SD for {team} must be positive, "
+                f"found {std}"
+            )
+
+        priors[str(team)] = TeamPrior(
+            mean=mean,
+            std=std,
+            differential_per_game=float("nan"),
+        )
+
+    return priors
+
+
 
 def estimate_total_points(results: pd.DataFrame) -> tuple[float, float]:
     completed = completed_results(results)
@@ -449,6 +505,8 @@ def run_simulations(
     simulation_count: int,
     strength_ratings: Mapping[str, float] | None = None,
     variability_ratings: Mapping[str, float] | None = None,
+    team_strength_points: Mapping[str, float] | None = None,
+    team_strength_sd_points: Mapping[str, float] | None = None,
     parameters: SimulationParameters | None = None,
     seed: int | None = None,
     teams: Iterable[str] = EXPECTED_TEAMS,
@@ -464,12 +522,19 @@ def run_simulations(
     current_ladder = compute_ladder(results, byes, team_list)
     fixtures = future_fixtures(results, team_list)
     outstanding_byes = future_bye_counts(byes, team_list)
-    priors = build_team_priors(
-        current_ladder,
-        strength_ratings,
-        variability_ratings,
-        parameters.strength_adjustment_scale,
-    )
+    if team_strength_points is None:
+        priors = build_team_priors(
+            current_ladder,
+            strength_ratings,
+            variability_ratings,
+            parameters.strength_adjustment_scale,
+        )
+    else:
+        priors = build_point_team_priors(
+            team_strength_points=team_strength_points,
+            team_strength_sd_points=team_strength_sd_points,
+            teams=team_list,
+        )
     estimated_total_mean, estimated_total_sigma = estimate_total_points(results)
     total_sigma = (
         parameters.total_sigma

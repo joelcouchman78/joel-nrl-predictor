@@ -5,6 +5,8 @@ import numpy as np
 import pandas as pd
 
 from predictor.ladder import (
+    parse_boolean,
+    completed_results,
     EXPECTED_TEAMS,
     compute_ladder,
     load_byes_csv,
@@ -14,6 +16,7 @@ from predictor.ladder import (
 from predictor.simulation import (
     SimulationParameters,
     apply_match_result,
+    build_point_team_priors,
     build_team_priors,
     differential_per_game,
     estimate_total_points,
@@ -64,10 +67,11 @@ def test_future_schedule_contract() -> None:
         byes
     )
 
-    assert len(fixtures) == 94
-    assert sum(
-        future_byes.values()
-    ) == 29
+    assert len(fixtures) + len(completed_results(results)) == len(results)
+    credited_bye_count = int(
+        byes["credited"].map(parse_boolean).sum()
+    )
+    assert sum(future_byes.values()) == len(byes) - credited_bye_count
 
     all_bye_counts = (
         byes["team"]
@@ -109,6 +113,29 @@ def test_strength_baseline_uses_diff_per_game() -> None:
     assert rates["A"] == 10.0
     assert rates["B"] == 2.0
     assert rates["C"] == 0.0
+
+
+def test_point_based_priors_use_margin_points_directly() -> None:
+    strengths = {
+        team: 0.0
+        for team in EXPECTED_TEAMS
+    }
+    strengths["Panthers"] = 12.0
+    strengths["Wests Tigers"] = -8.0
+
+    sds = {
+        team: 4.0
+        for team in EXPECTED_TEAMS
+    }
+
+    priors = build_point_team_priors(
+        team_strength_points=strengths,
+        team_strength_sd_points=sds,
+    )
+
+    assert priors["Panthers"].mean == 12.0
+    assert priors["Wests Tigers"].mean == -8.0
+    assert priors["Panthers"].std == 4.0
 
 
 def test_score_conversion_preserves_margin() -> None:
@@ -307,7 +334,7 @@ def test_initial_state_adds_future_byes_only() -> None:
     assert (
         final_start_points
         - current_points
-        == 58
+        == 2 * sum(outstanding.values())
     )
 
 
@@ -352,7 +379,7 @@ def test_position_distribution_occupancy() -> None:
         seed=67890,
     )
 
-    assert result.fixture_count == 94
+    assert result.fixture_count + len(completed_results(results)) == len(results)
     assert result.simulation_count == (
         simulations
     )

@@ -46,6 +46,7 @@ REPO_ROOT = Path(__file__).resolve().parent
 RESULTS_PATH = REPO_ROOT / "data" / "2026" / "nrl_results.csv"
 BYES_PATH = REPO_ROOT / "data" / "2026" / "nrl_byes.csv"
 META_PATH = REPO_ROOT / "data" / "2026" / "nrl_results.meta.json"
+MODEL_SETTINGS_PATH = REPO_ROOT / "data" / "2026" / "app_model_settings.json"
 
 DEFAULT_STRENGTH_RATINGS = {
     "Broncos": 4.0,
@@ -80,6 +81,39 @@ def load_app_inputs(
         Path(metadata_path).read_text(encoding="utf-8")
     )
     return results, byes, metadata
+
+@st.cache_data(show_spinner=False)
+def load_model_settings(settings_path: str) -> dict:
+    path = Path(settings_path)
+    if not path.exists():
+        return {}
+
+    settings = json.loads(path.read_text(encoding="utf-8"))
+    if settings.get("rating_mode") != "points":
+        return settings
+
+    strengths = settings.get("team_strength_points", {})
+    missing = sorted(set(EXPECTED_TEAMS) - set(strengths))
+    if missing:
+        raise ValueError(
+            "Point-mode model settings are missing team strengths for: "
+            f"{missing}"
+        )
+
+    strength_sds = settings.get("team_strength_sd_points", {})
+    missing_sds = sorted(set(EXPECTED_TEAMS) - set(strength_sds))
+    if missing_sds:
+        raise ValueError(
+            "Point-mode model settings are missing strength SDs for: "
+            f"{missing_sds}"
+        )
+
+    return settings
+
+
+def model_point_value(settings: dict, key: str, fallback: float) -> float:
+    return float(settings.get(key, fallback))
+
 
 
 def deployed_commit() -> str:
@@ -571,6 +605,13 @@ except Exception as exc:
     st.error(f"The 2026 predictor data could not be loaded: {exc}")
     st.stop()
 
+try:
+    model_settings = load_model_settings(str(MODEL_SETTINGS_PATH))
+except Exception as exc:
+    st.error(f"The 2026 model settings could not be loaded: {exc}")
+    st.stop()
+using_point_model = model_settings.get("rating_mode") == "points"
+
 current_ladder = compute_ladder(results_df, byes_df)
 completed_df = completed_results(results_df)
 credited_byes_df = credited_byes(byes_df)
@@ -590,15 +631,25 @@ if partial_rounds:
 
 st.caption(f"Data cutoff: {data_cutoff}")
 st.markdown(
-    "Adjust team strength and variability, then run a Monte Carlo "
+    "Adjust team assumptions, then run a Monte Carlo "
     "simulation of the remaining regular-season fixtures."
 )
-st.info(
-    f"The current data contain {len(completed_df)} completed matches. "
-    "Differential per game supplies the season baseline and the strength "
-    "presets apply current-form adjustments. Simulated scores update PF, "
-    "PA and differential, while scheduled byes add competition points only."
-)
+if using_point_model:
+    st.info(
+        f"The current data contain {len(completed_df)} completed matches. "
+        "The default ratings come from the latest Bayesian team-strength "
+        "model and are measured directly in expected margin points. Team "
+        "sliders are gut-feel point adjustments with zero impact by default. "
+        "Scheduled byes add competition points only."
+    )
+else:
+    st.info(
+        f"The current data contain {len(completed_df)} completed matches. "
+        "Differential per game supplies the legacy season baseline and "
+        "the strength presets apply current-form adjustments. Simulated "
+        "scores update PF, PA and differential, while scheduled byes add "
+        "competition points only."
+    )
 
 metric_columns = st.columns(4)
 metric_columns[0].metric("Completed matches", len(completed_df))
@@ -654,71 +705,160 @@ seed = st.sidebar.number_input(
     step=1,
     key="seed",
 )
-home_advantage = st.sidebar.slider(
-    "Home advantage",
-    min_value=0.0,
-    max_value=1.0,
-    value=0.1,
-    step=0.05,
-    help=(
-        "At strength-to-margin scale 10, 0.1 contributes approximately "
-        "one margin point to the listed home team."
-    ),
-    key="home_advantage",
-)
-alpha = st.sidebar.slider(
-    "Strength-to-margin scale",
-    min_value=5.0,
-    max_value=15.0,
-    value=10.0,
-    step=0.5,
-    key="alpha",
-)
-margin_sigma = st.sidebar.slider(
-    "Match randomness",
-    min_value=6.0,
-    max_value=20.0,
-    value=16.0,
-    step=0.5,
-    help=(
-        "Independent match-to-match margin noise. Persistent team-strength "
-        "uncertainty is handled separately by variability."
-    ),
-    key="margin_sigma",
-)
+team_strength_points: dict[str, float] | None = None
+team_strength_sd_points: dict[str, float] | None = None
+strength_ratings: dict[str, float] | None = None
+variability_ratings: dict[str, int] | None = None
+team_adjustments: dict[str, float] = {}
 
-st.sidebar.header("Team Beliefs")
-st.sidebar.caption(
-    "Strength presets adjust the differential-per-game baseline. "
-    "Variability represents uncertainty about persistent team strength; "
-    "zero is the calibrated minimum."
-)
-strength_ratings: dict[str, float] = {}
-variability_ratings: dict[str, int] = {}
+if using_point_model:
+    alpha = 1.0
+    base_strengths = {
+        team: float(value)
+        for team, value in model_settings["team_strength_points"].items()
+    }
+    strength_sds = {
+        team: float(value)
+        for team, value in model_settings["team_strength_sd_points"].items()
+    }
 
-for team in EXPECTED_TEAMS:
-    with st.sidebar.expander(team, expanded=False):
-        strength_ratings[team] = st.slider(
-            f"{team} strength",
-            min_value=0.0,
-            max_value=10.0,
-            value=float(DEFAULT_STRENGTH_RATINGS[team]),
-            step=0.5,
-            format="%.1f",
-            key=f"strength_2026_{team}",
-        )
-        variability_ratings[team] = st.slider(
-            f"{team} variability",
-            min_value=0,
-            max_value=10,
-            value=0,
-            step=1,
-            help=(
-                "Persistent season-long strength uncertainty, not "
-                "match-to-match volatility."
-            ),
-            key=f"variability_2026_{team}",
-        )
+    home_advantage = st.sidebar.slider(
+        "Listed-home adjustment (points)",
+        min_value=-5.0,
+        max_value=5.0,
+        value=model_point_value(
+            model_settings,
+            "home_advantage_points",
+            0.0,
+        ),
+        step=0.5,
+        help=(
+            "A direct margin-points adjustment for the listed home team. "
+            "This is not venue-specific."
+        ),
+        key="home_advantage_points",
+    )
+    margin_sigma = st.sidebar.slider(
+        "Match randomness (points)",
+        min_value=6.0,
+        max_value=24.0,
+        value=model_point_value(
+            model_settings,
+            "match_randomness_points",
+            16.5,
+        ),
+        step=0.5,
+        help="Independent match-to-match margin noise in points.",
+        key="margin_sigma_points",
+    )
+
+    st.sidebar.caption(
+        "Point mode is active. The fitted model supplies each team's "
+        "base rating in points. Team sliders below are gut-feel point "
+        "adjustments and default to 0.0."
+    )
+
+    st.sidebar.header("Gut-feel Team Adjustments")
+    for team in EXPECTED_TEAMS:
+        with st.sidebar.expander(team, expanded=False):
+            team_adjustments[team] = st.slider(
+                f"{team} adjustment (points)",
+                min_value=-10.0,
+                max_value=10.0,
+                value=0.0,
+                step=0.5,
+                format="%+.1f",
+                help=(
+                    "Add your own judgement to the fitted model rating. "
+                    "Leaving this at 0 uses the model rating unchanged."
+                ),
+                key=f"point_adjustment_2026_{team}",
+            )
+            effective = base_strengths[team] + team_adjustments[team]
+            st.caption(
+                f"Model: {base_strengths[team]:+.1f} pts | "
+                f"SD: {strength_sds[team]:.1f} | "
+                f"Effective: {effective:+.1f} pts"
+            )
+            if abs(team_adjustments[team]) >= 4.0:
+                st.warning(
+                    "This is a large override of the fitted model rating."
+                )
+
+    team_strength_points = {
+        team: base_strengths[team] + team_adjustments[team]
+        for team in EXPECTED_TEAMS
+    }
+    team_strength_sd_points = {
+        team: strength_sds[team]
+        for team in EXPECTED_TEAMS
+    }
+else:
+    home_advantage = st.sidebar.slider(
+        "Home advantage",
+        min_value=0.0,
+        max_value=1.0,
+        value=0.1,
+        step=0.05,
+        help=(
+            "At strength-to-margin scale 10, 0.1 contributes approximately "
+            "one margin point to the listed home team."
+        ),
+        key="home_advantage",
+    )
+    alpha = st.sidebar.slider(
+        "Strength-to-margin scale",
+        min_value=5.0,
+        max_value=15.0,
+        value=10.0,
+        step=0.5,
+        key="alpha",
+    )
+    margin_sigma = st.sidebar.slider(
+        "Match randomness",
+        min_value=6.0,
+        max_value=20.0,
+        value=16.0,
+        step=0.5,
+        help=(
+            "Independent match-to-match margin noise. Persistent "
+            "team-strength uncertainty is handled separately by variability."
+        ),
+        key="margin_sigma",
+    )
+
+    st.sidebar.header("Team Beliefs")
+    st.sidebar.caption(
+        "Strength presets adjust the differential-per-game baseline. "
+        "Variability represents uncertainty about persistent team strength; "
+        "zero is the calibrated minimum."
+    )
+    strength_ratings = {}
+    variability_ratings = {}
+
+    for team in EXPECTED_TEAMS:
+        with st.sidebar.expander(team, expanded=False):
+            strength_ratings[team] = st.slider(
+                f"{team} strength",
+                min_value=0.0,
+                max_value=10.0,
+                value=float(DEFAULT_STRENGTH_RATINGS[team]),
+                step=0.5,
+                format="%.1f",
+                key=f"strength_2026_{team}",
+            )
+            variability_ratings[team] = st.slider(
+                f"{team} variability",
+                min_value=0,
+                max_value=10,
+                value=0,
+                step=1,
+                help=(
+                    "Persistent season-long strength uncertainty, not "
+                    "match-to-match volatility."
+                ),
+                key=f"variability_2026_{team}",
+            )
 
 run_requested = st.sidebar.button(
     "Run Simulation",
@@ -739,6 +879,8 @@ if run_requested:
             simulation_count=int(simulation_count),
             strength_ratings=strength_ratings,
             variability_ratings=variability_ratings,
+            team_strength_points=team_strength_points,
+            team_strength_sd_points=team_strength_sd_points,
             parameters=parameters,
             seed=int(seed),
         )
@@ -750,7 +892,11 @@ if run_requested:
         "home_advantage": float(home_advantage),
         "alpha": float(alpha),
         "margin_sigma": float(margin_sigma),
+        "rating_mode": "points" if using_point_model else "legacy",
     }
+
+    if using_point_model:
+        st.session_state["team_adjustments"] = team_adjustments
 
 simulation_result = st.session_state.get("simulation_result")
 simulation_controls = st.session_state.get("simulation_controls")
@@ -1049,6 +1195,15 @@ with st.expander("Diagnostics and Data Provenance", expanded=False):
         "results_modified_time": file_modified_time(RESULTS_PATH),
         "byes_path": str(BYES_PATH),
         "metadata_path": str(META_PATH),
+        "model_settings_path": str(MODEL_SETTINGS_PATH),
+        "rating_mode": (
+            "points" if using_point_model else "legacy"
+        ),
+        "model_run": model_settings.get("model_run"),
+        "model_round_range": model_settings.get("round_range"),
+        "model_completed_match_count": model_settings.get(
+            "completed_match_count"
+        ),
         "data_cutoff": data_cutoff,
         "fixture_count": int(len(results_df)),
         "completed_match_count": int(len(completed_df)),
