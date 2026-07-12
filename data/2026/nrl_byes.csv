@@ -32,16 +32,16 @@ season,round,team,credited,bye_points
 2026,16,Eels,true,2
 2026,16,Rabbitohs,true,2
 2026,17,Sharks,true,2
-2026,18,Bulldogs,true,0
-2026,18,Cowboys,true,0
-2026,18,Raiders,true,0
-2026,18,Roosters,true,0
-2026,18,Storm,true,0
-2026,18,Titans,true,0
-2026,18,Warriors,true,0
-2026,19,Broncos,true,0
-2026,19,Dragons,true,0
-2026,19,Panthers,true,0
+2026,18,Bulldogs,true,2
+2026,18,Cowboys,true,2
+2026,18,Raiders,true,2
+2026,18,Roosters,true,2
+2026,18,Storm,true,2
+2026,18,Titans,true,2
+2026,18,Warriors,true,2
+2026,19,Broncos,true,2
+2026,19,Dragons,true,2
+2026,19,Panthers,true,2
 2026,20,Eels,false,0
 2026,21,Dolphins,false,0
 2026,22,Sea Eagles,false,0
