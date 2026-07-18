@@ -74,6 +74,9 @@ def load_app_inputs(
     results_path: str,
     byes_path: str,
     metadata_path: str,
+    results_modified: str,
+    byes_modified: str,
+    metadata_modified: str,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     results = load_results_csv(results_path)
     byes = load_byes_csv(byes_path)
@@ -600,6 +603,9 @@ try:
         str(RESULTS_PATH),
         str(BYES_PATH),
         str(META_PATH),
+        file_modified_time(RESULTS_PATH),
+        file_modified_time(BYES_PATH),
+        file_modified_time(META_PATH),
     )
 except Exception as exc:
     st.error(f"The 2026 predictor data could not be loaded: {exc}")
