@@ -32,7 +32,7 @@ EXPECTED_TEAMS = [
 PREDICTOR_ROOT = Path("/Users/joelcouchman/Projects/joel-nrl-predictor")
 SCRAPER_ROOT = Path("/Users/joelcouchman/total_nrl_scraper")
 
-MODEL_ROOT = SCRAPER_ROOT / "out/analysis/bayesian_team_strength_2026_r1_r19"
+MODEL_ROOT = SCRAPER_ROOT / "out/analysis/bayesian_team_strength_2026_r1_r21"
 STRENGTH_PATH = (
     MODEL_ROOT
     / "recency_weighted_raw_strength"
@@ -112,9 +112,9 @@ def main() -> None:
 
     model_inputs = pd.read_csv(INPUT_PATH)
     completed_match_count = int(len(model_inputs))
-    if completed_match_count != 140:
+    if completed_match_count != 156:
         raise RuntimeError(
-            f"Expected 140 R1-R19 model-input matches, got {completed_match_count}"
+            f"Expected 156 R1-R21 model-input matches, got {completed_match_count}"
         )
 
     home_advantage_points = read_parameter_mean(
@@ -146,7 +146,7 @@ def main() -> None:
     settings = {
         "schema_version": 1,
         "rating_mode": "points",
-        "model_run": "bayesian_team_strength_2026_r1_r19",
+        "model_run": "bayesian_team_strength_2026_r1_r21",
         "source_strength_file": str(STRENGTH_PATH),
         "source_strength_mean_column": "recency_weighted_mean_strength",
         "source_strength_sd_column": "recency_weighted_sd_strength",
@@ -156,7 +156,7 @@ def main() -> None:
         "source_scraper_commit": git_commit(SCRAPER_ROOT),
         "source_predictor_commit": git_commit(PREDICTOR_ROOT),
         "season": 2026,
-        "round_range": "Rounds 1-19",
+        "round_range": "Rounds 1-21",
         "completed_match_count": completed_match_count,
         "current_strength_half_life_rounds": 6,
         "home_advantage_points": round(home_advantage_points, 3),
